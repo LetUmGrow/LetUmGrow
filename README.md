@@ -1,5 +1,5 @@
 # LetUmGrow
 
-## Plants are family too; get to know them better.
+### Plants are family too; get to know them better.
 
-## A social network for plants located on the UH Manoa Campus.
+A social network for plants located on the UH Manoa Campus.
