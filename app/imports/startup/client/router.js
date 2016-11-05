@@ -1,10 +1,17 @@
-import { FlowRouter } from 'meteor/kadira:flow-router';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import {FlowRouter} from 'meteor/kadira:flow-router';
+import {BlazeLayout} from 'meteor/kadira:blaze-layout';
 
 FlowRouter.route('/', {
   name: 'Home_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Home_Page' });
+  },
+});
+
+FlowRouter.route('/terms', {
+  name: 'Terms_And_Conditions_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Terms_And_Conditions_Page' });
   },
 });
 
@@ -19,6 +26,13 @@ FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Add_Stuff_Page' });
+  },
+});
+
+FlowRouter.route('/add-plants', {
+  name: 'Add_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Plants_Page' });
   },
 });
 
