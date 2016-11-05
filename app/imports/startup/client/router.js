@@ -22,6 +22,13 @@ FlowRouter.route('/add', {
   },
 });
 
+FlowRouter.route('/add-plants', {
+  name: 'Add_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Plants_Page' });
+  },
+});
+
 FlowRouter.route('/stuff/:_id', {
   name: 'Edit_Stuff_Page',
   action() {
