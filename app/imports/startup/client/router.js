@@ -36,6 +36,13 @@ FlowRouter.route('/add-plants', {
   },
 });
 
+FlowRouter.route('/laau', {
+  name: 'Laau_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Laau_Page' });
+  },
+});
+
 FlowRouter.route('/stuff/:_id', {
   name: 'Edit_Stuff_Page',
   action() {

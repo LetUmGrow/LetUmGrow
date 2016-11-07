@@ -13,3 +13,5 @@ import './list-stuff-page.html';
 import './list-stuff-page.js';
 
 import './terms-and-conditions.html';
+
+import './laau.html';
