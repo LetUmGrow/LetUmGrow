@@ -8,6 +8,13 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/terms', {
+  name: 'Terms_And_Conditions_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Terms_And_Conditions_Page' });
+  },
+});
+
 FlowRouter.route('/list', {
   name: 'List_Stuff_Page',
   action() {
@@ -19,6 +26,20 @@ FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Add_Stuff_Page' });
+  },
+});
+
+FlowRouter.route('/add-plants', {
+  name: 'Add_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Plants_Page' });
+  },
+});
+
+FlowRouter.route('/laau', {
+  name: 'Laau_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Laau_Page' });
   },
 });
 
