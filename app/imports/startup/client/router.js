@@ -36,8 +36,6 @@ FlowRouter.route('/add-plants', {
   },
 });
 
-<<<<<<< HEAD
-=======
 FlowRouter.route('/laau', {
   name: 'Laau_Page',
   action() {
@@ -45,7 +43,6 @@ FlowRouter.route('/laau', {
   },
 });
 
->>>>>>> refs/remotes/origin/m1-test
 FlowRouter.route('/stuff/:_id', {
   name: 'Edit_Stuff_Page',
   action() {
