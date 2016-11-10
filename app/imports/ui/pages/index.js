@@ -13,3 +13,8 @@ import './list-stuff-page.html';
 import './list-stuff-page.js';
 
 import './terms-and-conditions.html';
+<<<<<<< HEAD
+=======
+
+import './laau.html';
+>>>>>>> refs/remotes/origin/m1-test

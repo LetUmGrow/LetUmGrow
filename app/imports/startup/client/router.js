@@ -36,6 +36,16 @@ FlowRouter.route('/add-plants', {
   },
 });
 
+<<<<<<< HEAD
+=======
+FlowRouter.route('/laau', {
+  name: 'Laau_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Laau_Page' });
+  },
+});
+
+>>>>>>> refs/remotes/origin/m1-test
 FlowRouter.route('/stuff/:_id', {
   name: 'Edit_Stuff_Page',
   action() {
