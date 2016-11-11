@@ -1,24 +1,10 @@
-import {FlowRouter} from 'meteor/kadira:flow-router';
-import {BlazeLayout} from 'meteor/kadira:blaze-layout';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 FlowRouter.route('/', {
-  name: 'Landing_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Landing_Page' });
-  },
-});
-
-FlowRouter.route('/home-page', {
   name: 'Home_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Home_Page' });
-  },
-});
-
-FlowRouter.route('/terms', {
-  name: 'Terms_And_Conditions_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Terms_And_Conditions_Page' });
   },
 });
 
@@ -36,23 +22,6 @@ FlowRouter.route('/add', {
   },
 });
 
-FlowRouter.route('/add-plants', {
-  name: 'Add_Plants_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Add_Plants_Page' });
-  },
-});
-
-<<<<<<< HEAD
-=======
-FlowRouter.route('/laau', {
-  name: 'Laau_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Laau_Page' });
-  },
-});
-
->>>>>>> refs/remotes/origin/master
 FlowRouter.route('/stuff/:_id', {
   name: 'Edit_Stuff_Page',
   action() {
