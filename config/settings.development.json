@@ -1,20 +1,3 @@
 {
-  "cas": {
-    "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
-    "autoClose": true
-  },
-  "public": {
-    "cas": {
-      "loginUrl": "https://cas-test.its.hawaii.edu/cas/login",
-      "serviceParam": "service",
-      "popupWidth": 810,
-      "popupHeight": 610
-    }
-  },
-  "allowed_users": [
-    "johnson",
-    "cmoore",
-    "jkq",
-    "mschultz"
-  ]
+  "defaultAccount": {"username": "John", "password": "changeme"}
 }
