@@ -26,4 +26,8 @@ Template.Add_Plants_Page.helpers({
   stuffCollection() {
     return Stuff;
   },
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> origin/matt

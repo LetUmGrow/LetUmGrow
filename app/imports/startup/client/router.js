@@ -43,6 +43,7 @@ FlowRouter.route('/add-plants', {
   },
 });
 
+<<<<<<< HEAD
 FlowRouter.route('/laau', {
   name: 'Laau_Page',
   action() {
@@ -50,6 +51,8 @@ FlowRouter.route('/laau', {
   },
 });
 
+=======
+>>>>>>> origin/matt
 FlowRouter.route('/stuff/:_id', {
   name: 'Edit_Stuff_Page',
   action() {
