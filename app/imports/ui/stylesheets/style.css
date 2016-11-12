@@ -57,3 +57,25 @@ body {
   text-align: center;
   margin-top: 90px;
 }
+
+.bottom-links {
+  margin-top: 150px;
+}
+
+.bottom-links a {
+  margin-right: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.bottom-links a:last-child{
+  margin-right: 0px;
+}
+
+.ui.borderless.menu {
+  background: #34444e;
+  box-shadow: none;
+  border: none;
+  margin-top: 40px;
+  color: #FFFFFF;
+}
