@@ -1,13 +1,4 @@
 body {
-<<<<<<< HEAD
-  background-color: #34444E;
-}
-
-#landing {
-  background-image: url('../../../public/images/landing-page-background.png');
-  background-size: contain;
-}
-=======
   background: #34444E;
   color: #FFFFFF;
   font-family: "Comic Sans MS", cursive, sans-serif;
@@ -89,4 +80,3 @@ body {
   margin-bottom: 20px;
   color: #FFFFFF;
 }
->>>>>>> gabe
