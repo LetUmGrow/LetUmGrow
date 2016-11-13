@@ -2,6 +2,7 @@ body {
   background: #34444E;
   color: #FFFFFF;
   font-family: "Comic Sans MS", cursive, sans-serif;
+  padding-top: 61px;
 }
 
 
@@ -76,7 +77,5 @@ body {
   background: #34444e;
   box-shadow: none;
   border: none;
-  margin-top: 40px;
-  margin-bottom: 20px;
   color: #FFFFFF;
 }
