@@ -17,3 +17,7 @@ import './terms-and-conditions.html';
 import './laau.html';
 
 import './landing-page.html';
+import './landing-page.js';
+
+import './landing-page.html';
+
