@@ -10,6 +10,7 @@ Template.Cas_Login.events({
   'click .cas-logout': function casLogout(event) {
     event.preventDefault();
     Meteor.logout();
+    FlowRouter.go('Landing_Page');
     return false;
   },
 
