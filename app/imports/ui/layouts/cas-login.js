@@ -10,6 +10,7 @@ Template.Cas_Login.events({
   'click .cas-logout': function casLogout(event) {
     event.preventDefault();
     Meteor.logout();
+    FlowRouter.go('Landing_Page');
     return false;
   },
 
@@ -26,7 +27,11 @@ Template.Cas_Login.events({
       }
     };
     Meteor.loginWithCas(callback);
+<<<<<<< HEAD
     FlowRouter.go('Home_Page');
+=======
+    FlowRouter.go('Home_Page');//JON
+>>>>>>> master
     return false;
   },
 });

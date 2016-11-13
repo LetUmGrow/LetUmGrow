@@ -2,7 +2,11 @@ body {
   background: #34444E;
   color: #FFFFFF;
   font-family: "Comic Sans MS", cursive, sans-serif;
+<<<<<<< HEAD
   padding-top: 61px;
+=======
+  padding-top: 64px;
+>>>>>>> master
 }
 
 
@@ -77,5 +81,13 @@ body {
   background: #34444e;
   box-shadow: none;
   border: none;
+<<<<<<< HEAD
+=======
+  /*
+  margin-top: 40px;
+  margin-bottom: 20px;
+  */
+>>>>>>> master
   color: #FFFFFF;
 }
+
