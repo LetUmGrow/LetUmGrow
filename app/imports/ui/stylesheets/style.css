@@ -1,3 +1,82 @@
 body {
-  padding-top: 61px;  /* Move body of page below navbar. */
+  background: #34444E;
+  color: #FFFFFF;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+.myButton {
+  -moz-box-shadow: 0px 10px 14px -7px #5c5c5c;
+  -webkit-box-shadow: 0px 10px 14px -7px #5c5c5c;
+  box-shadow: 0px 10px 14px -7px #5c5c5c;
+  background-color:#fcb500;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  font-size:20px;
+  padding:13px 32px;
+  text-decoration:none;
+}
+.myButton:hover {
+  background-color:#fcb500;
+}
+.myButton:active {
+  position:absolute;
+  top:1px;
+}
+
+.myButton2 {
+  -moz-box-shadow: 0px 10px 14px -7px #5c5c5c;
+  -webkit-box-shadow: 0px 10px 14px -7px #5c5c5c;
+  box-shadow: 0px 10px 14px -7px #5c5c5c;
+  background-color:#fa8100;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  font-size:20px;
+  padding:13px 32px;
+  text-decoration:none;
+}
+.myButton2:hover {
+  background-color:#fa8100;
+}
+.myButton2:active {
+  position:absolute;
+  top:1px;
+}
+
+.centerize {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.bottom-links {
+  margin-top: 150px;
+}
+
+.bottom-links a {
+  margin-right: 20px;
+  font-size: 16px;
+  color: white;
+}
+
+.bottom-links a:last-child{
+  margin-right: 0px;
+}
+
+.ui.borderless.menu {
+  background: #34444e;
+  box-shadow: none;
+  border: none;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
 }
