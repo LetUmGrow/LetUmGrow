@@ -19,6 +19,5 @@ import './laau.html';
 import './landing-page.html';
 import './landing-page.js';
 
-
-
-
+import './user-profile.html';
+import './user-profile.js';
