@@ -16,7 +16,7 @@ export const StuffSchema = new SimpleSchema({
     max: 20,
     autoform: {
       group: 'Stuff',
-      placeholder: 'Bicycle',
+      placeholder: 'Plant',
     },
   },
   quantity: {
