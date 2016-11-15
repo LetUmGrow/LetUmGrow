@@ -14,3 +14,5 @@ npm-debug.log
 
 # Build node_modules locally.
 node_modules/
+
+settings.development.json
