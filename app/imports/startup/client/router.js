@@ -23,6 +23,13 @@ FlowRouter.route('/terms', {
   },
 });
 
+FlowRouter.route('/remedy', {
+  name: 'Remedy_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Remedy_Page' });
+  },
+});
+
 FlowRouter.route('/list', {
   name: 'List_Stuff_Page',
   action() {
