@@ -16,6 +16,9 @@ import './terms-and-conditions.html';
 
 import './laau.html';
 
+import './remedy.html';
+import './remedy.js';
+
 import './landing-page.html';
 import './landing-page.js';
 
