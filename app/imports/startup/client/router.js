@@ -37,6 +37,13 @@ FlowRouter.route('/list', {
   },
 });
 
+FlowRouter.route('/list-plants', {
+  name: 'List_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'List_Plants_Page' });
+  },
+});
+
 FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {
