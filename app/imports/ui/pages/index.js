@@ -12,6 +12,9 @@ import './home-page.html';
 import './list-stuff-page.html';
 import './list-stuff-page.js';
 
+import './list-plants-page.html';
+import './list-plants-page.js';
+
 import './terms-and-conditions.html';
 
 import './laau.html';

@@ -13,31 +13,31 @@ export const PlantsSchema = new SimpleSchema({
     label: 'VernacularName',
     type: String,
     optional: false,
-    max: 20,
-    autoform: {
-      group: 'Plants',
-      placeholder: 'Plant',
-    },
+    max: 50,
   },
   scientificName: {
     label: 'ScientificName',
     type: String,
     optional: false,
+    max: 50,
   },
   decimalLongitude: {
     label: 'DecimalLongitude',
-    type: Number,
+    type: String,
     optional: false,
+    max: 50,
   },
   decimalLatitude: {
     label: 'DecimalLatitude',
-    type: Number,
+    type: String,
     optional: false,
+    max: 50,
   },
   plDesc: {
     label: 'PlDesc',
     type: String,
     optional: false,
+    max: 300,
   },
 });
 
