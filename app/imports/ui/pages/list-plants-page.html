@@ -13,12 +13,12 @@
           </thead>
 
           <tbody>
-          {{#each plants in plantsList}}
+          {{#each plant in plantsList}}
             <tr>
-              <td>{{plants.vernacularName}}</td>
-              <td>{{plants.decimalLongitude}}</td>
-              <td>{{plants.decimalLatitude}}</td>
-              <td><a href="{{pathFor 'Edit_Plants_Page' _id=plants._id}}">Edit</a></td>
+              <td>{{plant.vernacularName}}</td>
+              <td>{{plant.decimalLongitude}}</td>
+              <td>{{plant.decimalLatitude}}</td>
+              <td><a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">Edit</a></td>
             </tr>
           {{/each}}
           </tbody>
