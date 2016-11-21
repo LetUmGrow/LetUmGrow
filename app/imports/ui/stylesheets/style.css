@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
   background: #34444E;
   color: #FFFFFF;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
   padding-top: 61px;
 }
 
@@ -22,11 +25,11 @@ body {
   -webkit-border-bottom-left-radius:20px;
   -moz-border-radius-bottomleft:20px;
   border-bottom-left-radius:20px;
+  transition: all 0.3s ease 0s;
   text-indent:0px;
   border:1px solid #ffffff;
   display:inline-block;
   color:#ffffff;
-  font-family:Arial;
   font-size:15px;
   font-weight:bold;
   font-style:normal;
@@ -63,11 +66,11 @@ body {
   -webkit-border-bottom-left-radius:20px;
   -moz-border-radius-bottomleft:20px;
   border-bottom-left-radius:20px;
+  transition: all 0.3s ease 0s;
   text-indent:0px;
   border:1px solid #ffffff;
   display:inline-block;
   color:#ffffff;
-  font-family:Arial;
   font-size:15px;
   font-weight:bold;
   font-style:normal;
