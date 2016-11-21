@@ -1,29 +1,29 @@
 import { AutoForm } from 'meteor/aldeed:autoform';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
-import { Stuff } from '../../api/stuff/stuff.js';
+import { Plants } from '../../api/plants/plants.js';
 
 /* eslint-disable object-shorthand, no-unused-vars */
 
 /**
- * After successful addition of a new Stuff document, go to List page.
+ * After successful addition of a new Plants document, go to List page.
  * See: https://github.com/aldeed/meteor-autoform#callbackshooks
  */
 AutoForm.hooks({
-  AddStuffForm: {
+  AddPlantsForm: {
     /**
-     * After successful form submission, go to List_Stuff_Page.
+     * After successful form submission, go to List_Plants_Page.
      * @param formType The form.
      * @param result The result of form submission.
      */
     onSuccess: function onSuccess(formType, result) {
-      FlowRouter.go('List_Stuff_Page');
+      FlowRouter.go('List_Plants_Page');
     },
   },
 });
 
 Template.Add_Plants_Page.helpers({
-  stuffCollection() {
-    return Stuff;
+  plantsCollection() {
+    return Plants;
   },
 });
