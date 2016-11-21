@@ -6,8 +6,8 @@
           <thead>
           <tr>
             <th>vernacularName</th>
-            <th>decimalLongitude</th>
             <th>decimalLatitude</th>
+            <th>decimalLongitude</th>
             <th>Edit</th>
           </tr>
           </thead>
@@ -16,8 +16,8 @@
           {{#each plant in plantsList}}
             <tr>
               <td>{{plant.vernacularName}}</td>
-              <td>{{plant.decimalLongitude}}</td>
               <td>{{plant.decimalLatitude}}</td>
+              <td>{{plant.decimalLongitude}}</td>
               <td><a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">Edit</a></td>
             </tr>
           {{/each}}
