@@ -1,10 +1,5 @@
 <template name="Landing_Page">
 
-  <head>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-  </head>
-
   <div style="
   background-image: url('/images/landing-page-background.jpg');
   background-repeat: no-repeat;
@@ -25,7 +20,7 @@
     <img style="
     display: block;
     height: 206px;
-    margin-top: 29px;
+    margin-top: 59px;
     margin-left: auto;
     margin-right: auto;"
          src="/images/letumgrow-logo.png"/>
@@ -46,27 +41,16 @@
 
     <div class="centerize">
 
-      <a href="{{pathFor 'Terms_And_Conditions_Page'}}"><button class="ui yellow button">Login</button></a>
+      <a href="{{pathFor 'Terms_And_Conditions_Page'}}"><div class="login">Sign In</div></a>
 
-      <button class="ui orange button">Tutorial</button>
+      <a href="{{pathFor 'Home_Page'}}"><div class="tutorial" style="margin-left: 45px;">Tutorial</div></a>
       <!--<a class="myButton2"-->
          <!--href="{{pathFor 'Terms_And_Conditions_Page'}}"-->
          <!--style="-->
         <!--margin-left: 45px;-->
         <!--margin-right: auto;">-->
         <!--Tutorial</a>-->
-
-
-    </div>
-
-    <div class="centerize bottom-links">
-
-      <a href="#">Contact Us</a>
-      <a>|</a>
-      <a href="#">About Us</a>
-      <a>|</a>
-      <a href="#">FAQs</a>
-
+      
     </div>
 
   </div>
