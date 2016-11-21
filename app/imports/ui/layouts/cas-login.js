@@ -27,11 +27,7 @@ Template.Cas_Login.events({
       }
     };
     Meteor.loginWithCas(callback);
-<<<<<<< HEAD
     FlowRouter.go('Home_Page');
-=======
-    FlowRouter.go('Home_Page');//JON
->>>>>>> master
     return false;
   },
 });
