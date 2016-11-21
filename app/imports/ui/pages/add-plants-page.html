@@ -1,10 +1,15 @@
 <template name="Add_Plants_Page">
   {{#If_Logged_In}}
+    <style>
+      form#AddPlantsForm div label {
+        color: white;
+      }
+    </style>
     <h1 class="ui centered header">Add Plants</h1>
     <div class="ui centered grid">
       <div style="padding-top: 20px" class="four wide column">
         {{> quickForm
-        collection=stuffCollection
+        collection=plantsCollection
         template="semanticUI"
         id="AddPlantsForm"
         type="insert"
