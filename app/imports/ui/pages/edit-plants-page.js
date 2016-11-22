@@ -6,11 +6,11 @@ import { Plants } from '../../api/plants/plants.js';
 /* eslint-disable object-shorthand, no-unused-vars */
 
 /**
- * After successful addition of a new Plants document, go to List page.
+ * After successful edit, go to List page.
  * See: https://github.com/aldeed/meteor-autoform#callbackshooks
  */
 AutoForm.hooks({
-  AddPlantsForm: {
+  EditPlantsForm: {
     /**
      * After successful form submission, go to List_Plants_Page.
      * @param formType The form.
@@ -22,8 +22,12 @@ AutoForm.hooks({
   },
 });
 
-Template.Add_Plants_Page.helpers({
+Template.Edit_Plants_Page.helpers({
+  getDoc() {
+    return Plants.findOne(FlowRouter.getParam('_id'));
+  },
   plantsCollection() {
     return Plants;
   },
 });
+

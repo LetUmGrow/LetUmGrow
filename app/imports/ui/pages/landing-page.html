@@ -1,5 +1,7 @@
 <template name="Landing_Page">
 
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
   <div style="
   background-image: url('/images/landing-page-background.jpg');
   background-repeat: no-repeat;
@@ -20,7 +22,7 @@
     <img style="
     display: block;
     height: 206px;
-    margin-top: 29px;
+    margin-top: 99px;
     margin-left: auto;
     margin-right: auto;"
          src="/images/letumgrow-logo.png"/>
@@ -28,40 +30,30 @@
     <img style="
     display: block;
     height: 100px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;" src="/images/letumgrow-title.png"/>
 
     <p style="
     text-align: center;
-    font-size: 14pt;
-    margin-top: 30px;">
+    font-family: 'Dosis', sans-serif;
+    font-size: 15pt;
+    margin-top: 40px;">
       Plants are family too! Get to know them better.</p>
 
 
     <div class="centerize">
 
-      {{> Cas_Login }}
+      <a href="{{pathFor 'Terms_And_Conditions_Page'}}"><div class="login">Sign In</div></a>
 
-      <button class="ui orange button">Tutorial</button>
+      <a href="{{pathFor 'Home_Page'}}"><div class="tutorial" style="margin-left: 45px;">Tutorial</div></a>
       <!--<a class="myButton2"-->
          <!--href="{{pathFor 'Terms_And_Conditions_Page'}}"-->
          <!--style="-->
         <!--margin-left: 45px;-->
         <!--margin-right: auto;">-->
         <!--Tutorial</a>-->
-
-
-    </div>
-
-    <div class="centerize bottom-links">
-
-      <a href="#">Contact Us</a>
-      <a>|</a>
-      <a href="#">About Us</a>
-      <a>|</a>
-      <a href="#">FAQs</a>
-
+      
     </div>
 
   </div>
