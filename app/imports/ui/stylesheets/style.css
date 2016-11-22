@@ -1,57 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
   background: #34444E;
   color: #FFFFFF;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  padding-top: 64px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  padding-top: 61px;
 }
 
-
-.myButton {
-  -moz-box-shadow: 0px 10px 14px -7px #5c5c5c;
-  -webkit-box-shadow: 0px 10px 14px -7px #5c5c5c;
-  box-shadow: 0px 10px 14px -7px #5c5c5c;
-  background-color:#fcb500;
-  -moz-border-radius:8px;
-  -webkit-border-radius:8px;
-  border-radius:8px;
+.tutorial {
+  -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  box-shadow:inset 0px 0px 0px 0px #ffffff;
+  background-color:transparent;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  transition: all 0.3s ease 0s;
+  text-indent:0px;
+  border:1px solid #ffffff;
   display:inline-block;
-  cursor:pointer;
   color:#ffffff;
-  font-family:"Comic Sans MS", cursive, sans-serif;
-  font-size:20px;
-  padding:13px 32px;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:47px;
+  line-height:47px;
+  width:139px;
   text-decoration:none;
+  text-align:center;
 }
-.myButton:hover {
-  background-color:#fcb500;
+
+.tutorial:active {
+   position:relative;
+   top:1px;
+ }
+
+.tutorial:hover {
+  background:#e9ac27;
 }
-.myButton:active {
-  position:absolute;
+
+.login {
+  -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  box-shadow:inset 0px 0px 0px 0px #ffffff;
+  background-color:transparent;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  transition: all 0.3s ease 0s;
+  text-indent:0px;
+  border:1px solid #ffffff;
+  display:inline-block;
+  color:#ffffff;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:47px;
+  line-height:47px;
+  width:139px;
+  text-decoration:none;
+  text-align:center;
+}
+
+.login:active {
+  position:relative;
   top:1px;
 }
 
-.myButton2 {
-  -moz-box-shadow: 0px 10px 14px -7px #5c5c5c;
-  -webkit-box-shadow: 0px 10px 14px -7px #5c5c5c;
-  box-shadow: 0px 10px 14px -7px #5c5c5c;
-  background-color:#fa8100;
-  -moz-border-radius:8px;
-  -webkit-border-radius:8px;
-  border-radius:8px;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:"Comic Sans MS", cursive, sans-serif;
-  font-size:20px;
-  padding:13px 32px;
-  text-decoration:none;
-}
-.myButton2:hover {
-  background-color:#fa8100;
-}
-.myButton2:active {
-  position:absolute;
-  top:1px;
+.login:hover {
+  background:#e97c29;
 }
 
 .centerize {
@@ -60,7 +96,6 @@ body {
 }
 
 .bottom-links {
-  margin-top: 150px;
 }
 
 .bottom-links a {

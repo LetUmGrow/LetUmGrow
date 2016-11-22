@@ -21,17 +21,19 @@ export const PlantsSchema = new SimpleSchema({
     optional: false,
     max: 50,
   },
-  decimalLongitude: {
-    label: 'DecimalLongitude',
-    type: String,
-    optional: false,
-    max: 50,
-  },
   decimalLatitude: {
     label: 'DecimalLatitude',
-    type: String,
+    type: Number,
+    decimal: true,
     optional: false,
-    max: 50,
+    max: 90,
+  },
+  decimalLongitude: {
+    label: 'DecimalLongitude',
+    type: Number,
+    decimal: true,
+    optional: false,
+    max: 180,
   },
   plDesc: {
     label: 'PlDesc',
