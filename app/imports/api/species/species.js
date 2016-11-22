@@ -12,14 +12,14 @@ export const SpeciesSchema = new SimpleSchema({
   sid: {
     label: 'SpeciesID',
     type: Number,
-    optional: false,
     max: 10,
-    /*autoform: {   //can this be AI?
+    optional: true,
+    autoform: {   //can this be AI?
      group: 'Species',
-     placeholder: 'Plant',
-     },*/
+     placeholder: '1',
+     },
   },
-  pictures: [], //needs more
+ // pictures: [], //needs more
   family: {
     label: 'Family',
     type: String,
@@ -33,7 +33,7 @@ export const SpeciesSchema = new SimpleSchema({
   scientificName: {
     label: 'Scientific Name',
     type: String,
-    optional: false,
+    optional: true,
     max: 50,
     autoform: {
       group: 'Species',
@@ -110,22 +110,22 @@ export const SpeciesSchema = new SimpleSchema({
       placeholder: 'Conservation',
     },
   },
-  roots: {},
+/*  roots: {},
   stems: {},
   fruit: {},
   flowers: {},
   leaves: {
-    shape: {}, /* (lots of variations) */
-    arrangement: {}, /* alternate, opposite, whorled, nil */
-    compound: {}, /* unifoliate, bifoliate, trifoliate, palmate, even-pinnate, odd-pinnate, even-bipinnate */
-    margins: {}, /* entire, lobed, dissected */
-    apices: {}, /* mucronate, acuminate, attenuate, rounded, emarginate, truncate */
-    bases: {}, /* cordate, auriculate, sagittate, cuneate, truncate, asymmetrical */
-    teeth: {}, /* serrate, doubly-serrate, crenate, dentate */
-    Venation: {}, /* pinnate, plinervy, palmate, parallel, rotate */
+    shape: {}, // (lots of variations)
+    arrangement: {}, // alternate, opposite, whorled, nil
+    compound: {}, // unifoliate, bifoliate, trifoliate, palmate, even-pinnate, odd-pinnate, even-bipinnate
+    margins: {}, //entire, lobed, dissected
+    apices: {}, // mucronate, acuminate, attenuate, rounded, emarginate, truncate
+    bases: {}, // cordate, auriculate, sagittate, cuneate, truncate, asymmetrical
+    teeth: {}, // serrate, doubly-serrate, crenate, dentate
+    Venation: {}, // pinnate, plinervy, palmate, parallel, rotate
   },
   lastEditedBy: {},
-  timeLastEdited: {},
+  timeLastEdited: {}, */
 });
 
 Species.attachSchema(SpeciesSchema);
