@@ -6,28 +6,126 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 export const Species = new Mongo.Collection('Species');
 
 /**
- * Create the schema for Stuff
+ * Create the schema for Species
  */
 export const SpeciesSchema = new SimpleSchema({
-  name: {
-    label: 'Name',
-    type: String,
-    optional: false,
-    max: 20,
-    autoform: {
-      group: 'Stuff',
-      placeholder: 'Plant',
-    },
-  },
-  quantity: {
-    label: 'Quantity',
+  sid: {
+    label: 'SpeciesID',
     type: Number,
     optional: false,
+    max: 10,
+    /*autoform: {   //can this be AI?
+     group: 'Species',
+     placeholder: 'Plant',
+     },*/
+  },
+  pictures: [], //needs more
+  family: {
+    label: 'Family',
+    type: String,
+    optional: true,
+    max: 30,
     autoform: {
-      group: 'Stuff',
-      placeholder: '3',
+     group: 'Species',
+     placeholder: 'Family',
+     },
+  },
+  scientificName: {
+    label: 'Scientific Name',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Scientific Name',
     },
   },
+  HawaiianName: {
+    label: 'Hawaiian Name',
+    type: String,
+    optional: true,
+    max: 50,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Hawaiian Name',
+    },
+  },
+  vernacularName: {
+    label: 'Vernacular Name',
+    type: String,
+    optional: true,
+    max: 50,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Vernacular Name',
+    },
+  },
+  description: {
+    label: 'Description',
+    type: String,
+    optional: true,
+    max: 50,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Description',
+    },
+  },
+  uses: {
+    label: 'Uses',
+    type: String,
+    optional: true,
+    max: 250,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Uses',
+    },
+  },
+  origin: {
+    label: 'Origin',
+    type: String,
+    optional: true,
+    max: 50,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Origin',
+    },
+  },
+  biogeography: { /* native, endemic, transplant, aggressive invader, etc. */
+    label: 'Biogeography',
+    type: String,
+    optional: true,
+    max: 30,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Biogeography',
+    },
+  },
+  conservation: { /* endangered, etc. */
+    label: 'Conservation',
+    type: String,
+    optional: true,
+    max: 30,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Conservation',
+    },
+  },
+  roots: {},
+  stems: {},
+  fruit: {},
+  flowers: {},
+  leaves: {
+    shape: {}, /* (lots of variations) */
+    arrangement: {}, /* alternate, opposite, whorled, nil */
+    compound: {}, /* unifoliate, bifoliate, trifoliate, palmate, even-pinnate, odd-pinnate, even-bipinnate */
+    margins: {}, /* entire, lobed, dissected */
+    apices: {}, /* mucronate, acuminate, attenuate, rounded, emarginate, truncate */
+    bases: {}, /* cordate, auriculate, sagittate, cuneate, truncate, asymmetrical */
+    teeth: {}, /* serrate, doubly-serrate, crenate, dentate */
+    Venation: {}, /* pinnate, plinervy, palmate, parallel, rotate */
+  },
+  lastEditedBy: {},
+  timeLastEdited: {},
 });
 
-Stuff.attachSchema(SpeciesSchema);
+Species.attachSchema(SpeciesSchema);
