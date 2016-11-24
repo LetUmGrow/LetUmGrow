@@ -123,3 +123,9 @@ h1.ui.header {
   color: #FFFFFF;
 }
 
+.shadow {
+  box-shadow: 0 8px 6px -6px #1e1e1e;
+}
+
+
+
