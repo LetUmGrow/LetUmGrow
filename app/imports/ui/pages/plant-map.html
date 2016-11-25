@@ -1,5 +1,11 @@
-<template name="Plant Map">
+<template name="Plant_Map_Page">
   {{#If_Logged_In}}
-
+    <body>
+    <h1>popipo</h1>
+    <div class="plant-map-container" style="">
+      {{> googleMap name="exampleMap" options=exampleMapOptions}}
+    </div>
+    <h1>opipop</h1>
+    </body>
   {{/If_Logged_In}}
 </template>
