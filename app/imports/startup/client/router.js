@@ -86,6 +86,13 @@ FlowRouter.route('/edit-plants/:_id', {
   },
 });
 
+FlowRouter.route('/plant-map', {
+  name: 'Plant_Map_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Plant_Map_Page' });
+  },
+});
+
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
