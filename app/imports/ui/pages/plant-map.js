@@ -14,11 +14,11 @@ import { Template } from 'meteor/templating';
 //   GoogleMaps.load();
 // });
 
-if (Meteor.isClient) {
+// if (Meteor.isClient) {
   Meteor.startup(function() {
     GoogleMaps.load( { key: 'AIzaSyBBkGBcI1a-ZC9e0PsxeOSVOP02IzcjQwo' } );
   });
-}
+// }
 
 Template.Plant_Map_Page.helpers({
   plantMapOptions: function() {
@@ -33,8 +33,11 @@ Template.Plant_Map_Page.helpers({
   }
 });
 
-// Template.Plant_Map_Page.onCreated(function() {
+Template.Plant_Map_Page.onCreated(function() {
 //   // We can use the `ready` callback to interact with the map API once the map is ready.
+  GoogleMaps.ready('Plant Map', function(map){
+    console.log("I'm ready!");
+  });
 //   GoogleMaps.ready('plantMap', function(map) {
 //     // Add a marker to the map once it's ready
 //     var marker = new google.maps.Marker({
@@ -42,4 +45,4 @@ Template.Plant_Map_Page.helpers({
 //       map: map.instance
 //     });
 //   });
-// });
+});
