@@ -12,13 +12,13 @@ export const PlantsSchema = new SimpleSchema({
   vernacularName: {
     label: 'VernacularName',
     type: String,
-    optional: false,
+    optional: true,
     max: 50,
   },
   scientificName: {
     label: 'ScientificName',
     type: String,
-    optional: false,
+    optional: true,
     max: 50,
   },
   decimalLatitude: {
@@ -38,7 +38,7 @@ export const PlantsSchema = new SimpleSchema({
   plDesc: {
     label: 'PlDesc',
     type: String,
-    optional: false,
+    optional: true,
     max: 300,
   },
 });
