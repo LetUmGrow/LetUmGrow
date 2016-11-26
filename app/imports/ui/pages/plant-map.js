@@ -21,13 +21,13 @@ if (Meteor.isClient) {
 }
 
 Template.Plant_Map_Page.helpers({
-  exampleMapOptions: function() {
+  plantMapOptions: function() {
     // Make sure the maps API has loaded
     if (GoogleMaps.loaded()) {
       // Map initialization options
       return {
-        center: new google.maps.LatLng(21.300005,-157.8211567,17),
-        zoom: 16
+        center: new google.maps.LatLng(21.2985117,-157.8185832),
+        zoom: 17
       };
     }
   }
@@ -35,7 +35,7 @@ Template.Plant_Map_Page.helpers({
 
 // Template.Plant_Map_Page.onCreated(function() {
 //   // We can use the `ready` callback to interact with the map API once the map is ready.
-//   GoogleMaps.ready('exampleMap', function(map) {
+//   GoogleMaps.ready('plantMap', function(map) {
 //     // Add a marker to the map once it's ready
 //     var marker = new google.maps.Marker({
 //       position: map.options.center,

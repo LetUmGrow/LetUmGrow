@@ -133,5 +133,6 @@ Used on /plant-map
 .plant-map-container {
   width: 800px;
   max-width: 100%;
-  height: 500px;
+  height: 400px;
+  /*max-height: 100%;*/
 }
