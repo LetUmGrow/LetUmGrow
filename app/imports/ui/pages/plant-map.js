@@ -4,7 +4,7 @@
 // import { AutoForm } from 'meteor/aldeed:autoform';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import {Template} from 'meteor/templating';
-import { Plants } from '../../api/plants/plants.js';
+import {Plants} from '../../api/plants/plants.js';
 
 /*
  * This function breaks the css styling for some reason
@@ -36,14 +36,14 @@ Template.Plant_Map_Page.onCreated(function () {
 //   // We can use the `ready` callback to interact with the map API once the map is ready.
   GoogleMaps.ready('Plant Map', function (map) {
     // console.log("I'm ready!");
-    google.maps.event.addListener(map.instance, 'click', function(event){
+    google.maps.event.addListener(map.instance, 'click', function (event) {
       Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng() });
     });
 
     var plantMarkers = {};
 
     Plants.find().observe({
-      added: function(document) {
+      added: function (document) {
         // Create a marker for this document
         var marker = new google.maps.Marker({
           draggable: true,
@@ -56,17 +56,25 @@ Template.Plant_Map_Page.onCreated(function () {
         });
 
         // This listener lets us drag plantMarkers on the map and update their corresponding document.
-        google.maps.event.addListener(marker, 'dragend', function(event) {
-          Plants.update(marker.id, { $set: { decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng() }});
+        google.maps.event.addListener(marker, 'dragend', function (event) {
+          Plants.update(marker.id, {
+            $set: {
+              decimalLatitude: event.latLng.lat(),
+              decimalLongitude: event.latLng.lng()
+            }
+          });
         });
 
         // Store this marker instance within the plantMarkers object.
         plantMarkers[document._id] = marker;
       },
-      changed: function(newDocument, oldDocument) {
-        plantMarkers[newDocument._id].setPosition({ decimalLatitude: newDocument.decimalLatitude, decimalLongitude: newDocument.decimalLongitude });
+      changed: function (newDocument, oldDocument) {
+        plantMarkers[newDocument._id].setPosition({
+          decimalLatitude: newDocument.decimalLatitude,
+          decimalLongitude: newDocument.decimalLongitude
+        });
       },
-      removed: function(oldDocument) {
+      removed: function (oldDocument) {
         // Remove the marker from the map
         plantMarkers[oldDocument._id].setMap(null);
 
