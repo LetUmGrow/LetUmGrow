@@ -1,0 +1,10 @@
+<template name="Plant_Map_Page">
+  {{#If_Logged_In}}
+    <h1 class="ui centered header">Plant Map</h1>
+    <div class="ui centered grid container">
+      <div class="plant-map-container" style="">
+        {{> googleMap name="Plant Map" options=plantMapOptions}}
+      </div>
+    </div>
+  {{/If_Logged_In}}
+</template>
