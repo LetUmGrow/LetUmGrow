@@ -25,6 +25,9 @@ import './laau.html';
 import './remedy.html';
 import './remedy.js';
 
+import './faq-page.html';
+import './faq-page.js';
+
 import './landing-page.html';
 import './landing-page.js';
 
