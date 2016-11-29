@@ -115,6 +115,37 @@
             </div>
           </div>
 
+          <div style="background-color: #34444e !important" class="ui segment">
+            {{#If_Logged_In}}
+            <div class="ui text container">
+              {{#if Template.subscriptionsReady}}
+              <h2>Contacts</h2>
+              <table style="margin-top: 20px" class="ui celled table">
+                <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{#each contact in stuffcontactsList}}
+                <tr>
+                  <td>{{contact.email}}</td>
+                  <td>{{contact.first}}</td>
+                  <td>{{contact.last}}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+              </table>
+              {{else}}
+              {{> Loading}}
+              {{/if}}
+            </div>
+            {{/If_Logged_In}}
+          </div>
+
         </div>
       </div>
     </div>
