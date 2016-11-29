@@ -107,6 +107,13 @@ FlowRouter.route('/edit-plants/:_id', {
   },
 });
 
+FlowRouter.route('/edit-contact/:_id', {
+  name: 'Edit_Contact_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Contact_Page' });
+  },
+});
+
 FlowRouter.route('/plant-map', {
   name: 'Plant_Map_Page',
   action() {

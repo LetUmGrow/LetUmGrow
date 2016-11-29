@@ -5,7 +5,7 @@
       <div class="six wide column">
         <h1 class="ui header">My Profile</h1>
         <i class="ui massive user icon"></i>
-        <h2>{{currentUser.profile.email}}</h2>
+        <h2>Username</h2>
         <hr>
         <h2>Badges</h2>
         <i class="ui big icon facebook f"></i>
@@ -137,7 +137,7 @@
                   <td>{{contact.email}}</td>
                   <td>{{contact.first}}</td>
                   <td>{{contact.last}}</td>
-                  <td><a href="{{pathFor 'Edit_Contact_Page' _id=stuff._id}}">Edit</a></td>
+                  <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
                 </tr>
                 {{/each}}
                 </tbody>
