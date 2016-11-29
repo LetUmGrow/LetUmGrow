@@ -1,6 +1,9 @@
 <template name="Plant_Map_Page">
   {{#If_Logged_In}}
     <h1 class="ui centered header">Plant Map</h1>
+  <div class="ui centered grid container">
+  <p>Click the map to add points to LetUmGrow's database of plants and drag the points to move them.</p>
+  </div>
     <div class="ui centered grid container">
       <div class="plant-map-container" style="">
         {{> googleMap name="Plant Map" options=plantMapOptions}}
