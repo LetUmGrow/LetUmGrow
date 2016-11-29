@@ -37,6 +37,13 @@ FlowRouter.route('/remedy', {
   },
 });
 
+FlowRouter.route('/tutorial', {
+  name: 'Tutorial_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tutorial_Page' });
+  },
+});
+
 FlowRouter.route('/list', {
   name: 'List_Stuff_Page',
   action() {
