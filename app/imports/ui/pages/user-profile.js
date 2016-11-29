@@ -3,6 +3,7 @@
  */
 import { Template } from 'meteor/templating';
 import { Contacts } from '../../api/contacts/contacts.js';
+import { Meteor } from 'meteor/meteor';
 
 Template.User_Profile_Page.helpers({
 
