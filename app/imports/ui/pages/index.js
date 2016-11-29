@@ -20,10 +20,16 @@ import './list-plants-page.js';
 
 import './terms-and-conditions.html';
 
+import './tutorial-page.html';
+import './tutorial-page.js';
+
 import './laau.html';
 
 import './remedy.html';
 import './remedy.js';
+
+import './faq-page.html';
+import './faq-page.js';
 
 import './landing-page.html';
 import './landing-page.js';
