@@ -23,6 +23,13 @@ FlowRouter.route('/terms', {
   },
 });
 
+FlowRouter.route('/faq', {
+  name: 'FAQ_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'FAQ_Page' });
+  },
+});
+
 FlowRouter.route('/remedy', {
   name: 'Remedy_Page',
   action() {
@@ -83,6 +90,13 @@ FlowRouter.route('/edit-plants/:_id', {
   name: 'Edit_Plants_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Edit_Plants_Page' });
+  },
+});
+
+FlowRouter.route('/plant-map', {
+  name: 'Plant_Map_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Plant_Map_Page' });
   },
 });
 
