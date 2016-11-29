@@ -9,6 +9,14 @@ body {
   margin-bottom: 70px;
 }
 
+#Landing_Page body{
+  background: #34444E;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  margin-bottom: 70px;
+}
+
 .tutorial {
   -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
   -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
