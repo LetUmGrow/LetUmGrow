@@ -1,3 +1,6 @@
+import './add-contact-page.html';
+import './add-contact-page.js';
+
 import './add-stuff-page.html';
 import './add-stuff-page.js';
 

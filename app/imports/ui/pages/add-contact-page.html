@@ -1,0 +1,41 @@
+<template name="Add_Contact_Page">
+  <div class="ui container">
+    <form class="ui form contact-data-form {{ errorClass }}">
+      <hr>
+      <h4 class="ui dividing header">Contact Information</h4>
+      <div class="field">
+        <label>Email</label>
+        <div class="field">
+          <input name="email" id="email" placeholder="Email" type="text">
+          {{#if displayFieldError 'email' }}
+          <div class="ui error message">
+            <p>You must specify a UH email address for contact.</p>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="field">
+        <label>Name</label>
+        <div class="two fields">
+          <div class="field">
+            <input name="first" id="first" placeholder="First Name" type="text">
+            {{#if displayFieldError 'first' }}
+            <div class="ui error message">
+              <p>You must specify contact's first name.</p>
+            </div>
+            {{/if}}
+          </div>
+          <div class="field">
+            <input name="last" id="last" placeholder="Last Name" type="text">
+            {{#if displayFieldError 'last' }}
+            <div class="ui error message">
+              <p>You must specify contact's last name.</p>
+            </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+      <button class="ui primary button" type="submit">Submit</button>
+    </form>
+  </div>
+</template>

@@ -58,6 +58,13 @@ FlowRouter.route('/list-plants', {
   },
 });
 
+FlowRouter.route('/add-contact', {
+  name: 'Add_Contact_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Contact_Page' });
+  },
+});
+
 FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {

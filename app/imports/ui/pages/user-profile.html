@@ -119,6 +119,7 @@
             {{#If_Logged_In}}
             <div class="ui text container">
               {{#if Template.subscriptionsReady}}
+              <a class="item" href="{{pathFor 'Add_Contact_Page'}}">Add Contact</a>
               <h2>Contacts</h2>
               <table style="margin-top: 20px" class="ui celled table">
                 <thead>
@@ -126,15 +127,17 @@
                   <th>Email</th>
                   <th>First Name</th>
                   <th>Last Name</th>
+                  <th>Owner</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                {{#each contact in stuffcontactsList}}
+                {{#each contact in contactsList}}
                 <tr>
                   <td>{{contact.email}}</td>
                   <td>{{contact.first}}</td>
                   <td>{{contact.last}}</td>
+                  <td>{{contact.owner}}</td>
                 </tr>
                 {{/each}}
                 </tbody>
