@@ -5,8 +5,15 @@ import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 
 export const Plants = new Mongo.Collection('Plants');
 
+// if (Meteor.isServer) {
+//   // This code only runs on the server
+//   Meteor.publish('Plants', function PlantsPublication() {
+//     return Plants.find();
+//   });
+// }
+
 /**
- * Create the schema for Stuff
+ * Create the schema for Plants
  */
 export const PlantsSchema = new SimpleSchema({
   vernacularName: {
