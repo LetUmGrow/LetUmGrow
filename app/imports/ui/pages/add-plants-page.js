@@ -27,3 +27,9 @@ Template.Add_Plants_Page.helpers({
     return Plants;
   },
 });
+
+Template.Add_Plants_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Plants');
+  });
+});
