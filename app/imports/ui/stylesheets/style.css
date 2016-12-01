@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-  background: #34444E;
+  background: #334e4d;
   color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
@@ -9,19 +9,11 @@ body {
   margin-bottom: 70px;
 }
 
-#Landing_Page body{
-  background: #34444E;
-  color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: lighter;
-  margin-bottom: 70px;
-}
-
 .tutorial {
   -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
   -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
   box-shadow:inset 0px 0px 0px 0px #ffffff;
-  background-color:transparent;
+  background-color:#e9ac27;
   -webkit-border-top-left-radius:20px;
   -moz-border-radius-topleft:20px;
   border-top-left-radius:20px;
@@ -55,14 +47,14 @@ body {
  }
 
 .tutorial:hover {
-  background:#e9ac27;
+  background:#e9c227;
 }
 
 .ui.button.show.login {
   -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
   -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
   box-shadow:inset 0px 0px 0px 0px #ffffff;
-  background-color:transparent;
+  background-color: #e97c29;
   -webkit-border-top-left-radius:20px;
   -moz-border-radius-topleft:20px;
   border-top-left-radius:20px;
@@ -96,7 +88,7 @@ body {
 }
 
 .ui.button.show.login:hover {
-  background:#e97c29;
+  background:#e99529;
 }
 
 .centerize {
