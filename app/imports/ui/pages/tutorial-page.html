@@ -1,14 +1,14 @@
 <template name="Tutorial_Page">
   <div style="padding-top: 40px" class="ui text container">
     <div class="ui three top attached steps">
-      <div class="active step">
+      <div id="curr" class="active step" onclick="light(1)">
         <i class="truck icon"></i>
         <div class="content">
           <div class="title">Spot a plant</div>
           <div class="description">Look up longitude and latitude on google maps</div>
         </div>
       </div>
-      <div class="step">
+      <div id="next" class="step">
         <i class="payment icon"></i>
         <div class="content">
           <div class="title">Fillout an add plant form</div>
@@ -24,7 +24,22 @@
       </div>
     </div>
     <div class="ui attached segment">
-      <img src="/images/plant-finder.jpg">
+      <img id="image" src="/images/plant-finder.jpg">
     </div>
   </div>
+
+  <script>
+    function light(sw) {
+      let pic;
+      if(sw == 0){
+        pic = "/images/plant-finder.jpg"
+      }
+      else{
+        pic = "/images/breadfruit-fruit.jpg"
+      }
+      document.getElementById('image').src = pic;
+      document.getElementById('next').className = "active step";
+      document.getElementById('curr').className = "step";
+    }
+  </script>
 </template>
