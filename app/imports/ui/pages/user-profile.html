@@ -4,8 +4,8 @@
     <div class="ui two column grid">
       <div class="six wide column">
         <h1 class="ui header">My Profile</h1>
-        <img class="ui medium image" src="/images/headshot.jpg">
-        <h2>Bill Mullen</h2>
+        <i class="ui massive user icon"></i>
+        <h2>Username</h2>
         <hr>
         <h2>Badges</h2>
         <i class="ui big icon facebook f"></i>
@@ -113,6 +113,40 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <div style="background-color: #34444e !important" class="ui segment">
+            {{#If_Logged_In}}
+            <div class="ui text container">
+              {{#if Template.subscriptionsReady}}
+              <a class="item" href="{{pathFor 'Add_Contact_Page'}}">Add Contact</a>
+              <h2>Contacts</h2>
+              <table style="margin-top: 20px" class="ui celled table">
+                <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Edit</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{#each contact in contactsList}}
+                <tr>
+                  <td>{{contact.email}}</td>
+                  <td>{{contact.first}}</td>
+                  <td>{{contact.last}}</td>
+                  <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
+                </tr>
+                {{/each}}
+                </tbody>
+              </table>
+              {{else}}
+              {{> Loading}}
+              {{/if}}
+            </div>
+            {{/If_Logged_In}}
           </div>
 
         </div>

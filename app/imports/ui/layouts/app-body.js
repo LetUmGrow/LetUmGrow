@@ -2,6 +2,9 @@ import { Template } from 'meteor/templating';
 
 Template.App_Body.onCreated(function appBodyOnCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
+
+  //globally subscribe to the Plants collection, so every page has access to it
+  Meteor.subscribe('Plants');
 });
 
 Template.App_Body.helpers({

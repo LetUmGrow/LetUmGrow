@@ -58,6 +58,13 @@ FlowRouter.route('/list-plants', {
   },
 });
 
+FlowRouter.route('/add-contact', {
+  name: 'Add_Contact_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Contact_Page' });
+  },
+});
+
 FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {
@@ -97,6 +104,13 @@ FlowRouter.route('/edit-plants/:_id', {
   name: 'Edit_Plants_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Edit_Plants_Page' });
+  },
+});
+
+FlowRouter.route('/edit-contact/:_id', {
+  name: 'Edit_Contact_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Contact_Page' });
   },
 });
 

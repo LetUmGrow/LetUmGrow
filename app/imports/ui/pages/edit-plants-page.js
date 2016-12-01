@@ -31,3 +31,9 @@ Template.Edit_Plants_Page.helpers({
   },
 });
 
+Template.Edit_Plants_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Plants');
+  });
+});
+
