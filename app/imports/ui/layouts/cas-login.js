@@ -27,10 +27,12 @@ Template.Cas_Login.events({
       }
     };
     Meteor.loginWithCas(callback);
+
     // FlowRouter.go('User_Profile_Page');
-    $('.ui.modal.landing-page')
-        .modal('hide')
-    ;
+
+    //hides modal on landing page; need to test how it works when the user doesn't log in successfully
+    $('.ui.modal.landing-page').modal('hide');
+
     return false;
   },
 });

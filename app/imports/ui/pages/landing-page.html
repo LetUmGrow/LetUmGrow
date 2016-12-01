@@ -1,4 +1,5 @@
 <template name="Landing_Page">
+  <!-- Displays landing page content if the user isn't logged in -->
   {{#unless currentUser}}
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
@@ -226,7 +227,8 @@
 
             <div class="ui cancel button red">Decline</div>
 
-            <div class="ui cancel button">Close Window</div>
+            <!-- Commenting out for now, since the decline button does the same thing -->
+            <!--<div class="ui cancel button">Close Window</div>-->
 
           </div>
 
@@ -255,6 +257,7 @@
 
     </script>
   {{/unless}}
+  <!-- Displays home page content if the user is logged in-->
   {{#if currentUser}}
     <div class="ui middle aligned centered grid text container">
 
