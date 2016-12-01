@@ -33,6 +33,8 @@ Template.Plant_Map_Page.helpers({
 });
 
 Template.Plant_Map_Page.onCreated(function () {
+  // this.state = new ReactiveDict();
+
 //   // We can use the `ready` callback to interact with the map API once the map is ready.
   GoogleMaps.ready('Plant Map', function (map) {
     // console.log("I'm ready!");

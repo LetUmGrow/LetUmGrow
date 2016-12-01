@@ -12,6 +12,12 @@ const contactsSeeds = [
     last: 'Mullen',
     owner: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id,
   },
+  {
+    email: 'nahinan@hawaii.edu',
+    first: 'Nathan',
+    last: 'Nahina',
+    owner: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id,
+  },
 ];
 
 /**
