@@ -43,5 +43,8 @@ import './landing-page.js';
 import './user-profile.html';
 import './user-profile.js';
 
+import './plant-profile-page.html';
+import './plant-profile-page.js';
+
 import './plant-map.html';
 import './plant-map.js';
