@@ -9,3 +9,5 @@ import './if-logged-in.js';
 import './loading.html';
 import './cas-login.html';
 import './cas-login.js';
+import './plant-list.html';
+import './plant-list.js';
