@@ -1,5 +1,11 @@
 <template name="List_Plants_Page">
   {{#If_Logged_In}}
+
+  <h1 class="ui centered header">List Plants</h1>
+  <div style="padding-bottom:20px" class="ui container">
+    <p> These are all the plant locations you have saved via plotting points on the <a href="{{pathFor 'Plant_Map_Page'}}">List Plants</a> page.  Feel free to edit it's data (by clicking on the 'Edit' button on the right) to better describe your plants! </p>
+  </div>
+
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
         <table style="margin-top: 20px" class="ui celled table">
