@@ -13,7 +13,7 @@ Template.List_Plants_Page.helpers({
 
 });
 
-Template.Edit_Plants_Page.events({
+Template.List_Plants_Page.events({
   /*
    * deletes plant; doesn't work
    */
