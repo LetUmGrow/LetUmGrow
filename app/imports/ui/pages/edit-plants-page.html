@@ -9,9 +9,34 @@
       doc=getDoc
       buttonContent="Update"
       }}
+      <br>
+      <button class="ui red button delete" type="submit">Delete</button>
     </div>
-    <div class="ui text container">
-      <h2>Non quickForm</h2>
-    </div>
+    <!--<div class="ui container">-->
+      <!--<h1>Edit Contact</h1>-->
+      <!--<form class="ui contact-data-form form {{ errorClass }}">-->
+        <!--<div class="field">-->
+          <!--<label>First Name</label>-->
+          <!--<input type="text" name="first-name" id="first" placeholder="First Name" value="{{ contactField 'first' }}">-->
+          <!--{{#if displayFieldError 'first' }}-->
+            <!--<div class="ui error message">-->
+              <!--<p>You must specify your first name.</p>-->
+            <!--</div>-->
+          <!--{{/if}}-->
+        <!--</div>-->
+        <!--<div class="field">-->
+          <!--<label>Email</label>-->
+          <!--<input type="text" name="email" id="email" placeholder="Email" value="{{ contactField 'email' }}">-->
+          <!--{{#if displayFieldError 'email' }}-->
+            <!--<div class="ui error message">-->
+              <!--<p>You must specify your email.</p>-->
+            <!--</div>-->
+          <!--{{/if}}-->
+        <!--</div>-->
+        <!--&lt;!&ndash;The template will present a form with input controls for first, last, address, phone, and email as strings.&ndash;&gt;-->
+        <!--<button class="ui button" type="submit">Update</button>-->
+        <!--<button class="ui button delete" type="submit">Delete</button>-->
+      <!--</form>-->
+    <!--</div>-->
   {{/If_Logged_In}}
 </template>
