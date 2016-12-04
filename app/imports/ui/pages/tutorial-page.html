@@ -1,22 +1,19 @@
 <template name="Tutorial_Page">
   <div style="padding-top: 20px" class="ui container">
-    <div class="ui three top attached steps">
+    <div class="ui top attached ordered steps">
       <div id="zero" class="active step" onclick="light(0)">
-        <i class="truck icon"></i>
         <div class="content">
           <div class="title">Spot a plant</div>
           <div class="description">Look up longitude and latitude on google maps</div>
         </div>
       </div>
       <div id="one" class="step" onclick="light(1)">
-        <i class="payment icon"></i>
         <div class="content">
           <div class="title">Fillout an add plant form</div>
           <div class="description">Enter the name and coordinates</div>
         </div>
       </div>
       <div id="two" class="step" onclick="light(2)">
-        <i class="info icon"></i>
         <div class="content">
           <div class="title">Wait a bit</div>
           <div class="description">Wait for an Admin to verify</div>
@@ -40,7 +37,7 @@
       else if(sw == 1) {
         pic = "/images/breadfruit-fruit.jpg"
         document.getElementById('one').className = "active step";
-        document.getElementById('zero').className = "step";
+        document.getElementById('zero').className = "completed step";
         document.getElementById('two').className = "step";
       }
       else if(sw == 2) {
