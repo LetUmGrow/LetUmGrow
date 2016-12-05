@@ -13,6 +13,9 @@ Template.User_Profile_Page.helpers({
   contactsList() {
     return Contacts.find();
   },
+  username: function () {
+    return Meteor.user().username;
+  },
 });
 
 Template.User_Profile_Page.onCreated(function onCreated() {

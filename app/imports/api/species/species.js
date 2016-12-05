@@ -9,7 +9,7 @@ export const Species = new Mongo.Collection('Species');
  * Create the schema for Species
  */
 export const SpeciesSchema = new SimpleSchema({
-  sid: {
+  speciesId: {
     label: 'SpeciesID',
     type: Number,
     max: 10,
