@@ -1,30 +1,59 @@
 <template name="Tutorial_Page">
-  <div style="padding-top: 40px" class="ui text container">
-    <div class="ui three top attached steps">
-      <div class="active step">
-        <i class="truck icon"></i>
+  <div style="padding-top: 20px" class="ui container">
+    <div class="ui top attached ordered steps">
+      <div id="zero" class="active step" onclick="light(0)">
         <div class="content">
           <div class="title">Spot a plant</div>
           <div class="description">Look up longitude and latitude on google maps</div>
         </div>
       </div>
-      <div class="step">
-        <i class="payment icon"></i>
+      <div id="one" class="step" onclick="light(1)">
         <div class="content">
           <div class="title">Fillout an add plant form</div>
           <div class="description">Enter the name and coordinates</div>
         </div>
       </div>
-      <div class="step">
-        <i class="info icon"></i>
+      <div id="two" class="step" onclick="light(2)">
         <div class="content">
           <div class="title">Wait a bit</div>
           <div class="description">Wait for an Admin to verify</div>
         </div>
       </div>
     </div>
-    <div class="ui attached segment">
-      <img src="/images/plant-finder.jpg">
+    <div class="ui attached rounded segment" style="border-radius: 2px 2px 5px 5px">
+      <img id="image" class="ui centered image" src="/images/plant-finder.jpg">
     </div>
   </div>
+
+  <script>
+    function light(sw) {
+      let pic;
+      if(sw == 0){
+        pic = "/images/plant-finder.jpg"
+        document.getElementById('zero').className = "active step";
+        document.getElementById('one').className = "step";
+        document.getElementById('two').className = "step";
+      }
+      else if(sw == 1) {
+        pic = "/images/breadfruit-fruit.jpg"
+        document.getElementById('one').className = "active step";
+        document.getElementById('zero').className = "completed step";
+        document.getElementById('two').className = "step";
+      }
+      else if(sw == 2) {
+          pic = "/images/breadfruit-fruit.jpg"
+          document.getElementById('two').className = "active step";
+          document.getElementById('one').className = "step";
+          document.getElementById('zero').className = "step";
+        }
+        else {
+            pic = "/images/breadfruit-fruit.jpg"
+            document.getElementById('next').className = "active step";
+            document.getElementById('curr').className = "step";
+          }
+      document.getElementById('image').src = pic;
+
+
+    }
+  </script>
 </template>
