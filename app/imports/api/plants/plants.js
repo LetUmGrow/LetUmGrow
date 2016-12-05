@@ -42,6 +42,12 @@ export const PlantsSchema = new SimpleSchema({
     optional: true,
     max: 300,
   },
+  owner: {
+    label: 'Owner',
+    type: String,
+    optional: false,
+    max: 50,
+  }
 });
 
 Plants.attachSchema(PlantsSchema);
