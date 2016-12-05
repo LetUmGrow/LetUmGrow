@@ -121,6 +121,13 @@ FlowRouter.route('/plant-map', {
   },
 });
 
+FlowRouter.route('/plants/profile/:_id', {
+  name: 'Plant_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Plant_Profile_Page' });
+  },
+});
+
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });

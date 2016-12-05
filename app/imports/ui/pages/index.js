@@ -10,6 +10,9 @@ import './add-stuff-page.js';
 import './add-plants-page.html';
 import './add-plants-page.js';
 
+import './add-plants-form.html';
+import './add-plants-form.js';
+
 import './edit-stuff-page.html';
 import './edit-stuff-page.js';
 
@@ -42,6 +45,9 @@ import './landing-page.js';
 
 import './user-profile.html';
 import './user-profile.js';
+
+import './plant-profile-page.html';
+import './plant-profile-page.js';
 
 import './plant-map.html';
 import './plant-map.js';
