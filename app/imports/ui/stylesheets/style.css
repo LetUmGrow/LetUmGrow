@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-  background: #334e4d;
+  background: #34444e;
   color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   padding-top: 61px;
   margin-bottom: 70px;
+}
+
+.user-info {
+  color: #0f0f10;
+  text-align: center;
+  margin-top: 120px;
+  padding-top: 30px;
+  background: #FFFFFF;
+  height: 300px;
 }
 
 .tutorial {
