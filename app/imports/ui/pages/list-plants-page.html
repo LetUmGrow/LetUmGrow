@@ -14,7 +14,7 @@
             <th>vernacularName</th>
             <th>decimalLatitude</th>
             <th>decimalLongitude</th>
-            <th>Edit</th>
+            <th></th>
           </tr>
           </thead>
 
@@ -25,6 +25,8 @@
               <td>{{plant.decimalLatitude}}</td>
               <td>{{plant.decimalLongitude}}</td>
               <td><a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">Edit</a></td>
+              <!--not working-->
+              <!--<td><button class="ui button delete" type="submit">X</button></td>-->
             </tr>
           {{/each}}
           </tbody>

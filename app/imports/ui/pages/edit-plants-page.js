@@ -37,3 +37,18 @@ Template.Edit_Plants_Page.onCreated(function onCreated() {
   });
 });
 
+Template.Edit_Plants_Page.events({
+  /*
+   * deletes plant
+   */
+  'click .delete'(event, instance) {
+    event.preventDefault();
+
+    const removeConfirmation = window.confirm('Do you really want to delete this entry?');
+
+    if (removeConfirmation === true) {
+      Plants.remove(FlowRouter.getParam('_id'));
+      FlowRouter.go('Plant_Map_Page');
+    }
+  },
+});
