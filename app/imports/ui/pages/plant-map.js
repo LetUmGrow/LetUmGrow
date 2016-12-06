@@ -5,6 +5,7 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import {Template} from 'meteor/templating';
 import {Plants} from '../../api/plants/plants.js';
+import {Meteor} from 'meteor/meteor';
 
 /*
  * This function breaks the css styling for some reason
@@ -39,7 +40,8 @@ Template.Plant_Map_Page.onCreated(function () {
   GoogleMaps.ready('Plant Map', function (map) {
     // console.log("I'm ready!");
     google.maps.event.addListener(map.instance, 'click', function (event) {
-      Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng() });
+      Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng(), addedBy: Meteor.userId()/*this.userId*/ });
+      console.log("Added a point");
     });
 
     var plantMarkers = {};
