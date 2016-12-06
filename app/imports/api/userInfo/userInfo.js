@@ -1,7 +1,7 @@
 import {Mongo} from 'meteor/mongo';
 import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 
-export const Users = new Mongo.Collection('Users');
+export const UserInfo = new Mongo.Collection('UserInfo');
 
 export const UsersSchema = new SimpleSchema({
   owner: {
@@ -34,6 +34,12 @@ export const UsersSchema = new SimpleSchema({
     max: 200,
     optional: true,
   },
+  photoUrl: {
+    label: 'photo url',
+    type: String,
+    max: 200,
+    optional: true,
+  },
 });
 
-Users.attachSchema(UsersSchema);
+UserInfo.attachSchema(UsersSchema);

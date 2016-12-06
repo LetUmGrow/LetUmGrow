@@ -4,3 +4,4 @@ import './publications.js'
 import './stuff.js';
 import './plants.js';
 import './species.js';
+import './userInfo.js';

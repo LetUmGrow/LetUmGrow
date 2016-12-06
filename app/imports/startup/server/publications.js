@@ -1,4 +1,4 @@
-import { Users } from '../../api/users/users.js';
+import { UserInfo } from '../../api/userInfo/userInfo.js';
 import { Contacts } from '../../api/contacts/contacts.js';
 import { UsersPlants } from '../../api/usersPlants/usersPlants.js';
 import { UsersSpecies } from '../../api/usersSpecies/usersSpecies.js';
@@ -6,13 +6,13 @@ import { Species } from '../../api/species/species.js';
 import { Plants } from '../../api/plants/plants.js';
 import { Meteor } from 'meteor/meteor';
 
-Meteor.publish('Users', function publishUsersData() {
-  return Users.find();
+Meteor.publish('UserInfo', function publishUsersData() {
+  return UserInfo.find();
 });
 
 Meteor.publish('MyUser', function publishMyUserData() {
   const owner = this.userId;
-  return owner ? Users.find({ owner }) : this.ready();
+  return owner ? UserInfo.find({ owner }) : this.ready();
 });
 
 Meteor.publish('MyPlants', function publishMyPlantsData() {
