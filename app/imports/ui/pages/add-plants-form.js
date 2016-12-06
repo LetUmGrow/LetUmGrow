@@ -33,9 +33,9 @@ Template.Add_Plants_Form.events({
     const decimalLatitude = event.target.decimalLatitude.value;
     const decimalLongitude = event.target.decimalLongitude.value;
     const plDesc = event.target.plDesc.value;
-    const owner = Meteor.userId();
+    const addedBy = Meteor.userId();
 
-    const newPlant = { vernacularName, scientificName, decimalLatitude, decimalLongitude, plDesc, owner };
+    const newPlant = { vernacularName, scientificName, decimalLatitude, decimalLongitude, plDesc, addedBy };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newPlant reflects what will be inserted.

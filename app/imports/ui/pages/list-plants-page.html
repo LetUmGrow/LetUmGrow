@@ -11,11 +11,11 @@
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
-            <th>vernacularName</th>
-            <th>decimalLatitude</th>
-            <th>decimalLongitude</th>
-            <th>owner</th>
-            <th>description</th>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Added By</th>
+            <th>Description</th>
             <th></th>
           </tr>
           </thead>
@@ -30,7 +30,7 @@
               <td>{{plant.vernacularName}}</td>
               <td>{{plant.decimalLatitude}}</td>
               <td>{{plant.decimalLongitude}}</td>
-              <td>{{plant.owner}}</td>
+              <td>{{plant.addedBy}}</td>
               <td>{{plant.plDesc}}</td>
               <td><a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">Edit</a></td>
               <!--not working-->

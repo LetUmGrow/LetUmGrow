@@ -14,7 +14,7 @@ const plantSeeds = [
     decimalLatitude: '21.297557',
     decimalLongitude: '-157.820162',
     plDesc: 'This tree was was originally planted in 1935 by King Prajadhipok of Siam  â€˜ewa of old Farrington Hall, to honor Alice Ball for her work.  When Queen Liliâ€˜uokalani Student Services Center was built, the tree was relocated to its present place.',
-    owner: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id,
+    addedBy: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id,
   },
 ];
 
