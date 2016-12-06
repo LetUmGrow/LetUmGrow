@@ -11,19 +11,27 @@
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
-            <th>vernacularName</th>
-            <th>decimalLatitude</th>
-            <th>decimalLongitude</th>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Added By</th>
+            <th>Description</th>
             <th></th>
           </tr>
           </thead>
 
           <tbody>
           {{#each plant in plantsList}}
+          <script>
+            console.log('the academy is');
+            console.log ('The owner is ' + Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id);
+          </script>
             <tr>
               <td>{{plant.vernacularName}}</td>
               <td>{{plant.decimalLatitude}}</td>
               <td>{{plant.decimalLongitude}}</td>
+              <td>{{plant.addedBy}}</td>
+              <td>{{plant.plDesc}}</td>
               <td><a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">Edit</a></td>
               <!--not working-->
               <!--<td><button class="ui button delete" type="submit">X</button></td>-->
