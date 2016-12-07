@@ -5,6 +5,7 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import {Template} from 'meteor/templating';
 import {Plants} from '../../api/plants/plants.js';
+import {Meteor} from 'meteor/meteor';
 
 /*
  * This function breaks the css styling for some reason
@@ -39,7 +40,8 @@ Template.Plant_Map_Page.onCreated(function () {
   GoogleMaps.ready('Plant Map', function (map) {
     // console.log("I'm ready!");
     google.maps.event.addListener(map.instance, 'click', function (event) {
-      Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng() });
+      Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng(), addedBy: Meteor.userId()/*this.userId*/ });
+      console.log("Added a point");
     });
 
     var plantMarkers = {};
@@ -54,7 +56,8 @@ Template.Plant_Map_Page.onCreated(function () {
           map: map.instance,
           // We store the document _id on the marker in order
           // to update the document within the 'dragend' event below.
-          id: document._id
+          id: document._id,
+          icon: 'http://i.imgur.com/kwQH9nw.png'
         });
 
         // This listener lets us drag plantMarkers on the map and update their corresponding document.
