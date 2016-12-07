@@ -56,7 +56,8 @@ Template.Plant_Map_Page.onCreated(function () {
           map: map.instance,
           // We store the document _id on the marker in order
           // to update the document within the 'dragend' event below.
-          id: document._id
+          id: document._id,
+          icon: 'http://i.imgur.com/kwQH9nw.png'
         });
 
         // This listener lets us drag plantMarkers on the map and update their corresponding document.
