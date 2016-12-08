@@ -23,5 +23,14 @@
     "jramelb",
     "lorenz21"
   ],
-  "defaultAccount": {"username": "SeedDataUser", "password": "changeme"}
+  "defaultAccount": {
+    "services": {
+      "cas": {
+        "id": "LetUmGrow"
+      }
+    },
+    "profile": {
+      "name": "LetUmGrow"
+    }
+  }
 }

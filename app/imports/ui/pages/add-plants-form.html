@@ -1,3 +1,59 @@
 <template name="Add_Plants_Form">
-  <h1>Add Plants Form Template</h1>
+  <style>
+    form#AddPlantForm div label {
+      color: white;
+    }
+  </style>
+  <h1 class="ui centered header">Add Plants Form Template</h1>
+  <div class="ui container">
+    <h2>Add Plant</h2>
+    <form class="ui form add-plants-form {{ errorClass }}" id="AddPlantForm">
+      <div class="field">
+        <label>Plant Name</label>
+        <input type="text" name="vernacular-name" id="vernacularName" placeholder="Plant Name">
+        {{#if displayFieldError 'vernacularName' }}
+          <div class="ui error message">
+            <p>You must specify the name of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Scientific Name</label>
+        <input type="text" name="scientific-name" id="scientificName" placeholder="Scientific Name">
+        {{#if displayFieldError 'scientificName' }}
+          <div class="ui error message">
+            <p>You must specify the scientific name of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Latitude</label>
+        <input type="number" name="decimal-latitude" id="decimalLatitude" placeholder="Latitude" max="90">
+        {{#if displayFieldError 'decimalLatitude' }}
+          <div class="ui error message">
+            <p>You must specify the latitude of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Longitude</label>
+        <input type="number" name="decimal-longitude" id="decimalLongitude" placeholder="Longitude" max="180">
+        {{#if displayFieldError 'decimalLongitude' }}
+          <div class="ui error message">
+            <p>You must specify the latitude of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <input type="text" name="p1-desc" id="plDesc" placeholder="Description">
+        {{#if displayFieldError 'plDesc' }}
+          <div class="ui error message">
+            <p>You must specify the latitude of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
 </template>

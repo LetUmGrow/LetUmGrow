@@ -2,7 +2,6 @@ import {Template} from 'meteor/templating';
 import {Plants} from '../../api/plants/plants.js';
 
 Template.List_Plants_Page.helpers({
-
   /**
    * @returns {*} All of the Plants documents.
    */
@@ -10,7 +9,17 @@ Template.List_Plants_Page.helpers({
     return Plants.find();
   },
 
+});
 
+Template.List_Plants_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Plants');
+    // this.subscribe('users');
+
+    // Meteor.publish('users', function () {
+    //   return Meteor.users.find({});
+    // });
+  });
 });
 
 Template.List_Plants_Page.events({
