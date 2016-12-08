@@ -7,8 +7,8 @@ import { Accounts } from 'meteor/accounts-base';
 if (Meteor.users.find().count() === 0) {
   if (!!Meteor.settings.defaultAccount) {
     Accounts.createUser({
-      username: Meteor.settings.defaultAccount.username,
-      password: Meteor.settings.defaultAccount.password,
+      username: Meteor.settings.defaultAccount.profile.name,
+      password: Meteor.settings.defaultAccount.profile.name,
     });
   } else {
     console.log('No default user!  Please invoke meteor with a settings file.');
