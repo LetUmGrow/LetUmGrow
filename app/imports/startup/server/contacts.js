@@ -11,14 +11,14 @@ const contactsSeeds = [
     first: 'Bill',
     last: 'Mullen',
     /* owner: Meteor.settings.defaultAccount.userId, */
-    owner: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id,
+    owner: Meteor.settings.defaultAccount.profile.name, /* Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id, */
     /*may need to change this in the future for security?*/
   },
   {
     email: 'nahinan@hawaii.edu',
     first: 'Nathan',
     last: 'Nahina',
-    owner: Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id, /*owner: this.userId,*/
+    owner: Meteor.settings.defaultAccount.profile.name, /* Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id, */ /*owner: this.userId,*/
     /*may need to change this in the future for security?*/
   },
 ];
