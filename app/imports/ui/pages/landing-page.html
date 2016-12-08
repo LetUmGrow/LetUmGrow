@@ -43,7 +43,7 @@
     <p style="
     text-align: center;
     font-family: 'Dosis', sans-serif;
-    font-size: 15pt;
+    font-size: 18pt;
     margin-top: 40px;">
       Plants are family too! Get to know them better.</p>
 
@@ -52,9 +52,31 @@
 
       <div style="padding-top:0px" class="ui button show login">Login</div>
 
-      <a href="{{pathFor 'Home_Page'}}">
-        <div class="tutorial" style="margin-left: 45px;">Tutorial</div>
+      <a href="#Learn_More">
+        <div class="tutorial" style="margin-left: 45px;">Learn More</div>
       </a>
+
+      <div id="Learn_More" class="learn-more">
+
+          <h2 class="" style="padding-top:30px; font-weight: 100 !important;">
+            Ever seen a plant on campus and wanted to learn more about it?
+          </h2>
+
+          <h3 class="" style="padding-top: 20px; font-weight: 100;"> Our interactive map displays the location of nearby plants and  links to each plant profile.
+          </h3>
+
+      </div>
+
+      <div id="learn-more-2">
+
+        <h2 class="" style="padding-top:30px; font-weight: 100;">
+          Spotted a new plant on campus?
+        </h2>
+
+        <h3 style="padding-top: 20px; font-weight: 100;"> Create a profile page for that plant and add updates to its feed, like pictures or statuses.
+        </h3>
+
+      </div>
 
       <div class="ui modal landing-page">
         <i class="close icon"></i>
@@ -254,7 +276,7 @@
 
   </div>
 
-  <!-- Activates modal upon clicking of login button -->
+  <!-- Activates modal upon clicking of login button, smooth scrolling transition -->
   <script>
     $(document).on("click", ".show", function () {
       $(".ui.modal").modal("setting", {
@@ -264,6 +286,20 @@
 //        }
       }).modal("show");
     })
+
+
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
   </script>
   {{/unless}}
   <!-- Displays home page content if the user is logged in-->
