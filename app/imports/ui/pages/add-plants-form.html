@@ -4,13 +4,12 @@
       color: white;
     }
   </style>
-  <h1 class="ui centered header">Add Plants Form Template</h1>
   <div class="ui container">
-    <h2>Add Plant</h2>
+    <!--<h2>Add Plant</h2>-->
     <form class="ui form add-plants-form {{ errorClass }}" id="AddPlantForm">
       <div class="field">
         <label>Plant Name</label>
-        <input type="text" name="vernacular-name" id="vernacularName" placeholder="Plant Name">
+        <input type="text" name="vernacular-name" id="vernacularName" placeholder="The name of the plant">
         {{#if displayFieldError 'vernacularName' }}
           <div class="ui error message">
             <p>You must specify the name of the plant.</p>
@@ -19,7 +18,7 @@
       </div>
       <div class="field">
         <label>Scientific Name</label>
-        <input type="text" name="scientific-name" id="scientificName" placeholder="Scientific Name">
+        <input type="text" name="scientific-name" id="scientificName" placeholder="The scientific name of the plant">
         {{#if displayFieldError 'scientificName' }}
           <div class="ui error message">
             <p>You must specify the scientific name of the plant.</p>
@@ -28,7 +27,7 @@
       </div>
       <div class="field">
         <label>Latitude</label>
-        <input type="number" name="decimal-latitude" id="decimalLatitude" placeholder="Latitude" max="90">
+        <input type="number" name="decimal-latitude" id="decimalLatitude" placeholder="The latitude coordinate of the plant (can be any value from -90 to 90)" max="90" step=".000000000000001">
         {{#if displayFieldError 'decimalLatitude' }}
           <div class="ui error message">
             <p>You must specify the latitude of the plant.</p>
@@ -37,7 +36,7 @@
       </div>
       <div class="field">
         <label>Longitude</label>
-        <input type="number" name="decimal-longitude" id="decimalLongitude" placeholder="Longitude" max="180">
+        <input type="number" name="decimal-longitude" id="decimalLongitude" placeholder="The longitude coordinate of the plant (can be any value from -180 to 180)" max="180" step=".000000000000001">
         {{#if displayFieldError 'decimalLongitude' }}
           <div class="ui error message">
             <p>You must specify the latitude of the plant.</p>
@@ -46,14 +45,14 @@
       </div>
       <div class="field">
         <label>Description</label>
-        <input type="text" name="p1-desc" id="plDesc" placeholder="Description">
+        <input type="text" name="p1-desc" id="plDesc" placeholder="A description of the plant">
         {{#if displayFieldError 'plDesc' }}
           <div class="ui error message">
-            <p>You must specify the latitude of the plant.</p>
+            <p>You must specify the description of the plant.</p>
           </div>
         {{/if}}
       </div>
-      <button class="ui button" type="submit">Submit</button>
+      <button class="ui green button" type="submit">Submit</button>
     </form>
   </div>
 </template>
