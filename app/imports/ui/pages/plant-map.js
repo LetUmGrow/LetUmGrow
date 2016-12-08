@@ -40,8 +40,9 @@ Template.Plant_Map_Page.onCreated(function () {
   GoogleMaps.ready('Plant Map', function (map) {
     // console.log("I'm ready!");
     google.maps.event.addListener(map.instance, 'click', function (event) {
-      Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng(), addedBy: Meteor.userId()/*this.userId*/ });
+      Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng(), addedBy: Meteor.user().profile.name/*Meteor.user.username *//*this.userId*/ });
       console.log("Added a point");
+      console.log(Meteor.user().profile.name);
     });
 
     var plantMarkers = {};
