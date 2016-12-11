@@ -33,7 +33,7 @@ Template.Add_Plants_Form.events({
     const decimalLatitude = event.target.decimalLatitude.value;
     const decimalLongitude = event.target.decimalLongitude.value;
     const plDesc = event.target.plDesc.value;
-    const addedBy = Meteor.userId();
+    const addedBy = Meteor.user().profile.name;
 
     const newPlant = { vernacularName, scientificName, decimalLatitude, decimalLongitude, plDesc, addedBy };
     // Clear out any old validation errors.
