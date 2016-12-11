@@ -8,7 +8,7 @@ import {Meteor} from 'meteor/meteor';
  */
 
 const userSeeds = [
-  { owner: 'xxxx', username: 'wlmullen', email: 'wlmullen@hawaii.edu', first: 'Bill', last: 'Mullen', photoUrl: '' },
+  { owner: 'xxxx', username: 'WMullen', email: 'wlmullen@hawaii.edu', first: 'Bill', last: 'Mullen', photoUrl: '' },
 ];
 
 /**

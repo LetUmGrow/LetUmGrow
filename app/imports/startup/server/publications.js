@@ -10,12 +10,6 @@ Meteor.publish('UserInfo', function publishUsersData() {
   return UserInfo.find();
 });
 
-
-Meteor.publish('MyUser', function publishMyUserData() {
-  const owner = 'g8vzb9PpSf5t8WZ6N';
-  return owner ? UserInfo.find({ owner }) : this.ready();
-});
-
 Meteor.publish('MyPlants', function publishMyPlantsData() {
   const owner = this.userId;
   //return owner ? Users.find({ owner }) : this.ready();

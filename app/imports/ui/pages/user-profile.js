@@ -48,7 +48,7 @@ Template.User_Profile_Page.helpers({
     let username = Meteor.user() ? Meteor.user().profile.name : 'No current user';
     let userId = Meteor.userId();
     if (UserInfo.find({username: username}).count() === 0) {
-      UserInfo.insert({ owner: userId, username: username, email: `${username}@hawaii.edu`, first: 'Eponymous', last: 'User', photoUrl: '' });
+      UserInfo.insert({ owner: userId, username: username, email: `${username}@hawaii.edu`, first: 'Eponymous', last: 'User', photoUrl: 'http://semantic-ui.com/images/wireframe/image.png' });
     }
     return UserInfo.find({ username: username});
   },
