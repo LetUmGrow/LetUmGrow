@@ -26,6 +26,7 @@ Template.User_Profile_Page.helpers({
   /**
    * @returns {*} All of the Contacts documents.
    */
+
   contactsList() {
     return Contacts.find();
   },
@@ -38,13 +39,18 @@ Template.User_Profile_Page.helpers({
     return UserInfo.find();
   },
   usernameCurrent: function() {
-    return Meteor.user() ? Meteor.user().profile.name : 'No current user';;
+    return Meteor.user() ? Meteor.user().profile.name : 'No current user';
   },
   userId() {
     return Meteor.userId();
   },
   myUser() {
-
+    let username = Meteor.user() ? Meteor.user().profile.name : 'No current user';
+    let userId = Meteor.userId();
+    if (UserInfo.find({username: username}).count() === 0) {
+      UserInfo.insert({ owner: userId, username: username, email: `${username}@hawaii.edu`, first: 'Eponymous', last: 'User', photoUrl: '' });
+    }
+    return UserInfo.find({ username: username});
   },
 });
 
