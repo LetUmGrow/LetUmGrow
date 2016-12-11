@@ -4,13 +4,20 @@
 import { Template } from 'meteor/templating';
 import { Contacts } from '../../api/contacts/contacts.js';
 import { UserInfo } from '../../api/userInfo/userInfo.js';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 
 Template.User_Profile_Page.onCreated(function onCreated() {
+//  let usernameCurrent = Meteor.user().username;
   this.autorun(() => {
     this.subscribe('Contacts');
-    this.subscribe('MyUser');
+  });
+  this.autorun(() => {
     this.subscribe('UserInfo');
+  });
+  this.autorun(() => {
+    this.subscribe('MyUser');
   });
 });
 
@@ -22,11 +29,22 @@ Template.User_Profile_Page.helpers({
   contactsList() {
     return Contacts.find();
   },
+/*
   myUserList() {
     return myUser.find();
   },
+*/
   userList() {
     return UserInfo.find();
+  },
+  usernameCurrent: function() {
+    return Meteor.user() ? Meteor.user().profile.name : 'No current user';;
+  },
+  userId() {
+    return Meteor.userId();
+  },
+  myUser() {
+
   },
 });
 
