@@ -3,7 +3,6 @@
     <div class="ui container shadow">
       <a class="header item" href="{{pathFor 'Home_Page'}}"><img class="logo" style="height: 34px; width: 37px; margin-right: 10px;" src="images/letumgrow-logo.png" alt="3 leaf LetUmGrow logo">LetUmGrow</a>
       <div class="ui dropdown item"><i class="content icon"></i><div class="menu">
-      <a class="header item" href="{{pathFor 'Home_Page'}}"><img class="logo" style="height: 34px; width: 37px; margin-right: 10px;" src="images/letumgrow-logo.png" alt="3 leaf LetUmGrow logo">LetUmGrow</a>
       <a class="item" href="{{pathFor 'Tutorial_Page'}}" onclick="light()">Tutorial</a>
       <div class="ui dropdown item">
         Plants
@@ -22,8 +21,8 @@
       <!--<a class="{{ isActiveRoute 'Add_Stuff_Page'}} item" href="{{ pathFor 'Add_Stuff_Page' }}">Add Stuff </a>-->
       <!--<a class="{{ isActiveRoute 'List_Stuff_Page'}} item" href="{{ pathFor 'List_Stuff_Page' }}">List Stuff</a>-->
       <!--{{/if}}-->
-      {{> Cas_Login }}
       </div></div>
+      <div class="ui right inverted menu">{{> Cas_Login }}</div>
     </div>
   </div>
   <script>
