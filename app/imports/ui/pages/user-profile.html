@@ -11,6 +11,8 @@
           <div class="ui text container">
             {{#if Template.subscriptionsReady}}
             <h2>Me</h2>
+            <p> username: {{usernameCurrent}}</p>
+            <p>user ID: {{userId}}</p>
             <table style="margin-top: 20px" class="ui celled table">
               <thead>
               <tr>
@@ -20,7 +22,7 @@
               </tr>
               </thead>
               <tbody>
-              {{#each user in myUserList}}
+              {{#each user in myUser}}
               <tr>
                 <td>{{user.email}}</td>
                 <td>{{user.first}}</td>
@@ -50,7 +52,7 @@
               </tr>
               </thead>
               <tbody>
-              {{#each user in userInfoList}}
+              {{#each user in userList}}
               <tr>
                 <td>{{user.email}}</td>
                 <td>{{user.first}}</td>

@@ -10,8 +10,9 @@ Meteor.publish('UserInfo', function publishUsersData() {
   return UserInfo.find();
 });
 
+
 Meteor.publish('MyUser', function publishMyUserData() {
-  const owner = this.userId;
+  const owner = 'g8vzb9PpSf5t8WZ6N';
   return owner ? UserInfo.find({ owner }) : this.ready();
 });
 
