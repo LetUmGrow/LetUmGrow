@@ -1,8 +1,9 @@
 <template name="Header">
-  <div class="ui top fixed borderless inverted stackable container menu">
+  <div class="ui top fixed borderless inverted menu">
     <div class="ui container shadow">
-      <!--<img class="item" style="height: 68px; width: 74px" src="images/letumgrow-logo.png" alt="3 leaf LetUmGrow logo">-->
-      <a class="item" href="{{pathFor 'Home_Page'}}"><img style="height: 68px; width: 74px" src="images/letumgrow-logo.png" alt="3 leaf LetUmGrow logo"><h1>LetUmGrow</h1></a>
+      <a class="header item" href="{{pathFor 'Home_Page'}}"><img class="logo" style="height: 34px; width: 37px; margin-right: 10px;" src="images/letumgrow-logo.png" alt="3 leaf LetUmGrow logo">LetUmGrow</a>
+      <div class="ui right inverted menu"><div class="ui dropdown item"><i class="content icon"></i><div class="menu">
+      <a class="header item" href="{{pathFor 'Home_Page'}}"><img class="logo" style="height: 34px; width: 37px; margin-right: 10px;" src="images/letumgrow-logo.png" alt="3 leaf LetUmGrow logo">LetUmGrow</a>
       <a class="item" href="{{pathFor 'Tutorial_Page'}}" onclick="light()">Tutorial</a>
       <div class="ui dropdown item">
         Plants
@@ -22,6 +23,7 @@
       <!--<a class="{{ isActiveRoute 'List_Stuff_Page'}} item" href="{{ pathFor 'List_Stuff_Page' }}">List Stuff</a>-->
       <!--{{/if}}-->
       {{> Cas_Login }}
+      </div></div></div>
     </div>
   </div>
   <script>
