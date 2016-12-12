@@ -85,14 +85,14 @@ FlowRouter.route('/laau', {
     BlazeLayout.render('App_Body', { main: 'Laau_Page' });
   },
 });
-
+/*
 FlowRouter.route('/stuff/:_id', {
   name: 'Edit_Stuff_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Edit_Stuff_Page' });
   },
 });
-
+*/
 FlowRouter.route('/myprofile', {
   name: 'User_Profile_Page',
   action() {
@@ -107,10 +107,10 @@ FlowRouter.route('/edit-plants/:_id', {
   },
 });
 
-FlowRouter.route('/edit-contact/:_id', {
-  name: 'Edit_Contact_Page',
+FlowRouter.route('/edit-profile/:_id', {
+  name: 'Edit_Profile_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Edit_Contact_Page' });
+    BlazeLayout.render('App_Body', { main: 'Edit_Profile_Page' });
   },
 });
 

@@ -1,8 +1,8 @@
 import './add-contact-page.html';
 import './add-contact-page.js';
 
-import './edit-contact-page.html';
-import './edit-contact-page.js';
+import './edit-profile-page.html';
+import './edit-profile-page.js';
 
 import './add-stuff-page.html';
 import './add-stuff-page.js';

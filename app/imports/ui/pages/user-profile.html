@@ -4,37 +4,30 @@
     <div style="background-color: #34444e !important" class="ui segments">
       <div style="background-color: #34444e !important" class="ui segment">
         <h1 class="ui header">My Profile</h1>
-        <i class="ui massive user icon"></i>
 
         <div style="background-color: #34444e !important" class="ui segment">
           {{#If_Logged_In}}
-          <div class="ui text container">
             {{#if Template.subscriptionsReady}}
-            <h2>Me</h2>
-            <p> username: {{usernameCurrent}}</p>
-            <p>user ID: {{userId}}</p>
-            <table style="margin-top: 20px" class="ui celled table">
-              <thead>
-              <tr>
-                <th>Email</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-              </tr>
-              </thead>
-              <tbody>
+              <p>Login info: {{usernameCurrent}}; {{userId}}</p>
+              <h2>Me</h2>
               {{#each user in myUser}}
-              <tr>
-                <td>{{user.email}}</td>
-                <td>{{user.first}}</td>
-                <td>{{user.last}}</td>
-              </tr>
+                <div class="ui two column grid">
+                  <div class="ui column">
+                    <img class="ui centered medium image" src={{user.photoUrl}}>
+                  </div>
+                  <div class="ui column">
+                    <p>Username: {{user.username}}</p>
+                    <p>User ID: {{user.owner}}</p>
+                    <p>Email: {{user.email}}</p>
+                    <p>First Name: {{user.first}}</p>
+                    <p>Last Name: {{user.last}}</p>
+                    <p><a href="{{pathFor 'Edit_Profile_Page' _id=user._id}}">Edit</a></p>
+                  </div>
+                </div>
               {{/each}}
-              </tbody>
-            </table>
             {{else}}
             {{> Loading}}
             {{/if}}
-          </div>
           {{/If_Logged_In}}
         </div>
 
