@@ -43,3 +43,13 @@ Template.Cas_Login.onRendered(function enableDropDown() {
     action: 'select',
   });
 });
+
+Template.Cas_Login.helpers({
+  usernameCurrent: function() {
+    return Meteor.user() ? Meteor.user().profile.name : 'No current user';;
+  },
+
+  userId() {
+    return Meteor.userId();
+  }
+});
