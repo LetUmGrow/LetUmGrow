@@ -7,10 +7,8 @@ import { Meteor } from 'meteor/meteor';
 
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Add_Plants_Form.onCreated(function onCreated() {
-  this.messageFlags = new ReactiveDict();
-  this.messageFlags.set(displayErrorMessages, false);
-  this.context = PlantsSchema.namedContext('Create_PlantsData_Page');
+Meteor.startup(function () {
+  GoogleMaps.load({ key: 'AIzaSyBBkGBcI1a-ZC9e0PsxeOSVOP02IzcjQwo' });
 });
 
 Template.Add_Plants_Form.helpers({
@@ -21,7 +19,102 @@ Template.Add_Plants_Form.helpers({
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
   },
+  addPlantsFormMapOptions: function () {
+    // Make sure the maps API has loaded
+    if (GoogleMaps.loaded()) {
+      // Map initialization options
+      return {
+        center: new google.maps.LatLng(21.2985117, -157.8185832),
+        zoom: 17
+      };
+    }
+  }
 });
+
+
+Template.Add_Plants_Form.onCreated(function onCreated() {
+  this.messageFlags = new ReactiveDict();
+  this.messageFlags.set(displayErrorMessages, false);
+  this.context = PlantsSchema.namedContext('Create_PlantsData_Page');
+
+  GoogleMaps.ready('Add Plants Form Map', function (map) {
+    // console.log("I'm ready!");
+    google.maps.event.addListener(map.instance, 'click', function (event) {
+
+      //adds a plant object to the Plants collection with coordinates where the user clicked on the map
+      // Plants.insert({ decimalLatitude: event.latLng.lat(), decimalLongitude: event.latLng.lng(), addedBy: Meteor.user().profile.name});
+
+      //create objects for the location coordinates
+      let latitudeField= document.getElementById('decimalLatitude');
+      let longitudeField= document.getElementById('decimalLongitude');
+
+      //populates the form's location coordinate fields with
+      latitudeField.value= event.latLng.lat();
+      longitudeField.value= event.latLng.lng();
+
+      //test code
+      // console.log(latitudeField.value);
+      // console.log(longitudeField.value);
+      // console.log(Meteor.user().profile.name);
+    });
+
+    var plantMarkers = {};
+
+    Plants.find().observe({
+      added: function (document) {
+        // Create a marker for this document
+        var marker = new google.maps.Marker({
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: new google.maps.LatLng(document.decimalLatitude, document.decimalLongitude),
+          map: map.instance,
+          // We store the document _id on the marker in order
+          // to update the document within the 'dragend' event below.
+          id: document._id,
+          icon: 'http://i.imgur.com/kwQH9nw.png'
+        });
+
+        // This listener lets us drag plantMarkers on the map and update their corresponding document.
+        google.maps.event.addListener(marker, 'dragend', function (event) {
+          Plants.update(marker.id, {
+            $set: {
+              decimalLatitude: event.latLng.lat(),
+              decimalLongitude: event.latLng.lng()
+            }
+          });
+        });
+
+        // Store this marker instance within the plantMarkers object.
+        plantMarkers[document._id] = marker;
+      },
+      changed: function (newDocument, oldDocument) {
+        plantMarkers[newDocument._id].setPosition({
+          decimalLatitude: newDocument.decimalLatitude,
+          decimalLongitude: newDocument.decimalLongitude
+        });
+      },
+      removed: function (oldDocument) {
+        // Remove the marker from the map
+        plantMarkers[oldDocument._id].setMap(null);
+
+        // Clear the event listener
+        google.maps.event.clearInstanceListeners(
+            plantMarkers[oldDocument._id]);
+
+        // Remove the reference to this marker instance
+        delete plantMarkers[oldDocument._id];
+      }
+    });
+
+    // Add a marker to the map once it's ready
+    // var marker = new google.maps.Marker({
+    //   position: map.options.center,
+    //   map: map.instance
+    // });
+  });
+});
+
+
 
 Template.Add_Plants_Form.events({
   'submit .add-plants-form'(event, instance) {

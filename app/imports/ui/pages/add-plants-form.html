@@ -3,7 +3,20 @@
     form#AddPlantForm div label {
       color: white;
     }
+    .add-plants-form-map-container {
+      width: 800px;
+      max-width: 100%;
+      height: 400px;
+      /*max-height: 100%;*/
+    }
   </style>
+
+  <div class="ui fluid container">
+    <div class="add-plants-form-map-container" style="">
+      {{> googleMap name="Add Plants Form Map" options=addPlantsFormMapOptions}}
+    </div>
+  </div>
+
   <div class="ui container">
     <!--<h2>Add Plant</h2>-->
     <form class="ui form add-plants-form {{ errorClass }}" id="AddPlantForm">
@@ -55,4 +68,6 @@
       <button class="ui green button" type="submit">Submit</button>
     </form>
   </div>
+
+
 </template>
