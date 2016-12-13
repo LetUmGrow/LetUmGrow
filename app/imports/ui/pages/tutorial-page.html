@@ -1,24 +1,42 @@
 <template name="Tutorial_Page">
   <div style="padding-top: 20px" class="ui container">
-    <div class="ui top attached ordered steps">
-      <div id="zero" class="active step" onclick="light(0)">
+    <div class="ui five attached mini stackable ordered steps">
+
+      <div id="zero" class="step" onclick="light(0)">
         <div class="content">
-          <div class="title">Spot a plant</div>
+          <div class="title">Spot a plant on Campus</div>
           <div class="description">Look up longitude and latitude on google maps</div>
         </div>
       </div>
+
       <div id="one" class="step" onclick="light(1)">
+        <div class="content">
+          <div class="title">Log onto our app</div>
+          <div class="description">Navigate to the "Add Plants Page"</div>
+        </div>
+      </div>
+
+      <div id="two" class="step" onclick="light(2)">
         <div class="content">
           <div class="title">Fillout an add plant form</div>
           <div class="description">Enter the name and coordinates</div>
         </div>
       </div>
-      <div id="two" class="step" onclick="light(2)">
+
+      <div id="three" class="step" onclick="light(3)">
         <div class="content">
           <div class="title">Wait a bit</div>
           <div class="description">Wait for an Admin to verify</div>
         </div>
       </div>
+
+      <div id="four" class="step" onclick="light(4)">
+        <div class="content">
+          <div class="title">You've successfully located a new plant</div>
+          <div class="description">Hooray!</div>
+        </div>
+      </div>
+
     </div>
     <div class="ui attached rounded segment" style="border-radius: 2px 2px 5px 5px">
       <img id="image" class="ui centered image" src="/images/plant-finder.jpg">
@@ -33,24 +51,49 @@
         document.getElementById('zero').className = "active step";
         document.getElementById('one').className = "step";
         document.getElementById('two').className = "step";
+        document.getElementById('three').className = "step";
+        document.getElementById('four').className = "step";
       }
       else if(sw == 1) {
         pic = "/images/breadfruit-fruit.jpg"
-        document.getElementById('one').className = "active step";
         document.getElementById('zero').className = "completed step";
+        document.getElementById('one').className = "active step";
         document.getElementById('two').className = "step";
+        document.getElementById('three').className = "step";
+        document.getElementById('four').className = "step";
       }
       else if(sw == 2) {
           pic = "/images/breadfruit-fruit.jpg"
+          document.getElementById('zero').className = "completed step";
+          document.getElementById('one').className = "completed step";
           document.getElementById('two').className = "active step";
-          document.getElementById('one').className = "step";
-          document.getElementById('zero').className = "step";
-        }
-        else {
+          document.getElementById('three').className = "step";
+          document.getElementById('four').className = "step";
+      }
+      else if(sw == 3) {
             pic = "/images/breadfruit-fruit.jpg"
-            document.getElementById('next').className = "active step";
-            document.getElementById('curr').className = "step";
-          }
+            document.getElementById('zero').className = "completed step";
+            document.getElementById('one').className = "completed step";
+            document.getElementById('two').className = "completed step";
+            document.getElementById('three').className = "active step";
+            document.getElementById('four').className = "step";
+      }
+      else if(sw == 4) {
+              pic = "/images/breadfruit-fruit.jpg"
+              document.getElementById('zero').className = "completed step";
+              document.getElementById('one').className = "completed step";
+              document.getElementById('two').className = "completed step";
+              document.getElementById('three').className = "completed step";
+              document.getElementById('four').className = "active step";
+      }
+      else {
+              pic = "/images/plant-finder.jpg"
+              document.getElementById('zero').className = "active step";
+              document.getElementById('one').className = "step";
+              document.getElementById('two').className = "step";
+              document.getElementById('three').className = "step";
+              document.getElementById('four').className = "step";
+      }
       document.getElementById('image').src = pic;
 
 

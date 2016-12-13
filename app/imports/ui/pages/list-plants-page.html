@@ -22,10 +22,6 @@
 
           <tbody>
           {{#each plant in plantsList}}
-          <script>
-            console.log('the academy is');
-            console.log ('The owner is ' + Meteor.users.findOne({ username: Meteor.settings.defaultAccount.username })._id);
-          </script>
             <tr>
               <td>{{plant.vernacularName}}</td>
               <td>{{plant.decimalLatitude}}</td>

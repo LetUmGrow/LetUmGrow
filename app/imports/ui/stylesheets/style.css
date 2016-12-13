@@ -188,9 +188,11 @@ body {
   margin-right: 0px;
 }
 
-.ui.top.fixed.borderless.inverted.menu {
+.ui.top.fixed.borderless.inverted.menu, .ui.right.inverted.menu {
   background-color: #303030;
 }
+
+
 
 .container.footer {
   position: relative;

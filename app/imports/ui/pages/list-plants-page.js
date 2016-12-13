@@ -14,6 +14,11 @@ Template.List_Plants_Page.helpers({
 Template.List_Plants_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Plants');
+    // this.subscribe('users');
+
+    // Meteor.publish('users', function () {
+    //   return Meteor.users.find({});
+    // });
   });
 });
 
