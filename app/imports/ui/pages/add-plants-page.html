@@ -13,8 +13,7 @@
         the map yet! This is your current location. Add a plant to the database given it's latitude and longitude
         coordinates. Don't know the coordinates? its okay just go to the <a href="{{pathFor 'Plant_Map_Page'}}">Map
           Plants</a> page and follow the directions there! The plant's scientific name, vernacular name, and description
-        are
-        optional.</p>
+        are optional.</p>
     </div>
     <div class="ui centered grid">
       <div style="padding-top: 20px" class="four wide column">
@@ -60,6 +59,7 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
+
       }
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -67,6 +67,7 @@
             'Error: The Geolocation service failed.' :
             'Error: Your browser doesn\'t support geolocation.');
       }
+
     </script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBkGBcI1a-ZC9e0PsxeOSVOP02IzcjQwo&callback=initMap">
