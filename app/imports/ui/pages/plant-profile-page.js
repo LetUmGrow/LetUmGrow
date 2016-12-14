@@ -7,7 +7,7 @@ import {Plants} from '../../api/plants/plants.js';
 
 
 Template.Plant_Profile_Page.helpers({
-  getDoc() {
+  plant() {
     return Plants.findOne(FlowRouter.getParam('_id'));
   },
   plantsCollection() {
