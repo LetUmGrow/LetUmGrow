@@ -18,6 +18,9 @@
               <br>
               <p>Located at {{plant.decimalLatitude}}, {{plant.decimalLongitude}}</p>
             </div>
+            <div class="ui plant-profile-map-container container">
+              {{> googleMap name="Plant Profile Map" options=plantProfileMapOptions}}
+            </div>
           </div>
           <div class="extra content">
             <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
