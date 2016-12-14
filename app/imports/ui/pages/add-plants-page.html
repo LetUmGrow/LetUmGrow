@@ -9,11 +9,12 @@
     <h1 class="ui centered header">Add Plants</h1>
     <div style="padding-bottom:20px" class="ui container">
       <p>Ready to add a plant to the map? You can add a newly planted plant or even a plant that has not been identified
-        on
-        the map yet! This is your current location. Add a plant to the database given it's latitude and longitude
-        coordinates. Don't know the coordinates? its okay just go to the <a href="{{pathFor 'Plant_Map_Page'}}">Map
-          Plants</a> page and follow the directions there! The plant's scientific name, vernacular name, and description
-        are optional.</p>
+        on the map yet!</p>
+      <p>Use the form below to add a plant to the database if you know its latitude and longitude
+        coordinates.</p>
+      <p>Don't know the coordinates? It's okay, you can press the 'Use current location' button to request your device's current location (if it has location functionality enabled) or just tap a point on the map to use the coordinates at that location.</p>
+         <p>Entering the plant's name, scientific name, and description
+        is optional.</p>
     </div>
     {{#Add_Plants_Form}}
     {{/Add_Plants_Form}}

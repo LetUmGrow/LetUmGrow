@@ -162,7 +162,7 @@ Template.Add_Plants_Form.events({
   },
   'click .geolocation-button' (event, instance) {
     var currentLocation= Geolocation.latLng();
-    alert(`current location is: ${currentLocation.lat} ${currentLocation.lng}`);
+    alert(`Current location coordinates are: ${currentLocation.lat}, ${currentLocation.lng}`);
 
     //create objects for the location coordinates
     let latitudeField= document.getElementById('decimalLatitude');
