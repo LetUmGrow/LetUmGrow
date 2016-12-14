@@ -1,5 +1,5 @@
-import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import {Mongo} from 'meteor/mongo';
+import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 
 /* eslint-disable object-shorthand */
 
@@ -9,32 +9,32 @@ export const Species = new Mongo.Collection('Species');
  * Create the schema for Species
  */
 export const SpeciesSchema = new SimpleSchema({
-  speciesId: {
+  UHSP_ID: {
     label: 'SpeciesID',
-    type: Number,
-    max: 10,
+    type: String,
+    max: 20,
     optional: true,
     autoform: {   //can this be AI?
-     group: 'Species',
-     placeholder: '1',
-     },
+      group: 'Species',
+      placeholder: '1',
+    },
   },
- // pictures: [], //needs more
+  // pictures: [], //needs more
   family: {
     label: 'Family',
     type: String,
     optional: true,
     max: 30,
     autoform: {
-     group: 'Species',
-     placeholder: 'Family',
-     },
+      group: 'Species',
+      placeholder: 'Family',
+    },
   },
   scientificName: {
     label: 'Scientific Name',
     type: String,
     optional: true,
-    max: 50,
+    max: 70,
     autoform: {
       group: 'Species',
       placeholder: 'Scientific Name',
@@ -54,7 +54,7 @@ export const SpeciesSchema = new SimpleSchema({
     label: 'Vernacular Name',
     type: String,
     optional: true,
-    max: 50,
+    max: 100,
     autoform: {
       group: 'Species',
       placeholder: 'Vernacular Name',
@@ -64,22 +64,44 @@ export const SpeciesSchema = new SimpleSchema({
     label: 'Description',
     type: String,
     optional: true,
-    max: 50,
+    max: 4000,
     autoform: {
       group: 'Species',
       placeholder: 'Description',
     },
   },
-  uses: {
-    label: 'Uses',
+  spClass: {
+    label: 'Species Classification',
     type: String,
     optional: true,
-    max: 250,
+    max: 50,
     autoform: {
       group: 'Species',
-      placeholder: 'Uses',
+      placeholder: 'Species Classification',
     },
   },
+  habit: {
+    label: 'Habit',
+    type: String,
+    optional: true,
+    max: 50,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Habit',
+    },
+  },
+/*
+   uses: {
+     label: 'Uses',
+     type: String,
+     optional: true,
+     max: 250,
+     autoform: {
+     group: 'Species',
+     placeholder: 'Uses',
+     },
+   },
+*/
   origin: {
     label: 'Origin',
     type: String,
@@ -90,42 +112,44 @@ export const SpeciesSchema = new SimpleSchema({
       placeholder: 'Origin',
     },
   },
-  biogeography: { /* native, endemic, transplant, aggressive invader, etc. */
+  biogeography: {
+    /* native, endemic, transplant, aggressive invader, etc. */
     label: 'Biogeography',
     type: String,
     optional: true,
-    max: 30,
+    max: 250,
     autoform: {
       group: 'Species',
       placeholder: 'Biogeography',
     },
   },
-  conservation: { /* endangered, etc. */
-    label: 'Conservation',
+  threat: {
+    /* endangered, etc. */
+    label: 'Threat',
     type: String,
     optional: true,
-    max: 30,
+    max: 50,
     autoform: {
       group: 'Species',
-      placeholder: 'Conservation',
+      placeholder: 'Threat',
     },
   },
-/*  roots: {},
-  stems: {},
-  fruit: {},
-  flowers: {},
-  leaves: {
-    shape: {}, // (lots of variations)
-    arrangement: {}, // alternate, opposite, whorled, nil
-    compound: {}, // unifoliate, bifoliate, trifoliate, palmate, even-pinnate, odd-pinnate, even-bipinnate
-    margins: {}, //entire, lobed, dissected
-    apices: {}, // mucronate, acuminate, attenuate, rounded, emarginate, truncate
-    bases: {}, // cordate, auriculate, sagittate, cuneate, truncate, asymmetrical
-    teeth: {}, // serrate, doubly-serrate, crenate, dentate
-    Venation: {}, // pinnate, plinervy, palmate, parallel, rotate
-  },
-  lastEditedBy: {},
-  timeLastEdited: {}, */
+  /*  roots: {},
+   stems: {},
+   fruit: {},
+   flowers: {},
+   leaves: {
+   shape: {}, // (lots of variations)
+   arrangement: {}, // alternate, opposite, whorled, nil
+   compound: {}, // unifoliate, bifoliate, trifoliate, palmate, even-pinnate, odd-pinnate, even-bipinnate
+   margins: {}, //entire, lobed, dissected
+   apices: {}, // mucronate, acuminate, attenuate, rounded, emarginate, truncate
+   bases: {}, // cordate, auriculate, sagittate, cuneate, truncate, asymmetrical
+   teeth: {}, // serrate, doubly-serrate, crenate, dentate
+   Venation: {}, // pinnate, plinervy, palmate, parallel, rotate
+   },
+   lastEditedBy: {},
+   timeLastEdited: {}, */
 });
 
 Species.attachSchema(SpeciesSchema);
