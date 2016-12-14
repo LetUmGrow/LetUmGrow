@@ -32,7 +32,7 @@
 
       <div id="four" class="step" onclick="light(4)">
         <div class="content">
-          <div class="title">You've successfully located a new plant</div>
+          <div class="title">You've successfully located and logged a new plant</div>
           <div class="description">Hooray!</div>
         </div>
       </div>
@@ -47,7 +47,7 @@
     function light(sw) {
       let pic;
       if(sw == 0){
-        pic = "/images/plant-finder.jpg"
+        pic = "/images/plantmappage.PNG"
         document.getElementById('zero').className = "active step";
         document.getElementById('one').className = "step";
         document.getElementById('two').className = "step";
@@ -55,7 +55,7 @@
         document.getElementById('four').className = "step";
       }
       else if(sw == 1) {
-        pic = "/images/breadfruit-fruit.jpg"
+        pic = "/images/addplantpage2.PNG"
         document.getElementById('zero').className = "completed step";
         document.getElementById('one').className = "active step";
         document.getElementById('two').className = "step";
@@ -63,7 +63,7 @@
         document.getElementById('four').className = "step";
       }
       else if(sw == 2) {
-          pic = "/images/breadfruit-fruit.jpg"
+          pic = "/images/addplantpage.PNG"
           document.getElementById('zero').className = "completed step";
           document.getElementById('one').className = "completed step";
           document.getElementById('two').className = "active step";
@@ -71,7 +71,7 @@
           document.getElementById('four').className = "step";
       }
       else if(sw == 3) {
-            pic = "/images/breadfruit-fruit.jpg"
+            pic = "/images/clock.jpg"
             document.getElementById('zero').className = "completed step";
             document.getElementById('one').className = "completed step";
             document.getElementById('two').className = "completed step";
@@ -79,7 +79,7 @@
             document.getElementById('four').className = "step";
       }
       else if(sw == 4) {
-              pic = "/images/breadfruit-fruit.jpg"
+              pic = "/images/plantlistpage.PNG"
               document.getElementById('zero').className = "completed step";
               document.getElementById('one').className = "completed step";
               document.getElementById('two').className = "completed step";

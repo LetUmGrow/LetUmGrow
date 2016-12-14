@@ -25,35 +25,4 @@
       <div class="ui right inverted menu">{{> Cas_Login }}</div>
     </div>
   </div>
-  <script>
-    function light(sw) {
-      let pic;
-      if(sw == 0){
-        pic = "/images/plant-finder.jpg"
-        document.getElementById('zero').className = "active step";
-        document.getElementById('one').className = "step";
-        document.getElementById('two').className = "step";
-      }
-      else if(sw == 1) {
-        pic = "/images/breadfruit-fruit.jpg"
-        document.getElementById('one').className = "active step";
-        document.getElementById('zero').className = "completed step";
-        document.getElementById('two').className = "step";
-      }
-      else if(sw == 2) {
-          pic = "/images/breadfruit-fruit.jpg"
-          document.getElementById('two').className = "active step";
-          document.getElementById('one').className = "step";
-          document.getElementById('zero').className = "step";
-        }
-        else {
-          pic = "/images/breadfruit-fruit.jpg"
-          document.getElementById('next').className = "active step";
-          document.getElementById('curr').className = "step";
-        }
-      document.getElementById('image').src = pic;
-
-
-    }
-  </script>
 </template>
