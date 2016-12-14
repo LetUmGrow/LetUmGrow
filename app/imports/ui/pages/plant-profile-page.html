@@ -1,3 +1,36 @@
 <template name="Plant_Profile_Page">
-  <h1>Plant Profile Page</h1>
+  {{#If_Logged_In}}
+    <h1 class="ui centered header">Plant Profile Page</h1>
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Added By</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>{{getDoc.vernacularName}}</td>
+              <td>{{getDoc.decimalLatitude}}</td>
+              <td>{{getDoc.decimalLongitude}}</td>
+              <td>{{getDoc.addedBy}}</td>
+              <!--<td>{{getDoc.plDesc}}</td>-->
+              <td><a href="{{pathFor 'Edit_Plants_Page' _id=getDoc._id}}">Edit</a></td>
+              <!--not working-->
+              <!--<td><button class="ui button delete" type="submit">X</button></td>-->
+            </tr>
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
 </template>
