@@ -2,27 +2,30 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-import { UserInfo, UsersSchema } from '../../api/userInfo/userInfo.js';
+import { Species, SpeciesSchema } from '../../api/species/species.js';
 import { Meteor } from 'meteor/meteor';
 
 /* eslint-disable no-param-reassign */
 
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Edit_Profile_Page.onCreated(function onCreated() {
+Template.Edit_Species_Page.onCreated(function onCreated() {
   this.autorun(() => {
-    this.subscribe('UserInfo');
+    this.subscribe('Species');
   });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = UsersSchema.namedContext('Edit_Profile_Page');
+  this.context = SpeciesSchema.namedContext('Edit_Species_Page');
 });
 
-Template.Edit_Profile_Page.helpers({
-  userField(fieldName) {
-    const user = UserInfo.findOne(FlowRouter.getParam('_id'));
+Template.Edit_Species_Page.helpers({
+  species() {
+    return Species.findOne(FlowRouter.getParam('_id'));
+  },
+  speciesField(fieldName) {
+    const species = Species.findOne(FlowRouter.getParam('_id'));
     // See https://dweldon.silvrback.com/guards to understand '&&' in next line.
-    return user && user[fieldName];
+    return species && species[fieldName];
   },
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
@@ -50,26 +53,33 @@ Template.Edit_Profile_Page.onRendered(function enableSemantic() {
 });
 */
 
-Template.Edit_Profile_Page.events({
-  'submit .profile-data-form'(event, instance) {
+Template.Edit_Species_Page.events({
+  'submit .species-data-form'(event, instance) {
     event.preventDefault();
-    const owner = Meteor.userId();
-    const username = Meteor.user() ? Meteor.user().profile.name : 'No current user';
-    const email = event.target.email.value;
-    const first = event.target.first.value;
-    const last = event.target.last.value;
-    const photoUrl = event.target.photoUrl.value;
-    const updatedProfile = { owner, username, email, first, last, photoUrl };
+    const species = Species.findOne(FlowRouter.getParam('_id'));
+    const UHSP_ID = species.UHSP_ID;
+    const pictureUrl = event.target.pictureUrl.value;
+    const family = event.target.family.value;
+    const scientificName = species.scientificName;
+    const HawaiianName = event.target.HawaiianName.value;
+    const vernacularName = event.target.vernacularName.value;
+    const description = event.target.description.value;
+    const spClass = event.target.spClass.value;
+    const habit = event.target.habit.value;
+    const origin = event.target.origin.value;
+    const biogeography = event.target.biogeography.value;
+    const threat = event.target.threat.value;
+    const updatedSpecies = { UHSP_ID, pictureUrl, family, scientificName, HawaiianName, vernacularName, description, spClass, habit, origin, biogeography, threat };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
-    UsersSchema.clean(updatedProfile);
+    SpeciesSchema.clean(updatedSpecies);
     // Determine validity.
-    instance.context.validate(updatedProfile);
+    instance.context.validate(updatedSpecies);
     if (instance.context.isValid()) {
-      UserInfo.update(FlowRouter.getParam('_id'), { $set: updatedProfile });
+      Species.update(FlowRouter.getParam('_id'), { $set: updatedSpecies });
       instance.messageFlags.set(displayErrorMessages, false);
-      FlowRouter.go('User_Profile_Page')
+      FlowRouter.go('List_Species_Page')
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

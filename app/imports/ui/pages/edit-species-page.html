@@ -1,53 +1,65 @@
-<template name="Edit_Profile_Page">
+<template name="Edit_Species_Page">
   {{#if Template.subscriptionsReady}}
   <div class="ui container">
-    <form class="ui form profile-data-form {{ errorClass }}">
+    <form class="ui form species-data-form {{ errorClass }}">
       <hr>
-      <h4 class="ui dividing header">Edit Profile Information</h4>
+      <h4 class="ui dividing header">Edit Species Information: {{species.scientificName}}</h4>
       <div class="field">
-        <label>Email</label>
+        <label>Picture of Species</label>
         <div class="field">
-          <input name="email" id="email" placeholder="Email" type="text" value="{{ userField 'email' }}">
-          {{#if displayFieldError 'email' }}
-          <div class="ui error message">
-            <p>You must specify an email address for your profile.</p>
-          </div>
-          {{/if}}
+          <input name="pictureUrl" id="pictureUrl" placeholder="URL" type="text" value="{{ speciesField 'pictureUrl' }}">
         </div>
       </div>
       <div class="field">
-        <label>Name</label>
+        <label>Family</label>
+        <div class="field">
+          <input name="family" id="family" placeholder="Family (scientific)" type="text" value="{{ speciesField 'family' }}">
+        </div>
+      </div>
+      <div class="field">
+        <label>Common names: Hawaiian and Vernacular</label>
         <div class="two fields">
           <div class="field">
-            <input name="first" id="first" placeholder="First Name" type="text" value="{{ userField 'first' }}">
-            {{#if displayFieldError 'first' }}
-            <div class="ui error message">
-              <p>You must specify your first name.</p>
-            </div>
-            {{/if}}
+            <input name="HawaiianName" id="HawaiianName" placeholder="Hawaiian Name" type="text" value="{{ speciesField 'HawaiianName' }}">
           </div>
           <div class="field">
-            <input name="last" id="last" placeholder="Last Name" type="text" value="{{ userField 'last' }}">
-            {{#if displayFieldError 'last' }}
-            <div class="ui error message">
-              <p>You must specify your last name.</p>
-            </div>
-            {{/if}}
+            <input name="vernacularName" id="vernacularName" placeholder="Vernacular Name" type="text" value="{{ speciesField 'vernacularName' }}">
           </div>
         </div>
       </div>
       <div class="field">
-        <label>Photo URL</label>
-        <div class="field">
-          <input name="photoUrl" id="photoUrl" placeholder="URL" type="text" value="{{ userField 'photoUrl' }}">
-          {{#if displayFieldError 'photoUrl' }}
-          <div class="ui error message">
-            <p>Please specify a web URL for your profile picture. For a default picture, please use "http://semantic-ui.com/images/wireframe/image.png".</p>
+        <label>Classification and Habit</label>
+        <div class="two fields">
+          <div class="field">
+            <input name="spClass" id="spClass" placeholder="Classification" type="text" value="{{ speciesField 'spClass' }}">
           </div>
-          {{/if}}
+          <div class="field">
+            <input name="habit" id="habit" placeholder="Habit" type="text" value="{{ speciesField 'habit' }}">
+          </div>
         </div>
       </div>
-      <button class="ui primary button" type="submit">Update</button>
+      <div class="field">
+        <label>Conservation: Origin, Biogeography, and Threat</label>
+        <div class="three fields">
+          <div class="field">
+            <input name="origin" id="origin" placeholder="Origin" type="text" value="{{ speciesField 'origin' }}">
+          </div>
+          <div class="field">
+            <input name="biogeography" id="biogeography" placeholder="Biogeography" type="text" value="{{ speciesField 'biogeography' }}">
+          </div>
+          <div class="field">
+            <input name="threat" id="threat" placeholder="Threat" type="text" value="{{ speciesField 'threat' }}">
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <div class="field">
+          <textarea name="description" id="description" placeholder="Description" type="text" value="{{ speciesField 'description' }}"></textarea>
+        </div>
+      </div>
+      <button class="ui green button" type="submit">Update</button>
+      <button class="ui red button" type="cancel" href="{{pathFor 'List_Species_Page' }}">Cancel</button>
     </form>
   </div>
   {{/if}}

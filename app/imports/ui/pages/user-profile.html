@@ -1,207 +1,100 @@
 <template name="User_Profile_Page">
-
+  {{#If_Logged_In}}
   <div style="padding-top: 20px" class="ui middle aligned centered container">
     <div style="background-color: #34444e !important" class="ui segments">
-      <div style="background-color: #34444e !important" class="ui segment">
-        <h1 class="ui header">My Profile</h1>
 
-        <div style="background-color: #34444e !important" class="ui segment">
-          {{#If_Logged_In}}
-            {{#if Template.subscriptionsReady}}
-              <p>Login info: {{usernameCurrent}}; {{userId}}</p>
-              <h2>Me</h2>
-              {{#each user in myUser}}
-                <div class="ui two column grid">
-                  <div class="ui column">
-                    <img class="ui centered medium image" src={{user.photoUrl}}>
-                  </div>
-                  <div class="ui column">
-                    <p>Username: {{user.username}}</p>
-                    <p>User ID: {{user.owner}}</p>
-                    <p>Email: {{user.email}}</p>
-                    <p>First Name: {{user.first}}</p>
-                    <p>Last Name: {{user.last}}</p>
-                    <p><a href="{{pathFor 'Edit_Profile_Page' _id=user._id}}">Edit</a></p>
-                  </div>
-                </div>
-              {{/each}}
-            {{else}}
-            {{> Loading}}
-            {{/if}}
-          {{/If_Logged_In}}
-        </div>
-
-        <div style="background-color: #34444e !important" class="ui segment">
-          {{#If_Logged_In}}
-          <div class="ui text container">
-            {{#if Template.subscriptionsReady}}
-            <h2>UserInfo</h2>
-            <table style="margin-top: 20px" class="ui celled table">
-              <thead>
-              <tr>
-                <th>Email</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-              </tr>
-              </thead>
-              <tbody>
-              {{#each user in userList}}
-              <tr>
-                <td>{{user.email}}</td>
-                <td>{{user.first}}</td>
-                <td>{{user.last}}</td>
-              </tr>
-              {{/each}}
-              </tbody>
-            </table>
-            {{else}}
-            {{> Loading}}
-            {{/if}}
-          </div>
-          {{/If_Logged_In}}
-        </div>
-
-        <h2>Badges</h2>
-        <i class="ui big icon facebook f"></i>
-        <i class="ui big icon bug"></i>
-        <i class="ui big icon certificate"></i>
-      </div>
-
+      <h1 class="ui header">My Profile</h1>
 
       <div style="background-color: #34444e !important" class="ui segment">
-        <h2>My Events</h2>
-        <div class="ui feed">
-          <div class="event">
-            <div class="label">
-              <img src="/images/elliot.jpg">
-            </div>
-            <div class="content">
-              <div class="summary">
-                <a class="user">
-                  Bill Mullen
-                </a> watered My Breadfruit Tree
-                <div class="date">
-                  1 Hour Ago
-                </div>
-              </div>
-              <div class="meta">
-                <a class="like">
-                  <i class="like icon"></i> 4 Likes
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="label">
-              <img src="/images/helen.jpg">
-            </div>
-            <div class="content">
-              <div class="summary">
-                <a>Helen Troy</a> confirmed plant identification <a>'Ulu</a>
-                <div class="date">
-                  4 days ago
-                </div>
-              </div>
-              <div class="extra images">
-                <a><img src="/images/breadfruit-fruit.jpg"></a>
-              </div>
-              <div class="meta">
-                <a class="like">
-                  <i class="like icon"></i> 1 Like
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="label">
-              <img src="/images/elliot.jpg">
-            </div>
-            <div class="content">
-              <div class="summary">
-                <a class="user">
-                  Bill Mullen
-                </a> marked My Breadfruit Tree
-                <div class="date">
-                  7 Days Ago
-                </div>
-              </div>
-              <div class="meta">
-                <a class="like">
-                  <i class="like icon"></i> 8 Likes
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div style="background-color: #34444e !important" class="ui segment">
-        <h2>Saved locations</h2>
+        {{#if Template.subscriptionsReady}}
+        <h2>Me</h2>
+        {{#each user in myUser}}
         <div class="ui two column grid">
-          <div class="column">
-            <img class="ui  large image" src="/images/map3.jpg">
+          <div class="ui column">
+            <img class="ui centered medium image" src={{user.photoUrl}}>
           </div>
-          <div class="column">
-            <img class="ui small image" src="/images/breadfruit-tree.jpeg">
-            <p>My Breadfruit Tree</p>
+          <div class="ui column">
+            <p>Username: {{user.username}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>First Name: {{user.first}}</p>
+            <p>Last Name: {{user.last}}</p>
+            <p><a href="{{pathFor 'Edit_Profile_Page' _id=user._id}}">Edit</a></p>
           </div>
         </div>
+        {{/each}}
+        {{else}}
+        {{> Loading}}
+        {{/if}}
       </div>
 
       <div style="background-color: #34444e !important" class="ui segment">
-        <h2>Identified plants</h2>
-        <div class="ui three column grid">
-          <div class="column">
-            <img class="ui small image" src="/images/hibiscus.jpeg">
-            <div class="ui pointing label">
-              Hibiscus
-            </div>
-          </div>
-          <div class="column"><img class="ui small image" src="/images/breadfruit-fruit.jpg">
-            <div class="ui pointing label">
-              'Ulu
-            </div>
-            <div class="ui pointing label">
-              Breadfruit
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div style="background-color: #34444e !important" class="ui segment">
-        {{#If_Logged_In}}
-        <div class="ui text container">
+        <h2>Saved locations</h2>
+        <div class="ui centered link cards">
           {{#if Template.subscriptionsReady}}
-          <a class="item" href="{{pathFor 'Add_Contact_Page'}}">Add Contact</a>
-          <h2>Contacts</h2>
-          <table style="margin-top: 20px" class="ui celled table">
-            <thead>
-            <tr>
-              <th>Email</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Edit</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            {{#each contact in contactsList}}
-            <tr>
-              <td>{{contact.email}}</td>
-              <td>{{contact.first}}</td>
-              <td>{{contact.last}}</td>
-              <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
-            </tr>
-            {{/each}}
-            </tbody>
-          </table>
+          {{#each plant in myPlants}}
+          <div class="ui card">
+            <div class="content" href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
+              <a class="right floated mini ui image" href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}"><img src="/images/letumgrow-logo.png"></a>
+              <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}" class="header">{{plant.vernacularName}}</a>
+              <div class="meta">
+                Added by {{plant.addedBy}}
+              </div>
+              <div class="description">
+                <p>{{plant.plDesc}}</p>
+                <br>
+                <p>Located at {{plant.decimalLatitude}}, {{plant.decimalLongitude}}</p>
+              </div>
+            </div>
+            <div class="extra content">
+              <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
+                <i class="tree icon"></i>
+                Profile
+              </a>
+              <a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">
+                <i class="edit icon"></i>
+                Edit
+              </a>
+            </div>
+          </div>
+          {{/each}}
           {{else}}
           {{> Loading}}
           {{/if}}
         </div>
-        {{/If_Logged_In}}
+
       </div>
 
+      <div style="background-color: #34444e !important" class="ui segment">
+        <h2>Contacts</h2>
+        <a class="item" href="{{pathFor 'Add_Contact_Page'}}">Add Contact</a>
+        <br>
+        <div class="ui centered link cards">
+          {{#if Template.subscriptionsReady}}
+          {{#each contact in contactsList}}
+          <div class="ui card">
+            <div class="content" href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
+              <a class="header">{{contact.first}} {{contact.last}}</a>
+              <div class="description">
+                <p>{{contact.email}}</p>
+              </div>
+            </div>
+            <div class="extra content">
+              <a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">
+                <i class="edit icon"></i>
+                Edit
+              </a>
+            </div>
+          </div>
+          {{/each}}
+          {{else}}
+          {{> Loading}}
+          {{/if}}
+        </div>
+
+      </div>
     </div>
   </div>
+  {{/If_Logged_In}}
 </template>

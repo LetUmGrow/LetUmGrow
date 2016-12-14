@@ -19,7 +19,16 @@ export const SpeciesSchema = new SimpleSchema({
       placeholder: '1',
     },
   },
-  // pictures: [], //needs more
+  pictureUrl: {
+    label: 'Family',
+    type: String,
+    optional: true,
+    max: 200,
+    autoform: {
+      group: 'Species',
+      placeholder: 'Url of species picture',
+    },
+  },
   family: {
     label: 'Family',
     type: String,
@@ -33,7 +42,7 @@ export const SpeciesSchema = new SimpleSchema({
   scientificName: {
     label: 'Scientific Name',
     type: String,
-    optional: true,
+    optional: false,
     max: 70,
     autoform: {
       group: 'Species',

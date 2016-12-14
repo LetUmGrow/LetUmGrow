@@ -13,7 +13,11 @@
     {{#each species in speciesList}}
     <div class="ui card">
       <div class="content" href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
+        {{#if species.pictureUrl}}
+        <a class="right floated mini ui image" href="{{pathFor 'Species_Profile_Page' _id=species._id}}"><img src="{{species.pictureUrl}}"></a>
+        {{else}}
         <a class="right floated mini ui image" href="{{pathFor 'Species_Profile_Page' _id=species._id}}"><img src="/images/letumgrow-logo.png"></a>
+        {{/if}}
         <a href="{{pathFor 'Species_Profile_Page' _id=species._id}}" class="header">{{species.scientificName}}</a>
         <div class="meta">
           {{#if species.HawaiianName}}

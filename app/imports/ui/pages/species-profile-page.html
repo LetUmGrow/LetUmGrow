@@ -7,7 +7,11 @@
           <div class="content">
             <div class="header"><a href="{{pathFor 'Species_Profile_Page' _id=species._id}}" class="header">{{species.scientificName}}</a></div>
           </div>
+          {{#if species.pictureUrl}}
+          <div class="image"><img src="{{species.pictureUrl}}"></div>
+          {{else}}
           <div class="image"><img src="/images/letumgrow-logo.png"></div>
+          {{/if}}
           <div class="content" href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
             <a href="{{pathFor 'Species_Profile_Page' _id=species._id}}" class="header">{{species.scientificName}}</a>
             <div class="meta">
@@ -28,6 +32,9 @@
               <p>Biogeography: {{species.biogeography}}</p>
               <br>
               <p>Threat: {{species.threat}}</p>
+              <br>
+              <p>Classification: {{species.spClass}}</p>
+              <p>Habit: {{species.habit}}</p>
               <h4>More info:</h4>
               <p>{{species.description}}</p>
             </div>

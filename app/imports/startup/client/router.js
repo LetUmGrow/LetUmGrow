@@ -43,13 +43,14 @@ FlowRouter.route('/tutorial', {
     BlazeLayout.render('App_Body', { main: 'Tutorial_Page' });
   },
 });
-
+/*
 FlowRouter.route('/list', {
   name: 'List_Stuff_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'List_Stuff_Page' });
   },
 });
+*/
 
 FlowRouter.route('/list-plants', {
   name: 'List_Plants_Page',
@@ -72,12 +73,14 @@ FlowRouter.route('/add-contact', {
   },
 });
 
+/*
 FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Add_Stuff_Page' });
   },
 });
+*/
 
 FlowRouter.route('/add-plants', {
   name: 'Add_Plants_Page',
@@ -111,6 +114,20 @@ FlowRouter.route('/edit-plants/:_id', {
   name: 'Edit_Plants_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Edit_Plants_Page' });
+  },
+});
+
+FlowRouter.route('/edit-contact/:_id', {
+  name: 'Edit_Contact_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Contact_Page' });
+  },
+});
+
+FlowRouter.route('/species/edit/:_id', {
+  name: 'Edit_Species_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Species_Page' });
   },
 });
 
