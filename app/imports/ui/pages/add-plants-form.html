@@ -21,6 +21,7 @@
   <div class="ui container">
     <!--<h2>Add Plant</h2>-->
     <form class="ui form add-plants-form {{ errorClass }}" id="AddPlantForm">
+      <div class="ui button geolocation-button">Use current location</div>
       <div class="field">
         <label>Plant Name</label>
         <input type="text" name="vernacular-name" id="vernacularName" placeholder="The name of the plant">
@@ -66,7 +67,6 @@
           </div>
         {{/if}}
       </div>
-      <div class="ui button geolocation-button">Use current location</div>
       <button class="ui green button" type="submit">Submit</button>
     </form>
   </div>

@@ -2,44 +2,45 @@
   {{#If_Logged_In}}
 
   <h1 class="ui centered header">List Plants</h1>
-  <div style="padding-bottom:20px" class="ui container">
-    <p> These are all the plant locations you have saved via plotting points on the Plant Map above.  Feel free to edit it's data (by clicking on the 'Edit' button on the right) to better describe your plants!</p>
+  <div style="margin-bottom: 20px" class="ui container">
+    <p> These are all the plant locations saved to the plant map.  Feel free to edit a plant's data (by clicking on the 'Edit' button) to better describe a plant!</p>
   </div>
 
-    <div class="ui text container">
+    <!--Semantic UI card implementation of plant list-->
+  <!--<div class="ui centered container">-->
+    <div class="ui centered link cards">
       {{#if Template.subscriptionsReady}}
-        <table style="margin-top: 20px" class="ui celled table">
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th>Added By</th>
-            <!--<th>Description</th>-->
-            <th>Profile</th>
-            <th></th>
-          </tr>
-          </thead>
-
-          <tbody>
-          {{#each plant in plantsList}}
-            <tr>
-              <td>{{plant.vernacularName}}</td>
-              <td>{{plant.decimalLatitude}}</td>
-              <td>{{plant.decimalLongitude}}</td>
-              <td>{{plant.addedBy}}</td>
-              <!--<td>{{plant.plDesc}}</td>-->
-              <td><a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">Profile</a></td>
-              <td><a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">Edit</a></td>
-              <!--not working-->
-              <!--<td><button class="ui button delete" type="submit">X</button></td>-->
-            </tr>
-          {{/each}}
-          </tbody>
-        </table>
+        {{#each plant in plantsList}}
+          <div class="ui card">
+            <div class="content" href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
+              <a class="right floated mini ui image" href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}"><img src="/images/letumgrow-logo.png"></a>
+              <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}" class="header">{{plant.vernacularName}}</a>
+              <div class="meta">
+                Added by {{plant.addedBy}}
+              </div>
+              <div class="description">
+                <p>{{plant.plDesc}}</p>
+                <br>
+                <p>Located at {{plant.decimalLatitude}}, {{plant.decimalLongitude}}</p>
+              </div>
+            </div>
+            <div class="extra content">
+              <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
+                <i class="tree icon"></i>
+                Profile
+              </a>
+              <a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">
+                <i class="edit icon"></i>
+                Edit
+              </a>
+            </div>
+          </div>
+        {{/each}}
       {{else}}
         {{> Loading}}
       {{/if}}
     </div>
+  <!--</div>-->
+
   {{/If_Logged_In}}
 </template>

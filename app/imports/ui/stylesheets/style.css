@@ -231,6 +231,13 @@ Used on /plant-map
   /*max-height: 100%;*/
 }
 
+.plant-profile-map-container {
+  width: 1200px;
+  max-width: 100%;
+  height: 400px;
+  /*max-height: 100%;*/
+}
+
 .title {
   font-size: 24px;
   color: #FFFFFF;
