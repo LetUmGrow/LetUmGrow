@@ -12,7 +12,8 @@ body {
 }
 
 .learn-more {
-  background-image: linear-gradient(120deg, #155799, #159957);
+  background-image: linear-gradient(180deg, #34444e, #159957);
+  /*background-image: linear-gradient(120deg, #155799, #159957);*/
   color: white;
   top: 300px;
   font-weight: 100 !important;
@@ -27,7 +28,17 @@ body {
   top: 300px;
   font-weight: 100 !important;
   padding-top: 30px;
-  height: 550px;
+  height: 850px;
+  z-index: 99999;
+}
+
+.learn-more-3 {
+  background-image: linear-gradient(120deg, #155799, #159957);
+  color: white;
+  top: 300px;
+  font-weight: 100 !important;
+  padding-top: 30px;
+  height: 280px;
 }
 
 .user-info {
@@ -77,6 +88,46 @@ body {
 
 .tutorial:hover {
   background:#3e75eb;
+}
+
+.bot-button {
+  -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  box-shadow:inset 0px 0px 0px 0px #ffffff;
+  background-color:#f24848;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  transition: all 0.3s ease 0s;
+  text-indent:0px;
+  border:1px solid #ffffff;
+  display:inline-block;
+  color:#ffffff;
+  font-size:15px;
+  font-style:normal;
+  height:47px;
+  line-height:47px;
+  width:139px;
+  text-decoration:none;
+  text-align:center;
+}
+
+.bot-button:active {
+  position:relative;
+  top:1px;
+}
+
+.bot-button:hover {
+  background:#f26060;
 }
 
 .ui.button.show.login {
@@ -137,9 +188,11 @@ body {
   margin-right: 0px;
 }
 
-.ui.top.fixed.borderless.inverted.menu {
+.ui.top.fixed.borderless.inverted.menu, .ui.right.inverted.menu {
   background-color: #303030;
 }
+
+
 
 .container.footer {
   position: relative;
@@ -172,7 +225,14 @@ h1.ui.header {
 Used on /plant-map
 */
 .plant-map-container {
-  width: 800px;
+  width: 1200px;
+  max-width: 100%;
+  height: 400px;
+  /*max-height: 100%;*/
+}
+
+.plant-profile-map-container {
+  width: 1200px;
   max-width: 100%;
   height: 400px;
   /*max-height: 100%;*/
