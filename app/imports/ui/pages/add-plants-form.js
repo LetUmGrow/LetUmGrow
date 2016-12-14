@@ -9,6 +9,7 @@ const displayErrorMessages = 'displayErrorMessages';
 
 Meteor.startup(function () {
   GoogleMaps.load({ key: 'AIzaSyBBkGBcI1a-ZC9e0PsxeOSVOP02IzcjQwo' });
+  Geolocation.latLng();
 });
 
 Template.Add_Plants_Form.helpers({
@@ -28,6 +29,15 @@ Template.Add_Plants_Form.helpers({
         zoom: 17
       };
     }
+  },
+  currentLocation() {
+    let foobar= Geolocation.latLng();
+    console.log(foobar.lat);
+    console.log(foobar.lng);
+  },
+  geolocationError: function() {
+    var error = Geolocation.error();
+    return error && error.message;
   }
 });
 
@@ -37,8 +47,11 @@ Template.Add_Plants_Form.onCreated(function onCreated() {
   this.messageFlags.set(displayErrorMessages, false);
   this.context = PlantsSchema.namedContext('Create_PlantsData_Page');
 
+
+
   GoogleMaps.ready('Add Plants Form Map', function (map) {
     // console.log("I'm ready!");
+    // map.setMyLocationEnabled(true);
     google.maps.event.addListener(map.instance, 'click', function (event) {
 
       //adds a plant object to the Plants collection with coordinates where the user clicked on the map
@@ -52,6 +65,10 @@ Template.Add_Plants_Form.onCreated(function onCreated() {
       latitudeField.value= event.latLng.lat();
       longitudeField.value= event.latLng.lng();
 
+      // let foobar= Geolocation.latLng();
+      // console.log(foobar.lat());
+      // console.log(foobar.lng());
+      console.log(Geolocation.latLng());
       //test code
       // console.log(latitudeField.value);
       // console.log(longitudeField.value);
@@ -143,5 +160,17 @@ Template.Add_Plants_Form.events({
       instance.messageFlags.set(displayErrorMessages, true);
     }
   },
+  'click .geolocation-button' (event, instance) {
+    var currentLocation= Geolocation.latLng();
+    alert(`current location is: ${currentLocation.lat} ${currentLocation.lng}`);
+
+    //create objects for the location coordinates
+    let latitudeField= document.getElementById('decimalLatitude');
+    let longitudeField= document.getElementById('decimalLongitude');
+
+    //populates the form's location coordinate fields with
+    latitudeField.value= currentLocation.lat;
+    longitudeField.value= currentLocation.lng;
+  }
 });
 
