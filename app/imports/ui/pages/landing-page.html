@@ -3,6 +3,10 @@
   {{#unless currentUser}}
   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 
+  <div id="top" style="position: absolute; top: 0; padding-top: 40px; z-index: 9999;"></div>
+  <!-- Place this tag where you want the button to render. -->
+  <a class="github-button" href="https://github.com/letumgrow" data-style="mega" aria-label="Follow @letumgrow on GitHub">Follow @letumgrow</a>
+
   <div style="
   background-image: url('/images/landing-page-background.jpg');
   background-repeat: no-repeat;
@@ -62,8 +66,10 @@
             Ever seen a plant on campus and wanted to learn more about it?
           </h2>
 
-          <h3 class="" style="padding-top: 20px; font-weight: 100;"> Our interactive map displays the location of nearby plants and  links to each plant profile.
+          <h3 class="" style="padding-top: 15px; font-weight: 100;"> Our interactive map displays the location of nearby plants and  links to each plant profile.
           </h3>
+
+          <img src="http://i.imgur.com/lC4cAla.png" height="350" width="auto">
 
       </div>
 
@@ -73,9 +79,28 @@
           Spotted a new plant on campus?
         </h2>
 
-        <h3 style="padding-top: 20px; font-weight: 100;"> Create a profile page for that plant and add updates to its feed, like pictures or statuses.
+        <h3 style="padding-top: 20px; font-weight: 100;"> Add the plant through our forms and wait for an admin's approval!
         </h3>
 
+        <img src="http://i.imgur.com/juUiIE4.png" width="687" height="auto" style="opacity:70;">
+
+      </div>
+
+      <div class="learn-more-3">
+
+        <h2 class="" style=" font-weight: 100 !important;">
+          What are you waiting for? Try us out!
+        </h2>
+
+        <h3 class="" style="padding-top: 15px; font-weight: 100;">LetUmGrow is an amazingly easy place to start learning
+          about plants.
+        </h3>
+
+        <div style="padding-top: 15px;">
+        <a href="#top">
+          <div class="bot-button" style="">Back To Top</div>
+        </a>
+        </div>
       </div>
 
       <div class="ui modal landing-page">
@@ -301,6 +326,7 @@
       }
     });
   </script>
+
   {{/unless}}
   <!-- Displays home page content if the user is logged in-->
   {{#if currentUser}}
@@ -336,6 +362,9 @@
 
   </div>
   {{/if}}
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
 </template>
