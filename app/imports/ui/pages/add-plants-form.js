@@ -81,7 +81,7 @@ Template.Add_Plants_Form.onCreated(function onCreated() {
       added: function (document) {
         // Create a marker for this document
         var marker = new google.maps.Marker({
-          draggable: true,
+          // draggable: true,
           animation: google.maps.Animation.DROP,
           position: new google.maps.LatLng(document.decimalLatitude, document.decimalLongitude),
           map: map.instance,
