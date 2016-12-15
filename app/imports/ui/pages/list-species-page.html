@@ -1,0 +1,55 @@
+<template name="List_Species_Page">
+  {{#If_Logged_In}}
+
+  <h1 class="ui centered header">List of Species</h1>
+  <div style="margin-bottom: 20px" class="ui container">
+    <p> These are all of the species of plants in our database.</p>
+  </div>
+
+  <!--Semantic UI card implementation of species list-->
+  <!--<div class="ui centered container">-->
+  <div class="ui centered link cards">
+    {{#if Template.subscriptionsReady}}
+    {{#each species in speciesList}}
+    <div class="ui card">
+      <div class="content" href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
+        <a class="right floated mini ui image" href="{{pathFor 'Species_Profile_Page' _id=species._id}}"><img src="/images/letumgrow-logo.png"></a>
+        <a href="{{pathFor 'Species_Profile_Page' _id=species._id}}" class="header">{{species.scientificName}}</a>
+        <div class="meta">
+          {{#if species.HawaiianName}}
+            Hawaiian: {{species.HawaiianName}}
+            {{#if species.vernacularName}}
+              <br>
+            {{/if}}
+          {{/if}}
+          {{#if species.vernacularName}}
+            Vernacular: {{species.vernacularName}}
+          {{/if}}
+        </div>
+        <div class="description">
+          <p>Origin: {{species.origin}}</p>
+          <p>Biogeography: {{species.biogeography}}</p>
+          <br>
+          <p>Threat: {{species.threat}}</p>
+        </div>
+      </div>
+      <div class="extra content">
+        <a href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
+          <i class="tree icon"></i>
+          Profile
+        </a>
+        <a href="{{pathFor 'Edit_Species_Page' _id=species._id}}">
+          <i class="edit icon"></i>
+          Edit
+        </a>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    {{> Loading}}
+    {{/if}}
+  </div>
+  <!--</div>-->
+
+  {{/If_Logged_In}}
+</template>

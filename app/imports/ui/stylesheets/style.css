@@ -11,12 +11,25 @@ body {
   margin-bottom: 70px;
 }
 
+<<<<<<< HEAD
 .footer-links {
   color: #FFFFFF;
 }
 
 .footer-links-padding {
   padding-top: 30px;
+=======
+.ui.header {
+  background: #34444e;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.ui.form .field > label {
+  background: #34444e;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+>>>>>>> master
 }
 
 .learn-more {
@@ -233,7 +246,14 @@ h1.ui.header {
 Used on /plant-map
 */
 .plant-map-container {
-  width: 800px;
+  width: 1200px;
+  max-width: 100%;
+  height: 400px;
+  /*max-height: 100%;*/
+}
+
+.plant-profile-map-container {
+  width: 1200px;
   max-width: 100%;
   height: 400px;
   /*max-height: 100%;*/
