@@ -1,0 +1,45 @@
+<template name="List_Species_Page">
+  {{#If_Logged_In}}
+
+  <h1 class="ui centered header">Species List</h1>
+  <div style="padding-bottom:20px" class="ui container">
+    <p> These are all the species of plants in our database.</p>
+  </div>
+
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>Scientific Name</th>
+            <th>Vernacular Name</th>
+            <th>Hawaiian Name</th>
+            <th>Origin</th>
+            <th>Biogegraphy</th>
+            <th>Threat</th>
+            <th></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each species in speciesList}}
+            <tr>
+              <td>{{species.scientificName}}</td>
+              <td>{{species.vernacularName}}</td>
+              <td>{{species.HawaiianName}}</td>
+              <td>{{species.origin}}</td>
+              <td>{{species.biogeography}}</td>
+              <td>{{species.threat}}</td>
+              <td><a href="{{pathFor 'Edit_Species_Page' _id=species._id}}">Edit</a></td>
+              <!--not working-->
+              <!--<td><button class="ui button delete" type="submit">X</button></td>-->
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

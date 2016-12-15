@@ -24,6 +24,9 @@ import './home-page.html';
 import './list-stuff-page.html';
 import './list-stuff-page.js';
 
+import './list-species-page.html';
+import './list-species-page.js';
+
 import './list-plants-page.html';
 import './list-plants-page.js';
 
