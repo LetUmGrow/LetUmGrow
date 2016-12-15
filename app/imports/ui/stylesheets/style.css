@@ -11,6 +11,18 @@ body {
   margin-bottom: 70px;
 }
 
+.ui.header {
+  background: #34444e;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.ui.form .field > label {
+  background: #34444e;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .learn-more {
   background-image: linear-gradient(180deg, #34444e, #159957);
   /*background-image: linear-gradient(120deg, #155799, #159957);*/

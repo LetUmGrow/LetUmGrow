@@ -1,0 +1,47 @@
+<template name="Species_Profile_Page">
+  {{#If_Logged_In}}
+    <h1 class="ui centered header">Species Profile</h1>
+    <div class="ui container">
+      {{#if Template.subscriptionsReady}}
+        <div class="ui centered card">
+          <div class="content">
+            <div class="header"><a href="{{pathFor 'Species_Profile_Page' _id=species._id}}" class="header">{{species.scientificName}}</a></div>
+          </div>
+          <div class="image"><img src="/images/letumgrow-logo.png"></div>
+          <div class="content" href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
+            <a href="{{pathFor 'Species_Profile_Page' _id=species._id}}" class="header">{{species.scientificName}}</a>
+            <div class="meta">
+            Family: {{species.family}}
+            <br>
+              {{#if species.HawaiianName}}
+              Hawaiian: {{species.HawaiianName}}
+              {{#if species.vernacularName}}
+              <br>
+              {{/if}}
+              {{/if}}
+              {{#if species.vernacularName}}
+              Vernacular: {{species.vernacularName}}
+              {{/if}}
+            </div>
+            <div class="description">
+              <p>Origin: {{species.origin}}</p>
+              <p>Biogeography: {{species.biogeography}}</p>
+              <br>
+              <p>Threat: {{species.threat}}</p>
+              <h4>More info:</h4>
+              <p>{{species.description}}</p>
+            </div>
+          </div>
+          <div class="extra content">
+            <a href="{{pathFor 'Edit_Species_Page' _id=species._id}}">
+              <i class="edit icon"></i>
+              Edit
+            </a>
+          </div>
+        </div>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>
