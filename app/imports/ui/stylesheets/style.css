@@ -11,6 +11,14 @@ body {
   margin-bottom: 70px;
 }
 
+.footer-links {
+  color: #FFFFFF;
+}
+
+.footer-links-padding {
+  padding-top: 30px;
+}
+
 .ui.header {
   background: #34444e;
   color: #FFFFFF;

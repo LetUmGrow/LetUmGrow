@@ -1,11 +1,8 @@
 <template name="Landing_Page">
   <!-- Displays landing page content if the user isn't logged in -->
   {{#unless currentUser}}
-  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-
   <div id="top" style="position: absolute; top: 0; padding-top: 40px; z-index: 9999;"></div>
   <!-- Place this tag where you want the button to render. -->
-  <a class="github-button" href="https://github.com/letumgrow" data-style="mega" aria-label="Follow @letumgrow on GitHub">Follow @letumgrow</a>
 
   <div style="
   background-image: url('/images/landing-page-background.jpg');
@@ -342,17 +339,23 @@
     </div>
 
     <div class="ui container">
-      <p>Looking for a specific plant or want to learn more about a plant that you've seen? Please explore our menu above or click on the following links.  The <a
-          href="{{pathFor 'Tutorial_Page'}}">TUTORIAL PAGE</a> maps out a general workflow for our application.   Our <a
-          href="{{pathFor 'Plant_Map_Page'}}">INTERACTIVE MAP</a> displays the location of nearby plants and allows you
-        to add plants not yet identified on the map. Interested in Hawaiian Remedies (Lāʻau Lapaʻau)? Check out some <a
-            href="{{pathFor 'Plant_Map_Page'}}">REMEDIES</a> passed down from <a
+      <p>Looking for a specific plant or want to learn more about a plant that you've seen?  Keep track of plants in your garden or view what plants are on your favorite hike with LetUmGrow.  Please explore our menu above or click on the following links.  The <a
+          href="{{pathFor 'Tutorial_Page'}}">TUTORIAL</a> goes over the general use for this application. The <a
+          href="{{pathFor 'Add_Plants_Page'}}">ADD PLANT</a> section allows you to add a plant from your current location or specific location via Latitude/Longitude coordinates. The <a
+          href="{{pathFor 'Plant_Map_Page'}}">PLANT MAP</a> displays the location of all added plants on the map, and allows you
+        to add plants not yet identified on the map via clicking on the map. The <a
+            href="{{pathFor 'List_Plants_Page'}}">LIST PLANTS</a> section allows you to view and edit plants in the database and also links to each plant's individual profile. The <a
+            href="{{pathFor 'User_Profile_Page'}}">USER PROFILE</a> allows you to view and edit specific information associated with your account.  Interested in Lāʻau Lapaʻau (Hawaiian plant remedies)? Check out some <a
+            href="{{pathFor 'Remedy_Page'}}">REMEDIES</a> passed down from <a
             href="https://www.youtube.com/watch?v=DTLCHAVdM_Q">Kumu Levon
-          Ohai</a>. The <a
-            href="{{pathFor 'User_Profile_Page'}}">USER PROFILE PAGE</a> allows you to view and edit specific information associated with your account.  And the <a
-            href="{{pathFor 'FAQ_Page'}}">FAQ PAGE</a> answers some of the frequently asked questions that users come across in the LetUmGrow app. Another great way to use the app is to add plants from your garden at home or even your favorite
-        hike! Our purpose is to bridge the gaps between people, technology, and nature. We need plants around in order
+          Ohai</a>. And the <a
+            href="{{pathFor 'FAQ_Page'}}">FAQ PAGE</a> answers some of the frequently asked questions that users come across in the LetUmGrow app. Our purpose is to bridge the gaps between people, technology, and nature. We need plants around in order
         for us to survive so just "LetUmGrow"!</p>
+      <!-- LetUmGrow theme song! -->
+      <audio id="letumgrowsong" src="/images/LetUmGrowSong.wav"></audio>
+      <div class="ui small container" onclick="document.getElementById('letumgrowsong').play()"><a href="#letumgrowsong">Please DO NOT click on me, you WILL REGRET IT...</a></div>
+
+
     </div>
 
   </div>
