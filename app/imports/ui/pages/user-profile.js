@@ -4,6 +4,7 @@
 import { Template } from 'meteor/templating';
 import { Contacts } from '../../api/contacts/contacts.js';
 import { UserInfo } from '../../api/userInfo/userInfo.js';
+import { Plants } from '../../api/plants/plants.js';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -17,7 +18,7 @@ Template.User_Profile_Page.onCreated(function onCreated() {
     this.subscribe('UserInfo');
   });
   this.autorun(() => {
-    this.subscribe('MyUser');
+    this.subscribe('Plants');
   });
 });
 
@@ -26,6 +27,7 @@ Template.User_Profile_Page.helpers({
   /**
    * @returns {*} All of the Contacts documents.
    */
+
 
   contactsList() {
     return Contacts.find();
@@ -51,6 +53,10 @@ Template.User_Profile_Page.helpers({
       UserInfo.insert({ owner: userId, username: username, email: `${username}@hawaii.edu`, first: 'Eponymous', last: 'User', photoUrl: 'http://semantic-ui.com/images/wireframe/image.png' });
     }
     return UserInfo.find({ username: username});
+  },
+  myPlants() {
+    let addedBy = Meteor.user() ? Meteor.user().profile.name : 'No current user';
+    return Plants.find({ addedBy: addedBy});
   },
 });
 

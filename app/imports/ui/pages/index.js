@@ -16,8 +16,14 @@ import './add-plants-form.js';
 import './edit-stuff-page.html';
 import './edit-stuff-page.js';
 
+import './edit-contact-page.html';
+import './edit-contact-page.js';
+
 import './edit-plants-page.html';
 import './edit-plants-page.js';
+
+import './edit-species-page.html';
+import './edit-species-page.js';
 
 import './home-page.html';
 
