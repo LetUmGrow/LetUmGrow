@@ -11,14 +11,14 @@ body {
   margin-bottom: 70px;
 }
 
-<<<<<<< HEAD
 .footer-links {
   color: #FFFFFF;
 }
 
 .footer-links-padding {
   padding-top: 30px;
-=======
+}
+
 .ui.header {
   background: #34444e;
   color: #FFFFFF;
@@ -29,7 +29,6 @@ body {
   background: #34444e;
   color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
->>>>>>> master
 }
 
 .learn-more {
