@@ -58,7 +58,7 @@ FlowRouter.route('/list-plants', {
   },
 });
 
-FlowRouter.route('/list-species', {
+FlowRouter.route('/species/list', {
   name: 'List_Species_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'List_Species_Page' });
@@ -132,6 +132,13 @@ FlowRouter.route('/plants/profile/:_id', {
   name: 'Plant_Profile_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Plant_Profile_Page' });
+  },
+});
+
+FlowRouter.route('/species/profile/:_id', {
+  name: 'Species_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Species_Profile_Page' });
   },
 });
 

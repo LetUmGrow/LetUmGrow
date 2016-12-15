@@ -1,8 +1,8 @@
 import './add-contact-page.html';
 import './add-contact-page.js';
 
-import './edit-profile-page.html';
-import './edit-profile-page.js';
+import './edit-user-profile-page.html';
+import './edit-user-profile-page.js';
 
 import './add-stuff-page.html';
 import './add-stuff-page.js';
@@ -51,6 +51,9 @@ import './user-profile.js';
 
 import './plant-profile-page.html';
 import './plant-profile-page.js';
+
+import './species-profile-page.html';
+import './species-profile-page.js';
 
 import './plant-map.html';
 import './plant-map.js';
