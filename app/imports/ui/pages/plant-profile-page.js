@@ -1,6 +1,7 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import {Template} from 'meteor/templating';
 import {Plants} from '../../api/plants/plants.js';
+import {Species} from '../../api/species/species.js';
 import {Meteor} from 'meteor/meteor';
 
 /* eslint-disable object-shorthand, no-unused-vars */
@@ -30,12 +31,20 @@ Template.Plant_Profile_Page.helpers({
         zoom: 17,
       };
     }
+  },
+  species() {
+    const plant = Plants.findOne(FlowRouter.getParam('_id'));
+    const scientificName = plant.scientificName;
+    return Species.findOne({scientificName: scientificName});
   }
 });
 
 Template.Plant_Profile_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Plants');
+  });
+  this.autorun(() => {
+    this.subscribe('Species');
   });
   GoogleMaps.ready('Plant Profile Map', function(map) {
     // google.maps.event.addListener(map.instance, 'click', function(event) {

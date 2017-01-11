@@ -5,7 +5,7 @@
   <!-- Place this tag where you want the button to render. -->
 
   <div style="
-  background-image: url('/images/landing-page-background.jpg');
+  /*background-image: url('/images/landing-page-background.jpg');*/
   background-repeat: no-repeat;
   background-size:contain;
   width: 100%;
@@ -66,9 +66,12 @@
           <h3 class="" style="padding-top: 15px; font-weight: 100;"> Our interactive map displays the location of nearby plants and  links to each plant profile.
           </h3>
 
-          <img src="http://i.imgur.com/lC4cAla.png" height="350" width="auto">
+        <img src="http://i.imgur.com/lC4cAla.png" class="ui centered huge image">
+          <!--<img src="http://i.imgur.com/lC4cAla.png" height="350" width="auto">-->
 
       </div>
+
+      <div id="learn-more-2-transition"></div>
 
       <div id="learn-more-2">
 
@@ -79,11 +82,15 @@
         <h3 style="padding-top: 20px; font-weight: 100;"> Add the plant through our forms and wait for an admin's approval!
         </h3>
 
-        <img src="http://i.imgur.com/juUiIE4.png" width="687" height="auto" style="opacity:70;">
+        <!--<img src="http://i.imgur.com/juUiIE4.png" width="687" height="auto" style="opacity:70;">-->
+        <img src="http://i.imgur.com/juUiIE4.png" class="ui centered huge image">
+        <!--class="learn-more_image_3"-->
 
       </div>
 
-      <div class="learn-more-3">
+      <div id="learn-more-3-transition"></div>
+
+      <div id="learn-more-3"><!---->
 
         <h2 class="" style=" font-weight: 100 !important;">
           What are you waiting for? Try us out!
@@ -105,8 +112,8 @@
         <div class="header">
           <img class="ui centered image" style="height: 75px;" src="images/letumgrow-logo.png"
                alt="3 leaf LetUmGrow logo">
-          <h1 style="color:black" class="ui centered header">LetUmGrow Terms and Conditions of Use</h1>
-          <h2 class="ui centered header">**DISCLAIMER: THIS APP IS FOR INFORMATIONAL USE ONLY**</h2>
+          <h1 style="color:black; background-color:inherit" class="ui centered header">LetUmGrow Terms and Conditions of Use</h1>
+          <h2 style="color:black; background-color:inherit" class="ui centered header">**DISCLAIMER: THIS APP IS FOR INFORMATIONAL USE ONLY**</h2>
         </div>
         <div style="color:black" class="image content">
           <div style="padding-top: 20px;"
@@ -209,11 +216,11 @@
                 at any time in our sole discretion without notice or explanation.</p>
               <p><strong>9. Limitations and exclusions of liability</strong></p>
               <p>9.1 Nothing in these terms and conditions will:</p>
-              <p>(a) limit or exclude any liability for death or personal injury resulting from negligence, WE ARE
+              <p>(a) limit or exclude any liability of users for death or personal injury resulting from negligence, WE ARE
                 NOT
                 RESPONSIBLE
                 FOR EFFECTS OF USING OR CONSUMING PLANTS THAT ARE LISTED ON THIS APP;</p>
-              <p>(b) limit or exclude any liability for fraud or fraudulent misrepresentation;</p>
+              <p>(b) limit or exclude any liability of users for fraud or fraudulent misrepresentation;</p>
               <p>(c) limit any liabilities in any way that is not permitted under applicable law; or</p>
               <p>(d) exclude any liabilities that may not be excluded under applicable law.</p>
               <p>9.2 To the extent that our website and the information and services on our website are provided
@@ -352,8 +359,8 @@
             href="{{pathFor 'FAQ_Page'}}">FAQ PAGE</a> answers some of the frequently asked questions that users come across in the LetUmGrow app. Our purpose is to bridge the gaps between people, technology, and nature. We need plants around in order
         for us to survive so just "LetUmGrow"!</p>
       <!-- LetUmGrow theme song! -->
-      <audio id="letumgrowsong" src="/images/LetUmGrowSong.wav"></audio>
-      <div class="ui small container" onclick="document.getElementById('letumgrowsong').play()"><a href="#letumgrowsong">Please DO NOT click on me, you WILL REGRET IT...</a></div>
+      <audio id="letumgrowsong" src="/audio/LetUmGrowSong.wav"></audio>
+      <!--<div class="ui small container" onclick="document.getElementById('letumgrowsong').play()"><a href="#letumgrowsong">Please DO NOT click on me, you WILL REGRET IT...</a></div>-->
 
 
     </div>
