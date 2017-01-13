@@ -1,0 +1,375 @@
+<template name="Landing_Page">
+  <!-- Displays landing page content if the user isn't logged in -->
+  {{#unless currentUser}}
+  <div id="top" style="position: absolute; top: 0; padding-top: 40px; z-index: 9999;"></div>
+  <!-- Place this tag where you want the button to render. -->
+
+  <div style="
+  /*background-image: url('/images/landing-page-background.jpg');*/
+  background-repeat: no-repeat;
+  background-size:contain;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  padding-top: 56.25%">
+  </div>
+
+  <div style="
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;">
+
+    <img style="
+    display: block;
+    width: auto;
+    max-height: 30% !important;
+    min-height: 10% !important;
+    margin-top: 99px;
+    margin-left: auto;
+    margin-right: auto;"
+         src="/images/letumgrow-logo.png"/>
+
+    <img style="
+    display: block;
+    height: auto;
+    max-width: 60% !important;
+    min-width: 380px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;" src="/images/letumgrow-title.png"/>
+
+    <p style="
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18pt;
+    margin-top: 40px;">
+      Plants are family too! Get to know them better.</p>
+
+
+    <div class="centerize">
+
+      <div style="padding-top:0px" class="ui button show login">Login</div>
+
+      <a href="#Learn_More">
+        <div class="tutorial" style="margin-left: 45px;">Learn More</div>
+      </a>
+
+      <div id="Learn_More" class="learn-more">
+
+          <h2 class="" style="padding-top:30px; font-weight: 100 !important;">
+            Ever seen a plant on campus and wanted to learn more about it?
+          </h2>
+
+          <h3 class="" style="padding-top: 15px; font-weight: 100;"> Our interactive map displays the location of nearby plants and  links to each plant profile.
+          </h3>
+
+        <img src="http://i.imgur.com/lC4cAla.png" class="ui centered huge image">
+          <!--<img src="http://i.imgur.com/lC4cAla.png" height="350" width="auto">-->
+
+      </div>
+
+      <div id="learn-more-2-transition"></div>
+
+      <div id="learn-more-2">
+
+        <h2 class="" style="padding-top:30px; font-weight: 100;">
+          Spotted a new plant on campus?
+        </h2>
+
+        <h3 style="padding-top: 20px; font-weight: 100;"> Add the plant through our forms and wait for an admin's approval!
+        </h3>
+
+        <!--<img src="http://i.imgur.com/juUiIE4.png" width="687" height="auto" style="opacity:70;">-->
+        <img src="http://i.imgur.com/juUiIE4.png" class="ui centered huge image">
+        <!--class="learn-more_image_3"-->
+
+      </div>
+
+      <div id="learn-more-3-transition"></div>
+
+      <div id="learn-more-3"><!---->
+
+        <h2 class="" style=" font-weight: 100 !important;">
+          What are you waiting for? Try us out!
+        </h2>
+
+        <h3 class="" style="padding-top: 15px; font-weight: 100;">LetUmGrow is an amazingly easy place to start learning
+          about plants.
+        </h3>
+
+        <div style="padding-top: 15px;">
+        <a href="#top">
+          <div class="bot-button" style="">Back To Top</div>
+        </a>
+        </div>
+      </div>
+
+      <div class="ui modal landing-page">
+        <i class="close icon"></i>
+        <div class="header">
+          <img class="ui centered image" style="height: 75px;" src="images/letumgrow-logo.png"
+               alt="3 leaf LetUmGrow logo">
+          <h1 style="color:black; background-color:inherit" class="ui centered header">LetUmGrow Terms and Conditions of Use</h1>
+          <h2 style="color:black; background-color:inherit" class="ui centered header">**DISCLAIMER: THIS APP IS FOR INFORMATIONAL USE ONLY**</h2>
+        </div>
+        <div style="color:black" class="image content">
+          <div style="padding-top: 20px;"
+               class="ui middle aligned centered container">
+            <div class="ui container" style="height: 200px; overflow: auto;">
+              <p><strong>1. Introduction</strong></p>
+              <p>1.1 These terms and conditions shall govern your use of our app.</p>
+              <p>1.2 By using our website, you accept these terms and conditions in full; accordingly, if you
+                disagree
+                with these
+                terms and conditions or any part of these terms and conditions, you must not use our app.</p>
+              <p>1.3 If you register with our app, submit any material to our website or use any of our app
+                services,
+                we
+                will ask
+                you to expressly agree to these terms and conditions.</p>
+              <p>1.4 You must be at least 18 years of age to use our app; by using our app or agreeing to these
+                terms
+                and
+                conditions, you warrant and represent to us that you are at least 18 years of age.</p>
+              <p><strong>2. Credit</strong></p>
+              <p>2.1 This document was created using a template from <a href="http://www.seqlegal.com">SEQ Legal</a>.
+              </p>
+              <p><strong>3. Copyright notice</strong></p>
+              <p>3.1 Copyright (c) 2016 LetUmGrow</p>
+              <p>3.2 Subject to the express provisions of these terms and conditions:</p>
+              <p>(a) we, together with our licensors, own and control all the copyright and other intellectual
+                property
+                rights in
+                our app and the material on our app; and</p>
+              <p>(b) all the copyright and other intellectual property rights in our app and the material on our app
+                are
+                reserved.</p>
+              <p><strong>4. Licence to use website</strong></p>
+              <p>4.1 Except as expressly permitted by Section 4.1 or the other provisions of these terms and
+                conditions,
+                you must not download any material from our app or save any such material to your computer.</p>
+              <p>4.2 You may only use our app for your own personal and business purposes, and you must not use our
+                app
+                for any other purposes.</p>
+              <p>4.3 Except as expressly permitted by these terms and conditions, you must not edit or otherwise
+                modify
+                any material on our website.</p>
+              <p>4.4 Unless you own or control the relevant rights in the material, you must not:</p>
+              <p>(a) republish material from our website (including republication on another website);</p>
+              <p>(b) sell, rent or sub-license material from our website;</p>
+              <p>(c) show any material from our website in public;</p>
+              <p>(d) exploit material from our website for a commercial purpose; or</p>
+              <p>(e) redistribute material from our website.</p>
+              <p>4.5 We reserve the right to restrict access to areas of our website, or indeed our whole website,
+                at
+                our discretion; you must not circumvent or bypass, or attempt to circumvent or bypass, any access
+                restriction measures on our website.</p>
+              <p><strong>5. Acceptable use</strong></p>
+              <p>5.1 You must not:</p>
+              <p>(a) use our app in any way or take any action that causes, or may cause, damage to the plants
+                listed
+                in
+                our
+                app;</p>
+              <p>(b) use our app in any way that is unlawful, illegal, fraudulent or harmful, or in connection with
+                any
+                unlawful,
+                illegal, fraudulent or harmful purpose or activity;</p>
+              <p> (c) use our app as a means to identify edible plants to consume personally, THIS APP IS FOR
+                INFORMATIONAL USE
+                ONLY;</p>
+              <p>5.2 You must ensure that all the information you supply to us through our app, or in relation to
+                our
+                app, is
+                true,
+                accurate, current, complete and non-misleading.</p>
+              <p>6. <strong>Registration and accounts</strong></p>
+              <p>6.1 To be eligible for an account on our app under this Section 6, you must have a current
+                hawaii.edu
+                account.</p>
+              <p> 6.2 You must not allow any other person to use your account to access the app.
+              </p>
+              <p>6.3 You must notify us in writing immediately if you become aware of any unauthorized use of your
+                account.</p>
+              <p>6.4 You must not use any other person's account to access the app, unless you have that person's
+                express
+                permission
+                to do so.</p>
+
+              <p><strong>7. User login details</strong></p>
+              <p>7.1 You must keep your password confidential.</p>
+              <p>7.2 You must notify us in writing immediately if you become aware of any disclosure of your
+                password.</p>
+              <p>7.3 You are responsible for any activity on our app arising out of any failure to keep your
+                password
+                confidential,
+                and may be held liable for any losses arising out of such a failure.</p>
+              <p>
+              <p>8. Cancellation and suspension of account</p></p>
+              <p>8.1 We may:</p>
+              <p>(a) suspend your account;</p>
+              <p>(b) cancel your account; and/or</p>
+              <p>(c) edit your account details,
+                at any time in our sole discretion without notice or explanation.</p>
+              <p><strong>9. Limitations and exclusions of liability</strong></p>
+              <p>9.1 Nothing in these terms and conditions will:</p>
+              <p>(a) limit or exclude any liability of users for death or personal injury resulting from negligence, WE ARE
+                NOT
+                RESPONSIBLE
+                FOR EFFECTS OF USING OR CONSUMING PLANTS THAT ARE LISTED ON THIS APP;</p>
+              <p>(b) limit or exclude any liability of users for fraud or fraudulent misrepresentation;</p>
+              <p>(c) limit any liabilities in any way that is not permitted under applicable law; or</p>
+              <p>(d) exclude any liabilities that may not be excluded under applicable law.</p>
+              <p>9.2 To the extent that our website and the information and services on our website are provided
+                free
+                of
+                charge,
+                we
+                will not be liable for any loss or damage of any nature.</p>
+              <p>9.3 We will not be liable to you in respect of any losses arising out of any event or events beyond
+                our
+                reasonable
+                control.</p>
+              <p>9.4 We will not be liable to you in respect of any loss or corruption of any data, database or
+                software.</p>
+              <p>9.5 We will not be liable to you in respect of any special, indirect or consequential loss or
+                damage.</p>
+              <p>9.6 You accept that we have an interest in limiting the personal liability of our officers and
+                employees and,
+                having regard to that interest, you acknowledge that we are a limited liability entity; you agree
+                that
+                you will
+                not
+                bring any claim personally against our officers or employees in respect of any losses you suffer in
+                connection
+                with
+                the app or these terms and conditions (this will not, of course, limit or exclude the liability of
+                the
+                limited
+                liability entity itself for the acts and omissions of our officers and employees).</p>
+              <p><strong>10. Breaches of these terms and conditions</strong></p>
+              <p>10.1 Without prejudice to our other rights under these terms and conditions, if you breach these
+                terms
+                and
+                conditions in any way, or if we reasonably suspect that you have breached these terms and conditions
+                in
+                any way,
+                we
+                may:</p>
+              <p>(a) send you one or more formal warnings;</p>
+              <p> (b) temporarily suspend your access to our app;
+              </p>
+              <p>(c) permanently prohibit you from accessing our app;</p>
+              <p> (d) block computers using your IP address from accessing our app;
+              </p>
+              <p>(e) contact any or all of your internet service providers and request that they block your access
+                to
+                our app;</p>
+              <p>(f) commence legal action against you, whether for breach of contract or otherwise; and/or</p>
+              <p> (g) suspend or delete your account on our app.
+              </p>
+              <p>10.2 Where we suspend or prohibit or block your access to our app or a part of our app, you must
+                not
+                take any
+                action
+                to circumvent such suspension or prohibition or blocking (including without limitation creating
+                and/or
+                using a
+                different account).</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="actions">
+
+          <div class="ui cancel button green">{{> Cas_Login }}</div>
+
+          <div class="ui cancel button red">Decline</div>
+
+          <!-- Commenting out for now, since the decline button does the same thing -->
+          <!--<div class="ui cancel button">Close Window</div>-->
+
+        </div>
+      </div>
+    </div>
+
+    <!--<a class="myButton2"-->
+    <!--href="{{pathFor 'Terms_And_Conditions_Page'}}"-->
+    <!--style="-->
+    <!--margin-left: 45px;-->
+    <!--margin-right: auto;">-->
+    <!--Tutorial</a>-->
+
+  </div>
+
+  <!-- Activates modal upon clicking of login button, smooth scrolling transition -->
+  <script>
+    $(document).on("click", ".show", function () {
+      $(".ui.modal").modal("setting", {
+//        closable: false,
+//        onApprove: function () {
+//          return false;
+//        }
+      }).modal("show");
+    })
+
+
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  </script>
+
+  {{/unless}}
+  <!-- Displays home page content if the user is logged in-->
+  {{#if currentUser}}
+  <div class="ui middle aligned grid text container">
+
+    <div class="four wide column">
+      <img class="ui small image" src="/images/letumgrow-logo.png"/>
+    </div>
+
+    <div class="eight wide column">
+      <h1>Plants are family too,</h1>
+      <h1>Get to know them better</h1>
+    </div>
+
+    <div class="ui container">
+      <p>Looking for a specific plant or want to learn more about a plant that you've seen?  Keep track of plants in your garden or view what plants are on your favorite hike with LetUmGrow.  Please explore our menu above or click on the following links.  The <a
+          href="{{pathFor 'Tutorial_Page'}}">TUTORIAL</a> goes over the general use for this application. The <a
+          href="{{pathFor 'Add_Plants_Page'}}">ADD PLANT</a> section allows you to add a plant from your current location or specific location via Latitude/Longitude coordinates. The <a
+          href="{{pathFor 'Plant_Map_Page'}}">PLANT MAP</a> displays the location of all added plants on the map, and allows you
+        to add plants not yet identified on the map via clicking on the map. The <a
+            href="{{pathFor 'List_Plants_Page'}}">LIST PLANTS</a> section allows you to view and edit plants in the database and also links to each plant's individual profile. The <a
+            href="{{pathFor 'User_Profile_Page'}}">USER PROFILE</a> allows you to view and edit specific information associated with your account.  Interested in Lāʻau Lapaʻau (Hawaiian plant remedies)? Check out some <a
+            href="{{pathFor 'Remedy_Page'}}">REMEDIES</a> passed down from <a
+            href="https://www.youtube.com/watch?v=DTLCHAVdM_Q">Kumu Levon
+          Ohai</a>. And the <a
+            href="{{pathFor 'FAQ_Page'}}">FAQ PAGE</a> answers some of the frequently asked questions that users come across in the LetUmGrow app. Our purpose is to bridge the gaps between people, technology, and nature. We need plants around in order
+        for us to survive so just "LetUmGrow"!</p>
+      <!-- LetUmGrow theme song! -->
+      <audio id="letumgrowsong" src="/audio/LetUmGrowSong.wav"></audio>
+      <!--<div class="ui small container" onclick="document.getElementById('letumgrowsong').play()"><a href="#letumgrowsong">Please DO NOT click on me, you WILL REGRET IT...</a></div>-->
+
+
+    </div>
+
+  </div>
+  {{/if}}
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+</template>

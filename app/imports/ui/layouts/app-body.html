@@ -1,5 +1,11 @@
 <template name="App_Body">
-  {{> Header}}
+  {{#if currentUser}}
+    {{> Header}}
+  {{/if}}
   {{>Template.dynamic template=main}}
+  <div style="margin-bottom: 50px;">
+    </div>
+  {{#if currentUser}}
   {{> Footer}}
+  {{/if}}
 </template>

@@ -1,0 +1,14 @@
+<template name="Cas_Login">
+  {{#unless currentUser}}
+    <div class="text cas-login">Accept and Sign in to MyUH</div>
+  {{/unless}}
+  {{#if currentUser}}
+    <div class="ui simple dropdown item">
+      <div class="text">{{usernameCurrent}}</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="item cas-logout">Logout</div>
+      </div>
+    </div>
+  {{/if}}
+</template>

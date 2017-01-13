@@ -1,0 +1,100 @@
+<template name="User_Profile_Page">
+  {{#If_Logged_In}}
+  <div style="padding-top: 20px" class="ui middle aligned centered container">
+    <div style="background-color: #34444e !important" class="ui segments">
+
+      <h1 class="ui header">My Profile</h1>
+
+      <div style="background-color: #34444e !important" class="ui segment">
+
+        {{#if Template.subscriptionsReady}}
+        <h2>Me</h2>
+        {{#each user in myUser}}
+        <div class="ui two column grid">
+          <div class="ui column">
+            <img class="ui centered medium image" src={{user.photoUrl}}>
+          </div>
+          <div class="ui column">
+            <p>Username: {{user.username}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>First Name: {{user.first}}</p>
+            <p>Last Name: {{user.last}}</p>
+            <p><a href="{{pathFor 'Edit_Profile_Page' _id=user._id}}">Edit</a></p>
+          </div>
+        </div>
+        {{/each}}
+        {{else}}
+        {{> Loading}}
+        {{/if}}
+      </div>
+
+      <div style="background-color: #34444e !important" class="ui segment">
+
+        <h2>Saved locations</h2>
+        <div class="ui centered link cards">
+          {{#if Template.subscriptionsReady}}
+          {{#each plant in myPlants}}
+          <div class="ui card">
+            <div class="content" href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
+              <a class="right floated mini ui image" href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}"><img src="/images/letumgrow-logo.png"></a>
+              <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}" class="header">{{plant.vernacularName}}</a>
+              <div class="meta">
+                Added by {{plant.addedBy}}
+              </div>
+              <div class="description">
+                <p>{{plant.plDesc}}</p>
+                <br>
+                <p>Located at {{plant.decimalLatitude}}, {{plant.decimalLongitude}}</p>
+              </div>
+            </div>
+            <div class="extra content">
+              <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
+                <i class="tree icon"></i>
+                Profile
+              </a>
+              <a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">
+                <i class="edit icon"></i>
+                Edit
+              </a>
+            </div>
+          </div>
+          {{/each}}
+          {{else}}
+          {{> Loading}}
+          {{/if}}
+        </div>
+
+      </div>
+
+      <div style="background-color: #34444e !important" class="ui segment">
+        <h2>Contacts</h2>
+        <a class="item" href="{{pathFor 'Add_Contact_Page'}}">Add Contact</a>
+        <br>
+        <div class="ui centered link cards">
+          {{#if Template.subscriptionsReady}}
+          {{#each contact in contactsList}}
+          <div class="ui card">
+            <div class="content" href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
+              <a class="header">{{contact.first}} {{contact.last}}</a>
+              <div class="description">
+                <p>{{contact.email}}</p>
+              </div>
+            </div>
+            <div class="extra content">
+              <a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">
+                <i class="edit icon"></i>
+                Edit
+              </a>
+            </div>
+          </div>
+          {{/each}}
+          {{else}}
+          {{> Loading}}
+          {{/if}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {{/If_Logged_In}}
+</template>

@@ -1,0 +1,89 @@
+<template name="Add_Plants_Form">
+  <style>
+    form#AddPlantForm div label {
+      color: white;
+    }
+    .add-plants-form-map-container {
+      width: 1200px;
+      max-width: 100%;
+      height: 400px;
+      margin-bottom: 10px;
+      /*max-height: 100%;*/
+    }
+  </style>
+
+  <div class="ui centered container">
+    <div class="add-plants-form-map-container" style="">
+      {{> googleMap name="Add Plants Form Map" options=addPlantsFormMapOptions}}
+    </div>
+  </div>
+
+  <div class="ui container">
+    <!--<h2>Add Plant</h2>-->
+    <form class="ui form add-plants-form {{ errorClass }}" id="AddPlantForm">
+      <div class="ui button geolocation-button">Use current location</div>
+      <div class="field">
+        <label>Plant Name</label>
+        <input type="text" name="vernacular-name" id="vernacularName" placeholder="The name of the plant">
+        {{#if displayFieldError 'vernacularName' }}
+          <div class="ui error message">
+            <p>You must specify the name of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Scientific Name</label>
+        <input type="text" name="scientific-name" id="scientificName" placeholder="The scientific name of the plant">
+        {{#if displayFieldError 'scientificName' }}
+          <div class="ui error message">
+            <p>You must specify the scientific name of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Latitude</label>
+        <input type="number" name="decimal-latitude" id="decimalLatitude" placeholder="The latitude coordinate of the plant (can be any value from -90 to 90)" max="90" step=".000000000000001">
+        {{#if displayFieldError 'decimalLatitude' }}
+          <div class="ui error message">
+            <p>You must specify the latitude of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Longitude</label>
+        <input type="number" name="decimal-longitude" id="decimalLongitude" placeholder="The longitude coordinate of the plant (can be any value from -180 to 180)" max="180" step=".000000000000001">
+        {{#if displayFieldError 'decimalLongitude' }}
+          <div class="ui error message">
+            <p>You must specify the latitude of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <input type="text" name="p1-desc" id="plDesc" placeholder="A description of the plant">
+        {{#if displayFieldError 'plDesc' }}
+          <div class="ui error message">
+            <p>You must specify the description of the plant.</p>
+          </div>
+        {{/if}}
+      </div>
+      <button class="ui green button" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- smooth scrolling transition -->
+  <script>
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  </script>
+</template>

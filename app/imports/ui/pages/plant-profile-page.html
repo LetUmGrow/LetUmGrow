@@ -1,0 +1,40 @@
+<template name="Plant_Profile_Page">
+  {{#If_Logged_In}}
+    <h1 class="ui centered header">Plant Profile Page</h1>
+    <div class="ui container">
+      {{#if Template.subscriptionsReady}}
+        <div class="ui centered card">
+          <div class="content">
+            <div class="header"><a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}" class="header">{{plant.vernacularName}}</a></div>
+          </div>
+          <div class="image"><img src="/images/letumgrow-logo.png"></div>
+          <div class="content" href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}">
+            <a href="{{pathFor 'Plant_Profile_Page' _id=plant._id}}" class="header">{{plant.vernacularName}}</a>
+            <div class="meta">
+              Added by {{plant.addedBy}}
+            </div>
+            <div class="description">
+              <a href="{{pathFor 'Species_Profile_Page' _id=species._id}}">
+                Species info for {{plant.scientificName}}
+              </a>
+              <p>{{plant.plDesc}}</p>
+              <br>
+              <p>Located at {{plant.decimalLatitude}}, {{plant.decimalLongitude}}</p>
+            </div>
+            <div class="ui plant-profile-map-container container">
+              {{> googleMap name="Plant Profile Map" options=plantProfileMapOptions}}
+            </div>
+          </div>
+          <div class="extra content">
+            <a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">
+              <i class="edit icon"></i>
+              Edit
+            </a>
+          </div>
+        </div>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>

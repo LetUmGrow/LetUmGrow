@@ -1,0 +1,166 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+
+
+FlowRouter.route('/', {
+  name: 'Landing_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Landing_Page' });
+  },
+});
+
+FlowRouter.route('/home-page', {
+  name: 'Home_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Home_Page' });
+  },
+});
+
+FlowRouter.route('/terms', {
+  name: 'Terms_And_Conditions_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Terms_And_Conditions_Page' });
+  },
+});
+
+FlowRouter.route('/faq', {
+  name: 'FAQ_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'FAQ_Page' });
+  },
+});
+
+FlowRouter.route('/remedy', {
+  name: 'Remedy_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Remedy_Page' });
+  },
+});
+
+FlowRouter.route('/tutorial', {
+  name: 'Tutorial_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Tutorial_Page' });
+  },
+});
+/*
+FlowRouter.route('/list', {
+  name: 'List_Stuff_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'List_Stuff_Page' });
+  },
+});
+*/
+
+FlowRouter.route('/list-plants', {
+  name: 'List_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'List_Plants_Page' });
+  },
+});
+
+FlowRouter.route('/species/list', {
+  name: 'List_Species_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'List_Species_Page' });
+  },
+});
+
+FlowRouter.route('/add-contact', {
+  name: 'Add_Contact_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Contact_Page' });
+  },
+});
+
+/*
+FlowRouter.route('/add', {
+  name: 'Add_Stuff_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Stuff_Page' });
+  },
+});
+*/
+
+FlowRouter.route('/add-plants', {
+  name: 'Add_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Add_Plants_Page' });
+  },
+});
+
+FlowRouter.route('/laau', {
+  name: 'Laau_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Laau_Page' });
+  },
+});
+/*
+FlowRouter.route('/stuff/:_id', {
+  name: 'Edit_Stuff_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Stuff_Page' });
+  },
+});
+*/
+FlowRouter.route('/myprofile', {
+  name: 'User_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'User_Profile_Page' });
+  },
+});
+
+FlowRouter.route('/edit-plants/:_id', {
+  name: 'Edit_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Plants_Page' });
+  },
+});
+
+FlowRouter.route('/edit-contact/:_id', {
+  name: 'Edit_Contact_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Contact_Page' });
+  },
+});
+
+FlowRouter.route('/species/edit/:_id', {
+  name: 'Edit_Species_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Species_Page' });
+  },
+});
+
+FlowRouter.route('/edit-profile/:_id', {
+  name: 'Edit_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Profile_Page' });
+  },
+});
+
+FlowRouter.route('/plant-map', {
+  name: 'Plant_Map_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Plant_Map_Page' });
+  },
+});
+
+FlowRouter.route('/plants/profile/:_id', {
+  name: 'Plant_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Plant_Profile_Page' });
+  },
+});
+
+FlowRouter.route('/species/profile/:_id', {
+  name: 'Species_Profile_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Species_Profile_Page' });
+  },
+});
+
+FlowRouter.notFound = {
+  action() {
+    BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
+  },
+};

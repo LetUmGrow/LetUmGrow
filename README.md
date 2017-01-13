@@ -5,3 +5,7 @@
 A social network for plants located on the UH Manoa Campus.
 
 https://LetUmGrow.github.io
+
+View on Galaxy:
+
+CURRENTLY UNAVAILABLE

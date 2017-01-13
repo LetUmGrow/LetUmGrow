@@ -1,0 +1,37 @@
+<template name="Plant_List">
+  {{#If_Logged_In}}
+
+    <h1 class="ui centered header">Plant List</h1>
+    <div style="padding-bottom:20px" class="ui container">
+      <p> These are all the plant locations you have saved via plotting points on the <a href="{{pathFor 'Plant_Map_Page'}}">List Plants</a> page.  Feel free to edit it's data (by clicking on the 'Edit' button on the right) to better describe your plants! </p>
+    </div>
+
+    <div class="ui text container">
+      {{#if Template.subscriptionsReady}}
+        <table style="margin-top: 20px" class="ui celled table">
+          <thead>
+          <tr>
+            <th>vernacularName</th>
+            <th>decimalLatitude</th>
+            <th>decimalLongitude</th>
+            <th>Edit</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each plant in plantsList}}
+            <tr>
+              <td>{{plant.vernacularName}}</td>
+              <td>{{plant.decimalLatitude}}</td>
+              <td>{{plant.decimalLongitude}}</td>
+              <td><a href="{{pathFor 'Edit_Plants_Page' _id=plant._id}}">Edit</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>
