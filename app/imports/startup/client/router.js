@@ -159,6 +159,13 @@ FlowRouter.route('/species/profile/:_id', {
   },
 });
 
+FlowRouter.route('/plants/display', {
+  name: 'Display_Plants_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Display_Plants_Page'});
+  },
+});
+
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });

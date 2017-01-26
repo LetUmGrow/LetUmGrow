@@ -63,3 +63,6 @@ import './species-profile-page.js';
 
 import './plant-map.html';
 import './plant-map.js';
+
+import './display-plants-page.html';
+import './display-plants-page';
