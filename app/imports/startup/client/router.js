@@ -171,3 +171,17 @@ FlowRouter.notFound = {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
   },
 };
+
+//Authenticated routes
+// const authenticatedRoutes = FlowRouter.group({
+//   name: 'authenticated',
+//   triggersEnter: [ authenticatedRedirect ]
+// });
+//
+// authenticatedRoutes.route( '/users', {
+//   name: 'users',
+//   triggersEnter: [ blockUnauthorizedAdmin ],
+//   action() {
+//     BlazeLayout.render( 'default', {yield: 'users'} );
+//   }
+// });
