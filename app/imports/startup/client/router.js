@@ -206,6 +206,21 @@ authenticatedRoutes.route( '/users', {
   action() {
     BlazeLayout.render( 'default', {yield: 'users'} );
   }
+})
+
+authenticatedRoutes.route('/managers', {
+  name: 'managers',
+  /* triggersEnter: [ blockUnauthorizedAdmin ], //changed blockUnauthorizedManager to blockUnauthorizedAdmin*/
+  action() {
+    BlazeLayout.render( 'default', { yield: 'managers' } );
+  }
+});
+
+authenticatedRoutes.route( '/employees', {
+  name: 'employees',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'employee' } );
+  }
 });
 
 //GROUP ROUTES

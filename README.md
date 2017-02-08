@@ -8,4 +8,5 @@ https://LetUmGrow.github.io
 
 View on Galaxy:
 
-CURRENTLY UNAVAILABLE
+https://letumgrow.meteorapp.com
+https://LetUmGrow.meteorapp.com
