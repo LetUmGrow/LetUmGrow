@@ -1,13 +1,31 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
+//causes landing page to just display nothing
+const publicRoutes = FlowRouter.group({
+  name: 'public',
+  // triggersEnter: [ publicRedirect ], //Currently causes pages not to render properly
+});
 
-FlowRouter.route('/', {
+publicRoutes.route( '/', {
   name: 'Landing_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Landing_Page' });
   },
 });
+
+const publicRedirect = ( context, redirect ) => {
+  if ( Meteor.userId() ) {
+    Modules.both.redirectUser( { redirect: redirect } );
+  }
+};
+
+// FlowRouter.route('/', {
+//   name: 'Landing_Page',
+//   action() {
+//     BlazeLayout.render('App_Body', { main: 'Landing_Page' });
+//   },
+// });
 
 FlowRouter.route('/home-page', {
   name: 'Home_Page',
@@ -172,16 +190,54 @@ FlowRouter.notFound = {
   },
 };
 
-//Authenticated routes
-// const authenticatedRoutes = FlowRouter.group({
-//   name: 'authenticated',
-//   triggersEnter: [ authenticatedRedirect ]
+
+
+
+
+/* Authenticated routes */
+const authenticatedRoutes = FlowRouter.group({
+  name: 'authenticated',
+  // triggersEnter: [ authenticatedRedirect ]
+});
+
+authenticatedRoutes.route( '/users', {
+  name: 'users',
+  // triggersEnter: [ blockUnauthorizedAdmin ],
+  action() {
+    BlazeLayout.render( 'default', {yield: 'users'} );
+  }
+});
+
+//GROUP ROUTES
+
+//Plant routes
+// var plantRoutes = FlowRouter.group({
+//   prefix: '/plants',
+//   name: 'plants',
 // });
-//
-// authenticatedRoutes.route( '/users', {
-//   name: 'users',
-//   triggersEnter: [ blockUnauthorizedAdmin ],
-//   action() {
-//     BlazeLayout.render( 'default', {yield: 'users'} );
-//   }
+
+//Species routes
+// var speciesRoutes = FlowRouter.group({
+//   prefix: '/species',
+//   name: 'species ',
+// });
+
+//Routes for pages still in development
+// var devRoutes = FlowRouter.group({
+//   prefix: '/dev',
+//   name: 'dev',
+//   triggersEnter: [function(context, redirect) {
+//     console.log('running group triggers');
+//   }]
+// });
+
+
+// handling /dev route
+// devRoutes.route('/', {
+//   action: function() {
+//     BlazeLayout.render('componentLayout', {content: 'dev'});
+//   },
+//   triggersEnter: [function(context, redirect) {
+//     console.log('running /dev trigger');
+//   }]
 // });
