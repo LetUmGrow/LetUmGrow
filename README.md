@@ -8,5 +8,4 @@ https://LetUmGrow.github.io
 
 View on Galaxy:
 
-https://letumgrow.meteorapp.com
 https://LetUmGrow.meteorapp.com
