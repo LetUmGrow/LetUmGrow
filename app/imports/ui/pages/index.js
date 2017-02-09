@@ -65,4 +65,10 @@ import './plant-map.html';
 import './plant-map.js';
 
 import './display-plants-page.html';
-import './display-plants-page';
+import './display-plants-page.js';
+
+import './users.html';
+
+import './employees.html';
+
+import './managers.html';

@@ -163,6 +163,28 @@ FlowRouter.route('/plant-map', {
   },
 });
 
+FlowRouter.route('/test-page', {
+  name: 'Test_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Test_Page' });
+  },
+});
+
+FlowRouter.route( '/users', {
+  name: 'Users_Page',
+  // triggersEnter: [ blockUnauthorizedAdmin ],
+  action() {
+    // BlazeLayout.render( 'default', { yield: 'users'} );
+    BlazeLayout.render('App_Body', { main: 'Users_Page'});
+  },
+});
+// FlowRouter.route('/users', {
+//   name: 'Users_Page',
+//   action() {
+//     BlazeLayout.render('App_Body', { main: 'Users_Page' });
+//   },
+// });
+
 FlowRouter.route('/plants/profile/:_id', {
   name: 'Plant_Profile_Page',
   action() {
@@ -200,26 +222,28 @@ const authenticatedRoutes = FlowRouter.group({
   // triggersEnter: [ authenticatedRedirect ]
 });
 
-authenticatedRoutes.route( '/users', {
-  name: 'users',
-  // triggersEnter: [ blockUnauthorizedAdmin ],
-  action() {
-    BlazeLayout.render( 'default', {yield: 'users'} );
-  }
-})
+// authenticatedRoutes.route( '/users', {
+//   name: 'users',
+//   // triggersEnter: [ blockUnauthorizedAdmin ],
+//   action() {
+//     // BlazeLayout.render( 'default', { yield: 'users'} );
+//     BlazeLayout.render( 'App_Body', { main: 'users'} );
+//   }
+// });
 
 authenticatedRoutes.route('/managers', {
-  name: 'managers',
+  name: 'Managers_Page',
   /* triggersEnter: [ blockUnauthorizedAdmin ], //changed blockUnauthorizedManager to blockUnauthorizedAdmin*/
   action() {
-    BlazeLayout.render( 'default', { yield: 'managers' } );
-  }
+    // BlazeLayout.render( 'default', { yield: 'managers' } );
+    BlazeLayout.render( 'App_Body', { main: 'Managers_Page' } );
+  },
 });
 
 authenticatedRoutes.route( '/employees', {
-  name: 'employees',
+  name: 'Employees_Page',
   action() {
-    BlazeLayout.render( 'default', { yield: 'employee' } );
+    BlazeLayout.render( 'App_Body', { main: 'Employees_Page' } );
   }
 });
 
