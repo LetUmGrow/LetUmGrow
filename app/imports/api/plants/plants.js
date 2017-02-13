@@ -5,6 +5,19 @@ import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 
 export const Plants = new Mongo.Collection('Plants');
 
+/*Will be used in the future for security purposes but commented out for now;
+// Plants.allow({
+//   insert: () => false,
+//   update: () => false,
+//   remove: () => false
+// });
+//
+// Plants.deny({
+//   insert: () => true,
+//   update: () => true,
+//   remove: () => true
+// });
+
 /**
  * Create the schema for Plants
  * only the geolocation coordinates for latitude and longitude are required for now

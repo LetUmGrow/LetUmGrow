@@ -68,6 +68,7 @@ import './display-plants-page.html';
 import './display-plants-page.js';
 
 import './users.html';
+import './users.js';
 
 import './employees.html';
 

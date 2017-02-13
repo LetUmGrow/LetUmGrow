@@ -1,3 +1,19 @@
 <template name="Users_Page">
   <h3>Users Page</h3>
+  <h4 class="page-header">Users</h4>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Email Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each user in users}}
+    <tr>
+      <td>vvv{{user.username}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+  <button onclick="testUserFunction()">AAA button</button>
 </template>
