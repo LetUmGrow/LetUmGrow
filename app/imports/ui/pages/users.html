@@ -1,4 +1,9 @@
 <template name="Users_Page">
+  <style>
+    select {
+      color: black;
+    }
+  </style>
   <h3>Users Page</h3>
   <h4 class="page-header">Users</h4>
   <table class="table table-bordered">
@@ -10,7 +15,14 @@
     <tbody>
     {{#each user in users}}
     <tr>
-      <td>vvv{{user.username}}</td>
+      <td>{{user.profile.name}}</td>
+      <td>
+        <select name="userRole" class="form-control">
+          <option selected="admin" value="admin">Admin</option>
+          <option selected="manager" value="manager">Manager</option>
+          <option selected="user" value="user">Employee</option>
+        </select>
+      </td>
     </tr>
     {{/each}}
     </tbody>

@@ -37,3 +37,21 @@ Meteor.publish('Species', function publishSpeciesData() {
 Meteor.publish('Plants', function publishPlantsData() {
   return Plants.find();
 });
+
+// Meteor.publish( 'users', function() {
+  // let isAdmin = Roles.userIsInRole( this.userId, 'admin' );
+  //
+  // if ( isAdmin ) {
+  //   return [
+  //     Meteor.users.find( {}, { fields: { "emails.address": 1, "roles": 1 } } )
+  //   ];
+  // } else {
+  //   return null;
+  // }
+// });
+
+//publish roles collection, so that roles can be updated
+//probably not the most secure implementation since it is universally publishing to the client side
+Meteor.publish('rolesPub', function publishRolesData(){
+  return Meteor.roles.find();
+});
