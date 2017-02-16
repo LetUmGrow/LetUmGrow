@@ -1,8 +1,8 @@
-import {FlowRouter} from 'meteor/kadira:flow-router';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
-import {Meteor} from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 
-
+/* Adapted from https://themeteorchef.com/tutorials/building-a-user-admin */
 Template.Users_Page.onCreated( function(){
 // Template.Users_Page.onCreated( () => {
 
@@ -52,5 +52,24 @@ Template.Users_Page.helpers({
     if ( users ) {
       return users;
     }
+  },
+});
+
+Template.Users_Page.events({
+  'change [name="userRole"]': function( event, template ) {
+    let role = $( event.target ).find( 'option:selected' ).val();
+
+    // console.log(`user is ${this._id}\nrole is ${role}`);
+    console.log(this._id);
+
+    Meteor.call( "setRoleOnUser", {
+      user: this._id,
+      role: role
+    }, ( error, response ) => {
+      if ( error ) {
+        // Bert.alert( error.reason, "warning" );
+        alert( error.reason, "warning" );
+      }
+    });
   },
 });

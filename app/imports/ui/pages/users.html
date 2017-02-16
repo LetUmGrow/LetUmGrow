@@ -13,14 +13,14 @@
     </tr>
     </thead>
     <tbody>
-    {{#each user in users}}
+    {{#each users}}
     <tr>
-      <td>{{user.profile.name}}</td>
+
       <td>
         <select name="userRole" class="form-control">
-          <option selected="admin" value="admin">Admin</option>
-          <option selected="manager" value="manager">Manager</option>
-          <option selected="user" value="user">User</option>
+          <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
+          <option selected="{{selected roles.[0] 'manager'}}" value="manager">Manager</option>
+          <option selected="{{selected roles.[0] 'general-user'}}" value="general-user">General User</option>
         </select>
       </td>
     </tr>
