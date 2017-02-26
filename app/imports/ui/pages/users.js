@@ -6,12 +6,12 @@ import { Meteor } from 'meteor/meteor';
 Template.Users_Page.onCreated( function(){
 // Template.Users_Page.onCreated( () => {
 
-  if(Roles.subscription.ready()){
-    console.log('Roles subscription is ready');
-  }
-  else {
-    console.log('Roles subscription is not ready');
-  }
+  // if(Roles.subscription.ready()){
+  //   console.log('Roles subscription is ready');
+  // }
+  // else {
+  //   console.log('Roles subscription is not ready');
+  // }
 
   // if(users.subscription.ready()){
   //   console.log('users subscription is ready');
@@ -26,14 +26,14 @@ Template.Users_Page.onCreated( function(){
   let userId= Meteor.userId();
 
   // Roles.setUserRoles(userId, 'testRole01'); //doesn't seem to work
-  Roles.addUsersToRoles(userId , 'testRole01');
+  // Roles.addUsersToRoles(userId , 'testRole01');
 
 
-  if( Roles.userIsInRole(userId, 'testRole01') ){
-    console.log(`${userId} is in testRole01 role` );
-  } else {
-    console.log(`${userId} is not in testRole01 role` );
-  }
+  // if( Roles.userIsInRole(userId, 'testRole01') ){
+  //   console.log(`${userId} is in testRole01 role` );
+  // } else {
+  //   console.log(`${userId} is not in testRole01 role` );
+  // }
 
   // Roles.createRole('admin');
   // if( Roles.userIsInRole(Meteor.userId(), 'testRole02') ){
@@ -47,7 +47,7 @@ Template.Users_Page.helpers({
   users: function() {
     let users = Meteor.users.find();
 
-    console.log('yesterday all my troubles seemed so far away');
+    // console.log('yesterday all my troubles seemed so far away');
 
     if ( users ) {
       return users;

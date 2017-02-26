@@ -15,7 +15,9 @@
     <tbody>
     {{#each users}}
     <tr>
-
+      <td>
+        {{profile.name}}
+      </td>
       <td>
         <select name="userRole" class="form-control">
           <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>
