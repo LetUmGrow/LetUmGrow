@@ -15,10 +15,10 @@ publicRoutes.route( '/', {
 });
 
 //BEGIN taken from https://themeteorchef.com/tutorials/building-a-user-admin
-// ' if the user is logged in, we want to redirect them away from these public routes. Yeah, much better. Let's take a peek at that module.'
+// ' if the user is logged in, we want to redirect them away from these public routes'
 const publicRedirect = ( context, redirect ) => {
   if ( Meteor.userId() ) {
-    Modules.both.redirectUser( { redirect: redirect } );
+    // Modules.both.redirectUser( { redirect: redirect } );
   }
 };
 
@@ -46,7 +46,17 @@ let _getCurrentUserRoles = () => {
   return Roles.getRolesForUser( Meteor.userId() );
 };
 
+let _redirectUser = ( path, redirect ) => {
+  if ( redirect ) {
+    redirect( path );
+  } else {
+    FlowRouter.go( FlowRouter.path( path ) );
+  }
+}
 
+// Modules.both.redirectUser = route;
+
+//END taken from https://themeteorchef.com/tutorials/building-a-user-admin
 
 // FlowRouter.route('/', {
 //   name: 'Landing_Page',
@@ -198,6 +208,9 @@ FlowRouter.route('/test-page', {
   },
 });
 
+
+
+
 FlowRouter.route( '/users', {
   name: 'Users_Page',
   // triggersEnter: [ blockUnauthorizedAdmin ],
@@ -243,6 +256,20 @@ FlowRouter.notFound = {
 
 
 
+//authenticated.js code
+const blockUnauthorizedAdmin = ( context, redirect ) => {
+  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), 'admin' ) ) {
+    console.log('&z');
+    console.log(`roles function is ${Roles.userIsInRole(Meteor.userId(), 'admin')}`);
+    // FlowRouter.go("/");
+  }
+}
+
+const blockUnauthorizedManager = ( context, redirect ) => {
+  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), [ 'admin', 'manager' ] ) ) {
+    FlowRouter.go("/");
+  }
+}
 
 /* Authenticated routes */
 const authenticatedRoutes = FlowRouter.group({
@@ -261,7 +288,7 @@ const authenticatedRoutes = FlowRouter.group({
 
 authenticatedRoutes.route('/managers', {
   name: 'Managers_Page',
-  /* triggersEnter: [ blockUnauthorizedAdmin ], //changed blockUnauthorizedManager to blockUnauthorizedAdmin*/
+  triggersEnter: [ blockUnauthorizedAdmin ], //changed blockUnauthorizedManager to blockUnauthorizedAdmin
   action() {
     // BlazeLayout.render( 'default', { yield: 'managers' } );
     BlazeLayout.render( 'App_Body', { main: 'Managers_Page' } );
@@ -274,6 +301,8 @@ authenticatedRoutes.route( '/employees', {
     BlazeLayout.render( 'App_Body', { main: 'Employees_Page' } );
   }
 });
+
+
 
 //GROUP ROUTES
 
