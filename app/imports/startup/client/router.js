@@ -295,6 +295,7 @@ authenticatedRoutes.route('/managers', {
   action() {
     // BlazeLayout.render( 'default', { yield: 'managers' } );
     BlazeLayout.render( 'App_Body', { main: 'Managers_Page' } );
+    console.log('running \'managers\' group triggers');
   },
 });
 
