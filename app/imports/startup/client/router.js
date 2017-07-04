@@ -258,9 +258,12 @@ FlowRouter.notFound = {
 
 //authenticated.js code
 const blockUnauthorizedAdmin = ( context, redirect ) => {
+
+  console.log(`roles function is ${Roles.userIsInRole(Meteor.userId(), 'admin')}`);
+
   if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), 'admin' ) ) {
     console.log('&z');
-    console.log(`roles function is ${Roles.userIsInRole(Meteor.userId(), 'admin')}`);
+
     // FlowRouter.go("/");
   }
 }
