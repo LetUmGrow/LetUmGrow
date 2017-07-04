@@ -8,6 +8,7 @@ Template.If_Admin.helpers({
   isAdmin: function isAdmin(){
     //return if user is Admin
     console.log(`returning if the user is admin: ${Meteor.user.role}`);
+    console.log(`returning if the user is admin: ${options.role}`);
     return Meteor.user.role === 'admin';
   },
 });

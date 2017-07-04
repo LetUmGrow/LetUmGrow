@@ -1,6 +1,6 @@
 <template name="Managers_Page">
   <h3>Managers</h3>
-    {{#If_Admin}}
+    {{#if isInRole 'admin'}}
       <p>Important admin stuff here</p>
-    {{/If_Admin}}
+    {{/if}}
 </template>
